@@ -1,0 +1,95 @@
+mat-toolbar {
+  background-color: #4E5366;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: inherit;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 0 8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links.is-mobile {
+  display: none;
+}
+
+.menu-button {
+  display: none;
+}
+
+.mobile-menu {
+  width: 250px;
+}
+
+.sidenav-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+mat-sidenav {
+  width: 250px;
+  background-color: #4E5366;
+  color: white;
+}
+
+mat-nav-list a {
+  color: white;
+}
+
+
+/* Asegurarse que el toolbar esté por encima del sidenav-content pero por debajo del sidenav */
+mat-toolbar {
+  position: relative;
+  z-index: 1000;
+}
+
+mat-nav-list {
+  padding-top: 64px; /* altura aproximada del toolbar */
+}
+
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  mat-toolbar {
+    padding: 10px;
+  }
+
+  .menu-button {
+    display: block !important;
+    margin-right: 8px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+/* Estilo para el enlace activo */
+.active-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
