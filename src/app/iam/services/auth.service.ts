@@ -9,6 +9,6 @@ export class AuthService {
   constructor() { }
 
   getAuthToken():Observable<boolean>{
-    return of(false);
+    return of(true);
   }
 }

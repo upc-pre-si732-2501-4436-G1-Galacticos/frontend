@@ -1,15 +1,27 @@
 <mat-toolbar>
-  <!-- Botón de menú hamburguesa para móviles -->
-  <button mat-icon-button class="menu-button" (click)="toggleMobileMenu()" [style.display]="isMobile ? 'block' : 'none'">
+  <!-- Burger menu button - Only visible in mobile devices -->
+  <button
+    mat-icon-button
+    *ngIf="isMobile"
+    (click)="toggleSidenav.emit()"
+    aria-label="Open menu"
+  >
     <mat-icon>menu</mat-icon>
   </button>
 
   <a class="logo-container" routerLink="/home">
-    <img ngSrc="logos/FitWiseNoBG.png" width="100" height="50" alt="FitWise Logo" priority/>
+    <img
+      ngSrc="logos/FitWiseNoBG.png"
+      width="100"
+      height="50"
+      alt="FitWise Logo"
+      priority
+    />
   </a>
+
   <span class="spacer"></span>
 
-  <!-- Navegación principal - se ocultará en móviles -->
+  <!-- Main navigation - Not visible in mobile devices -->
   <div class="nav-links" [class.is-mobile]="isMobile">
     <a mat-button routerLink="/diets" routerLinkActive="active-link">
       <mat-icon>restaurant</mat-icon>
@@ -25,7 +37,7 @@
     </a>
   </div>
 
-  <!-- Menú de usuario -->
+  <!-- Menu button - Always visible -->
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="User options">
     <mat-icon>account_circle</mat-icon>
   </button>
@@ -40,24 +52,4 @@
     </button>
   </mat-menu>
 </mat-toolbar>
-
-<!-- Menú móvil (sidenav) -->
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="over" class="mobile-menu">
-    <mat-nav-list>
-      <a mat-list-item routerLink="/diets" routerLinkActive="active-link">
-        <mat-icon>restaurant</mat-icon>
-        <span>Diets</span>
-      </a>
-      <a mat-list-item routerLink="/routines" routerLinkActive="active-link">
-        <mat-icon>fitness_center</mat-icon>
-        <span>Routines</span>
-      </a>
-      <a mat-list-item routerLink="/planner" routerLinkActive="active-link">
-        <mat-icon>edit</mat-icon>
-        <span>Planner</span>
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
-</mat-sidenav-container>
 

@@ -1,4 +1,30 @@
-<app-header-content></app-header-content>
-<main class="main-container">
-  <router-outlet></router-outlet>
-</main>
+<mat-sidenav-container class="layout-sidenav-container">
+
+  <mat-sidenav
+    *ngIf="isMobile"
+    #sidenav
+    [mode]="isMobile ? 'over' : 'side'"
+    [opened]="!isMobile"
+    class="mobile-menu"
+  >
+    <mat-nav-list>
+      <a mat-list-item routerLink="/diets" routerLinkActive="active-link">
+        <mat-icon>restaurant</mat-icon><span>Diets</span>
+      </a>
+      <a mat-list-item routerLink="/routines" routerLinkActive="active-link">
+        <mat-icon>fitness_center</mat-icon><span>Routines</span>
+      </a>
+      <a mat-list-item routerLink="/planner" routerLinkActive="active-link">
+        <mat-icon>edit</mat-icon><span>Planner</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header-content (toggleSidenav)="sidenav.toggle()"></app-header-content>
+    <main class="main-container">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

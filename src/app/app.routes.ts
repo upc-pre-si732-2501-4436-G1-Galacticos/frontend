@@ -7,16 +7,17 @@ import {PageNotFoundComponent} from './public/pages/page-not-found/page-not-foun
 import {authGuard} from './iam/guards/auth.guard';
 
 export const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: '',
     component: LayoutComponent,
     canActivate: [authGuard],
     children: [
-      { path: 'home', loadComponent: () => import('./some/home.component').then(m => m.HomeComponent) },
-      { path: 'diets', loadComponent: () => import('./some/diets.component').then(m => m.DietsComponent) },
-      { path: 'routines', loadComponent: () => import('./some/routines.component').then(m => m.RoutinesComponent) },
-      { path: 'planner', loadComponent: () => import('./some/planner.component').then(m => m.PlannerComponent) },
-      { path: 'profile', loadComponent: () => import('./some/profile.component').then(m => m.ProfileComponent) },
+      { path: 'home', loadComponent: () => import('./public/pages/home/home.component').then(m => m.HomeComponent) },
+      { path: 'diets', loadComponent: () => import('./core/pages/diets-management/diets-management.component').then(m => m.DietsManagementComponent) },
+      { path: 'routines', loadComponent: () => import('./core/pages/routines-management/routines-management.component').then(m => m.RoutinesManagementComponent) },
+      { path: 'planner', loadComponent: () => import('./core/pages/planner-management/planner-management.component').then(m => m.PlannerManagementComponent) },
+      { path: 'profile', loadComponent: () => import('./core/pages/profile-management/profile-management.component').then(m => m.ProfileManagementComponent) },
     ]
   },
   {
@@ -27,6 +28,5 @@ export const routes: Routes = [
       { path: 'register', component: RegisterComponent }
     ]
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
