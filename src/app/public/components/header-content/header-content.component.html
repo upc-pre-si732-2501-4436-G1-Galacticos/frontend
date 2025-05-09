@@ -1,0 +1,60 @@
+<mat-toolbar>
+  <!-- Burger menu button - Only visible in mobile devices -->
+  <button
+    mat-icon-button
+    *ngIf="isMobile"
+    (click)="toggleSidenav.emit()"
+    aria-label="Open menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <a class="logo-container" routerLink="/home">
+    <img
+      ngSrc="logos/FitWiseNoBG.png"
+      width="100"
+      height="50"
+      alt="FitWise Logo"
+      priority
+    />
+  </a>
+
+  <span class="spacer"></span>
+
+  <!-- Main navigation - Not visible in mobile devices -->
+  <div class="nav-links" [class.is-mobile]="isMobile">
+    <a mat-button routerLink="/diets" routerLinkActive="active-link">
+      <mat-icon>restaurant</mat-icon>
+      <span>Diets</span>
+    </a>
+    <a mat-button routerLink="/routines" routerLinkActive="active-link">
+      <mat-icon>fitness_center</mat-icon>
+      <span>Routines</span>
+    </a>
+    <a mat-button routerLink="/planner" routerLinkActive="active-link">
+      <mat-icon>edit</mat-icon>
+      <span>Planner</span>
+    </a>
+  </div>
+
+  <!-- Menu button - Always visible -->
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="User options">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <ng-container *ngIf="isSignedIn">
+      <button mat-menu-item disabled>
+        <mat-icon>person</mat-icon>
+        <span>Welcome, {{ currentEmail }}</span>
+      </button>
+      <button mat-menu-item (click)="goToProfile()">
+        <mat-icon>manage_accounts</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item (click)="onSignOut()">
+        <mat-icon>logout</mat-icon>
+        <span>Sign Out</span>
+      </button>
+    </ng-container>
+  </mat-menu>
+</mat-toolbar>

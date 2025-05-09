@@ -1,0 +1,44 @@
+<div class="sign-up-container">
+  <!-- Image: Desktop-only view -->
+  <div class="image-section">
+    <img src="/auth-page-main.png" alt="Fitness image" />
+  </div>
+
+  <!-- Form: Always visible -->
+  <mat-card class="form-section">
+    <div class="logo-wrapper">
+      <img src="/logos/FitWiseLogo.png" alt="FitWise Logo"/>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-content">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input title="email" matInput id="email" name="email" required
+               formControlName="email"/>
+        @if (isInvalidControl(form, 'email')) {
+          <mat-error>{{ errorMessagesForControl(form, 'email') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input title="password" matInput id="password" name="password" type="password" required
+               formControlName="password"/>
+        @if (isInvalidControl(form, 'password')) {
+          <mat-error>{{ errorMessagesForControl(form, 'password') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <button class="login-button full-width" type="submit" mat-flat-button>
+        Sign Up
+      </button>
+    </form>
+
+    <div class="container-actions">
+      <div class="links full-width">
+        <span>Already have an account? <strong class="link" (click)="navigateToLogin()">Sign In</strong></span>
+      </div>
+    </div>
+  </mat-card>
+
+</div>
