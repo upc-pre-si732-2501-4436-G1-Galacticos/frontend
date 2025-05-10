@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 // import {environment} from '../../../environments/environment';
 import {environment} from '../../../environments/environment.development';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
@@ -78,9 +78,9 @@ export class AuthService {
           this.signedInUserId.next(response.id);
           this.signedInEmail.next(response.email);
           localStorage.setItem('token', response.token);
-          localStorage.setItem('email',     response.email);
-          localStorage.setItem('userId',    response.id.toString());
-          console.log(`Signed In as ${response.email} with token: ${response.token}`);
+          localStorage.setItem('email', response.email);
+          localStorage.setItem('userId', response.id.toString());
+          console.log(`Signed In as ${response.email} with ID: ${response.id} with token: ${response.token}`);
           this.router.navigate(['/']).then();
         },
         error: (error) => {
@@ -94,6 +94,10 @@ export class AuthService {
       });
   }
 
+  private clearStorage() {
+    ['token', 'userId', 'email'].forEach(key => localStorage.removeItem(key));
+  }
+
   /**
    * Sign Out
    * @summary
@@ -103,8 +107,37 @@ export class AuthService {
     this.signedIn.next(false);
     this.signedInUserId.next(0);
     this.signedInEmail.next('');
-    localStorage.removeItem('token');
-    localStorage.removeItem('email');
+    this.clearStorage();
     this.router.navigate(['/sign-in']).then();
+  }
+
+  /**
+   * Forgot Password
+   * @summary
+   * Sends an email with a reset password link to the user.
+   * @param email - User's email
+   */
+  forgotPassword(email: string) {
+    return this.http.post<{ message: string }>(
+      `${this.basePath}/authentication/forgot-password`,
+      {email},
+      this.httpOptions
+    );
+  }
+
+  /**
+   * Reset Password
+   * @summary
+   * Resets the user's password using a token.
+   * @param token - Reset token sent via email
+   * @param email - User's email
+   * @param password - New password to set
+   */
+  resetPassword(token: string, email: string, password: string) {
+    return this.http.post<{ message: string }>(
+      `${this.basePath}/authentication/reset-password`,
+      {token, email, password},
+      this.httpOptions
+    );
   }
 }

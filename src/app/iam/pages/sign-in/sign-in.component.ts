@@ -54,4 +54,8 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
   navigateToRegister(): void {
     this.router.navigate(['/sign-up']).then();
   }
+
+  navigateToForgotPassword(): void {
+    this.router.navigate(['/forgot-password']).then();
+  }
 }
