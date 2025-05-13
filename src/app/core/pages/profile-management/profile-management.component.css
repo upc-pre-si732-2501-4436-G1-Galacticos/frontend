@@ -1,0 +1,13 @@
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.gender-group {
+  display: flex;
+  gap: 16px;
+  margin: 8px 0;
+}

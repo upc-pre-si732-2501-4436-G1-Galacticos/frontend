@@ -12,6 +12,7 @@ import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import {MatInput} from '@angular/material/input';
+import {MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-profile-management',
@@ -25,6 +26,7 @@ import {MatInput} from '@angular/material/input';
     MatButtonModule,
     MatInput,
     CommonModule,
+    MatRadioModule,
   ],
   styleUrls: ['./profile-management.component.css']
 })

@@ -1,45 +1,50 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div class="two-columns">
-    <mat-form-field><mat-label>Nombre</mat-label>
-      <input matInput formControlName="firstName" /></mat-form-field>
-    <mat-form-field><mat-label>Apellido</mat-label>
-      <input matInput formControlName="lastName" /></mat-form-field>
-  </div>
-
-  <mat-form-field appearance="outline">
-    <mat-label>Género</mat-label>
-    <mat-select formControlName="gender">
-      <mat-option value="M">Masculino</mat-option>
-      <mat-option value="F">Femenino</mat-option>
-    </mat-select>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="profile-form">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="firstName" />
   </mat-form-field>
 
-  <div class="two-columns">
-    <mat-form-field><mat-label>Altura (cm)</mat-label>
-      <input matInput type="number" formControlName="height" /></mat-form-field>
-    <mat-form-field><mat-label>Peso (kg)</mat-label>
-      <input matInput type="number" formControlName="weight" /></mat-form-field>
-  </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input matInput formControlName="lastName" />
+  </mat-form-field>
 
-  <mat-form-field appearance="outline">
+  <mat-label>Género</mat-label>
+  <mat-radio-group formControlName="gender" class="gender-group">
+    <mat-radio-button value="male">Masculino</mat-radio-button>
+    <mat-radio-button value="female">Femenino</mat-radio-button>
+    <mat-radio-button value="other">Otro</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Altura (cm)</mat-label>
+    <input matInput type="number" formControlName="height" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Peso (kg)</mat-label>
+    <input matInput type="number" formControlName="weight" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
     <mat-label>Nivel de actividad</mat-label>
     <mat-select formControlName="activityLevelId">
-      <mat-option *ngFor="let l of activityLevels" [value]="l.id">
-        {{ l.levelName }}
+      <mat-option *ngFor="let level of activityLevels" [value]="level.id">
+        {{ level.levelName }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Objetivo</mat-label>
+  <mat-form-field appearance="fill">
+    <mat-label>Meta</mat-label>
     <mat-select formControlName="goalId">
-      <mat-option *ngFor="let g of goals" [value]="g.id">
-        {{ g.goalName }}
+      <mat-option *ngFor="let goal of goals" [value]="goal.id">
+        {{ goal.goalName }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
-  <button mat-flat-button color="primary" type="submit">
-    {{ isEdit ? 'Actualizar perfil' : 'Crear perfil' }}
+  <button mat-raised-button color="primary" type="submit">
+    Guardar
   </button>
 </form>
