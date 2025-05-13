@@ -1,1 +1,35 @@
-<p>routines-management works!</p>
+<h2>ROUTINES</h2>
+
+<div class="dietas-wrapper">
+  <!-- Crea tu nueva rutina -->
+  <div class="create-diet-section">
+    <h3>Crea tu nueva rutina</h3>
+    <input type="text" placeholder="Ingrese el nombre de la rutina" [(ngModel)]="newWorkout.title" />
+    <input type="text" placeholder="Ingrese detalles de la rutina" [(ngModel)]="newWorkout.note" />
+
+
+
+    <button class="add-diet-btn" (click)="createRoutine()">Agregar rutina</button>
+  </div>
+
+  <!-- Mi rutina actual y comunidad -->
+  <div class="right-section">
+    <!-- Rutina actual -->
+    <div class="current-diet">
+      <h3>Mi rutina actual</h3>
+      <div *ngIf="currentWorkout" class="diet-card">
+        <h4>{{ currentWorkout.title }}</h4>
+        <p>{{ currentWorkout.note }}</p>
+      </div>
+      <div *ngIf="!currentWorkout">
+        <p>No has seleccionado una rutina aún.</p>
+      </div>
+    </div>
+
+    <!-- Rutinas de la comunidad -->
+    <div class="community-diets">
+      <h3>Rutinas de la comunidad</h3>
+      <app-routine-list [routines]="workouts" (routineSelected)="openRoutineDetails($event)"></app-routine-list>
+    </div>
+  </div>
+</div>
