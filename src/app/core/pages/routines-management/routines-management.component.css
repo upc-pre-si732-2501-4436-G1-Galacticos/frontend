@@ -108,3 +108,36 @@
   border-radius: 10px;
   border: 1px solid #ccc;
 }
+
+/* Media Query para pantallas más pequeñas (ejemplo: tablets y móviles) */
+@media (max-width: 768px) {
+  .dietas-wrapper {
+    flex-direction: column;
+  }
+
+  .create-diet-section,
+  .right-section {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .current-diet {
+    margin-bottom: 15px;
+  }
+}
+
+/* Media Query para pantallas aún más pequeñas (ejemplo: móviles) */
+@media (max-width: 480px) {
+  .create-diet-section h3,
+  .current-diet h3,
+  .community-diets h3 {
+    font-size: 1.1rem;
+  }
+
+  .create-diet-section input,
+  .add-diet-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
