@@ -1,4 +1,4 @@
-import {environment} from "../../../environments/environment";
+import {environment} from "../../../environments/environment.development";
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
 

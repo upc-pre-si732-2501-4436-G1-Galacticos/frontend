@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HeaderContentComponent } from '../../public/components/header-content/header-content.component';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { MatSidenavModule} from '@angular/material/sidenav';
+import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -28,11 +28,20 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-  @ViewChild('sidenav') sidenav!: any;
+  @ViewChild('sidenav') sidenav!: MatSidenav;
   isMobile = false;
   constructor(private bo: BreakpointObserver) {}
+
   ngOnInit() {
-    this.bo.observe([Breakpoints.Handset]).subscribe(r => this.isMobile = r.matches);
+    this.bo.observe([Breakpoints.Handset])
+      .subscribe(r => (this.isMobile = r.matches));
   }
+
+  close() {
+    if (this.sidenav) {
+      this.sidenav.close().then();
+    }
+  }
+
 }
 

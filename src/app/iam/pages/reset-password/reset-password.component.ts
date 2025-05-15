@@ -33,12 +33,12 @@ export class ResetPasswordComponent extends BaseFormComponent implements OnInit 
   private token = '';
   private email = '';
 
-  constructor(
-    private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private auth: AuthService
-  ) {
+    constructor(
+      private fb: FormBuilder,
+      private route: ActivatedRoute,
+      private router: Router,
+      private auth: AuthService
+    ) {
     super();
   }
 
