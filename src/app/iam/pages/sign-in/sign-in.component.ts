@@ -9,6 +9,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
 import {CommonModule} from "@angular/common";
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { SignInTwoFactorComponent } from  '../sign-in-two-factor/sign-in-two-factor.component'
 
 import {Router} from "@angular/router";
 
@@ -23,6 +25,8 @@ import {Router} from "@angular/router";
     MatCardModule,
     CommonModule,
     MatIconModule,
+    MatDialogModule,
+    SignInTwoFactorComponent
   ],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css'
@@ -31,8 +35,18 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
   form!: FormGroup;
   submitted = false;
 
-  constructor(private router: Router, private builder: FormBuilder, private authenticationService: AuthService) {
+  constructor(  private router: Router,
+                private builder: FormBuilder,
+                private authenticationService: AuthService,
+
+                private dialog: MatDialog ) {
     super();
+  }
+  openLoginModal() {
+    this.dialog.open(SignInTwoFactorComponent, {
+      width: '600px',
+      disableClose: true // opcional
+    });
   }
 
   ngOnInit(): void {

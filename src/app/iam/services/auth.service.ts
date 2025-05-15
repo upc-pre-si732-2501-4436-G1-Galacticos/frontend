@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+// import {environment} from '../../../environments/environment';
 import {environment} from '../../../environments/environment.development';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs';
@@ -57,7 +58,7 @@ export class AuthService {
           this.router.navigate(['/sign-in']).then();
         },
         error: (error) => {
-          console.error(`Error while signing up: ${error.message}`);
+          console.error();
           this.router.navigate(['/sign-up']).then();
         }
       });
@@ -87,7 +88,7 @@ export class AuthService {
           this.signedInUserId.next(0);
           this.signedInEmail.next('');
           localStorage.removeItem('token');
-          console.error(`Error while signing in: ${error.message}`);
+          console.error();
           this.router.navigate(['/sign-in']).then();
         }
       });
@@ -132,11 +133,19 @@ export class AuthService {
    * @param email - User's email
    * @param password - New password to set
    */
-  resetPassword(token: string, email: string, password: string) {
+  resetPassword(verificationCode: string, email: string, password: string) {
     return this.http.post<{ message: string }>(
       `${this.basePath}/authentication/reset-password`,
-      {token, email, password},
+      {verificationCode, email, password},
       this.httpOptions
     );
   }
+  twoFactor(email: string, verificationCode: string ) {
+    return this.http.post<{ message: string }>(
+      `${this.basePath}/authentication/sign-in-two-factor`,
+      {email, verificationCode},
+      this.httpOptions
+    );
+  }
+
 }

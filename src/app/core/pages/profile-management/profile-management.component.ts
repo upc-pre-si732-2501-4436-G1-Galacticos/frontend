@@ -8,7 +8,10 @@ import { forkJoin, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import {MatOption} from '@angular/material/core';
+import {MatSelect} from '@angular/material/select';
 import { CommonModule } from '@angular/common';
+import {MatInput} from '@angular/material/input';
 import {MatRadioModule } from '@angular/material/radio';
 
 @Component({
@@ -18,7 +21,10 @@ import {MatRadioModule } from '@angular/material/radio';
   imports: [
     ReactiveFormsModule,
     MatFormFieldModule,
+    MatSelect,
+    MatOption,
     MatButtonModule,
+    MatInput,
     CommonModule,
     MatRadioModule,
   ],

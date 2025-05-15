@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from "./public/pages/page-not-found/page-not-fo
 
 import { SignUpComponent } from "./iam/pages/sign-up/sign-up.component";
 import { SignInComponent } from "./iam/pages/sign-in/sign-in.component";
+import {SignInTwoFactorComponent} from './iam/pages/sign-in-two-factor/sign-in-two-factor.component';
 
 export const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -60,6 +61,7 @@ export const routes: Routes = [
     children: [
       { path: "sign-up", component: SignUpComponent },
       { path: "sign-in", component: SignInComponent },
+      { path: "sign-in-two-factor", component: SignInTwoFactorComponent },
       {
         path: "forgot-password",
         loadComponent: () =>
