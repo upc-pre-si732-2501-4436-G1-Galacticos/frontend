@@ -1,1 +1,30 @@
-<p>home works!</p>
+<h1>Bienvenido a FitWise</h1>
+
+<mat-card *ngIf="currentPlan">
+  <mat-card-header>
+    <mat-card-title>Tu plan actual</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>Nombre:</strong> {{ currentPlan.name }}</p>
+
+    <div *ngIf="currentPlan.diet">
+      <p><strong>Dieta:</strong> {{ currentPlan.diet.title }}</p>
+    </div>
+
+    <div *ngIf="currentPlan.workout">
+      <p><strong>Rutina:</strong> {{ currentPlan.workout.title }}</p>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<div *ngIf="!currentPlan">
+  <p>No tienes un plan activo todavía.</p>
+  <button mat-raised-button color="primary" [routerLink]="['/fitwise-plans']">Crear uno</button>
+</div>
+
+<section class="quick-actions">
+  <h2>Accesos rápidos</h2>
+  <button mat-stroked-button color="accent" [routerLink]="['/diets']">Ver Dietas</button>
+  <button mat-stroked-button color="accent" [routerLink]="['/routines']">Ver Rutinas</button>
+  <button mat-stroked-button color="accent" [routerLink]="['/planner']">Mis Planes</button>
+</section>

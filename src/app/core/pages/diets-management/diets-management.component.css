@@ -18,7 +18,7 @@
 
 .create-diet-section input {
   display: block;
-  width: 100%;
+  width: 97%;
   margin: 10px 0;
   padding: 10px;
   border-radius: 10px;
@@ -70,3 +70,24 @@
 .diet-card:hover {
   background-color: #f0fff0;
 }
+.community-diets {
+  background-color: #ffffff; /* Fondo suave y claro */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.community-diets h3 {
+  color: #000000; /* Azul fuerte para contraste */
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.community-diets app-diet-list {
+  display: block;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+

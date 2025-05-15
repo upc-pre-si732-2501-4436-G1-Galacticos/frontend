@@ -2,98 +2,96 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 1rem;
-  gap: 2rem;
-  box-sizing: border-box;
-}
+  height: 100vh;
+  background-color: #f7f6f5;
 
-/* Cada sección cuadrada al 50% del ancho */
-.image-section,
-.form-section {
-  flex: 0 1 45%;
-  max-width: 45%;
-  aspect-ratio: 1 / 1;  /* ¡cuadrado! */
-  max-height: calc(100vh - 2rem); /* resta el padding vertical */
-  box-sizing: border-box;
-  position: relative;
-}
-
-/* IMAGE SECTION */
-.image-section {
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.image-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;  /* respeta el 9:16 y muestra la imagen completa */
-  object-position: center center;
-}
-
-/* FORM SECTION */
-.form-section {
-  background-color: #BEED00;
-  border-radius: 20px;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.logo-wrapper img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 1.5rem;
-}
-
-.form-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-mat-form-field {
-  color: black;
-  border-radius: 5px;
-}
-
-login-button {
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  border-radius: 2rem;
-  padding: 0.75rem 0;
-  text-transform: none;
-  margin-top: 0.5rem;
-}
-
-.full-width {
-  width: 100%;
-}
-
-/* MÓVIL: ocultar imagen, form full-width y sin aspect-ratio */
-@media (max-width: 768px) {
-  .sign-up-container {
-    flex-direction: column;
-    height: auto;
-    padding: 1.5rem;
-  }
   .image-section {
     display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+      margin-right: 2rem;
+
+      img {
+        width: 300px;
+      }
+    }
   }
+
   .form-section {
-    flex: 1 1 auto;
-    max-width: 100%;
-    aspect-ratio: auto;
-    max-height: none;
+    background-color: #d9ff3f; // Neón similar al login
+  padding: 2rem;
     border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    padding: 1.5rem;
+    max-width: 400px;
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+
+      img {
+        max-width: 150px;
+        height: auto;
+      }
+    }
+
+    .form-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-left: 20px;
+    }
+
+    .custom {
+      padding: 0.75rem;
+      border: 2px solid black;
+      border-radius: 20px;
+      font-size: 1rem;
+      outline: none;
+      background-color: white;
+      color: black;
+      width: 90%;
+      box-sizing: border-box;
+    }
+
+    .submit-btn {
+      background-color: cyan;
+      color: black;
+      font-weight: bold;
+      border-radius: 15px;
+      width: 90%;
+    }
+
+    .emailText {
+      color: #ff0000;
+    }
+
+    .bottom-links {
+      margin-top: 1rem;
+      text-align: center;
+      padding-bottom: 10px;
+
+      .link {
+        color: black;
+        font-weight: 600;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .feedback {
+      margin-top: 1rem;
+      text-align: center;
+
+      &.success {
+        color: green;
+      }
+
+      &.error {
+        color: red;
+      }
+    }
   }
 }

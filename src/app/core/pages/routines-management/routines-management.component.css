@@ -18,7 +18,7 @@
 
 .create-diet-section input {
   display: block;
-  width: 100%;
+  width: 97%;
   margin: 10px 0;
   padding: 10px;
   border-radius: 10px;
@@ -69,4 +69,42 @@
 
 .diet-card:hover {
   background-color: #f0fff0;
+}
+/* --- Tarjetas individuales de rutina (estilo comunidad) --- */
+.diet-card {
+  background-color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+
+.diet-card:hover {
+  background-color: #f0fff0;
+}
+
+/* --- Contenedor general de la comunidad de rutinas --- */
+.community-diets {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de sección comunidad */
+.community-diets h3 {
+  color: #000000;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+/* Lista de rutinas (componente hijo) */
+.community-diets app-routine-list {
+  display: block;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }

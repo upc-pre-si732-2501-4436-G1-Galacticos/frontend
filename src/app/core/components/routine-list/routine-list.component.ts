@@ -43,4 +43,3 @@ export class RoutineListComponent implements OnChanges {
     this.routineSelected.emit(id);
   }
 }
-

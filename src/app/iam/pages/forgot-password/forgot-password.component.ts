@@ -8,6 +8,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from "@angular/material/card";
 import { CommonModule } from "@angular/common";
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
@@ -18,7 +19,8 @@ import { CommonModule } from "@angular/common";
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    CommonModule
+    CommonModule,
+    RouterLink
   ],
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.css']

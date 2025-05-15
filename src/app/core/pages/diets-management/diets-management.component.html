@@ -6,9 +6,6 @@
     <h3>Crea tu nueva dieta</h3>
     <input type="text" placeholder="Ingrese el nombre de la dieta" [(ngModel)]="newDiet.title" />
     <input type="text" placeholder="Ingrese detalles de la dieta" [(ngModel)]="newDiet.note" />
-
-
-
     <button class="add-diet-btn" (click)="createDiet()">Agregar dieta</button>
   </div>
 
@@ -26,10 +23,11 @@
       </div>
     </div>
 
-    <!-- Dietas de la comunidad -->
-    <div class="community-diets">
-      <h3>Dietas de la comunidad</h3>
-      <app-diet-list [diets]="diets" (dietSelected)="openDietDetails($event)"></app-diet-list>
-    </div>
+
   </div>
+</div>
+<!-- Dietas de la comunidad -->
+<div class="community-diets">
+  <h3>Dietas de la comunidad</h3>
+  <app-diet-list [diets]="diets" (dietSelected)="openDietDetails($event)"></app-diet-list>
 </div>

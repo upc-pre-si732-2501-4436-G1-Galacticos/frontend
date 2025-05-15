@@ -6,9 +6,6 @@
     <h3>Crea tu nueva rutina</h3>
     <input type="text" placeholder="Ingrese el nombre de la rutina" [(ngModel)]="newWorkout.title" />
     <input type="text" placeholder="Ingrese detalles de la rutina" [(ngModel)]="newWorkout.note" />
-
-
-
     <button class="add-diet-btn" (click)="createRoutine()">Agregar rutina</button>
   </div>
 
@@ -25,11 +22,10 @@
         <p>No has seleccionado una rutina aún.</p>
       </div>
     </div>
-
-    <!-- Rutinas de la comunidad -->
-    <div class="community-diets">
-      <h3>Rutinas de la comunidad</h3>
-      <app-routine-list [routines]="workouts" (routineSelected)="openRoutineDetails($event)"></app-routine-list>
-    </div>
   </div>
+</div>
+<!-- Rutinas de la comunidad -->
+<div class="community-diets">
+  <h3>Rutinas de la comunidad</h3>
+  <app-routine-list [routines]="workouts" (routineSelected)="openRoutineDetails($event)"></app-routine-list>
 </div>

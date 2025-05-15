@@ -1,0 +1,18 @@
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+mat-card {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.quick-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.quick-actions button {
+  margin: 10px;
+}
