@@ -1,13 +1,13 @@
 h1 {
   text-align: center;
   margin-top: 20px;
-  font-size: 2.5rem; /* Ajusta el tamaño de la fuente para pantallas más grandes */
+  font-size: 2.5rem;
 }
 
 mat-card {
   margin: 20px auto;
   max-width: 600px;
-  width: 95%; /* Permite que la tarjeta se ajuste a pantallas más pequeñas */
+  width: 95%;
 }
 
 mat-card-header {
@@ -39,17 +39,16 @@ mat-card-content {
   padding: 10px 15px;
 }
 
-/* Estilos para el contenedor cuando no hay plan activo */
-div:has(> p:first-child + button) { /* Selecciona el div que contiene el p seguido inmediatamente por el button */
+div:has(> p:first-child + button) {
   display: flex;
-  flex-direction: column; /* Alinea los elementos verticalmente */
-  align-items: center; /* Centra los elementos horizontalmente */
-  text-align: center; /* Centra el texto dentro del párrafo */
-  margin-top: 20px; /* Añade un poco de espacio superior si es necesario */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
 div:has(> p:first-child + button) p {
-  margin-bottom: 15px; /* Espacio entre el párrafo y el botón */
+  margin-bottom: 15px;
 }
 
 /* Media Query para pantallas más pequeñas (ejemplo: tablets - max-width: 768px) */
@@ -110,7 +109,7 @@ div:has(> p:first-child + button) p {
   }
 
   .quick-actions button {
-    display: block; /* Apila los botones en pantallas muy pequeñas */
+    display: block;
     width: 80%;
     margin: 10px auto;
     font-size: 1rem;
@@ -118,6 +117,6 @@ div:has(> p:first-child + button) p {
   }
 
   div:has(> p:first-child + button) button {
-    width: 80%; /* Ocupa un ancho mayor en pantallas pequeñas */
+    width: 80%;
   }
 }
