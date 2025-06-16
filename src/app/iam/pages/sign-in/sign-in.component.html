@@ -22,9 +22,8 @@
         class="custom-input"
       />
 
-      <button mat-flat-button color="primary"  class="login-button" type="submit" (click)="openLoginModal()">
+      <button [disabled]="onLoading" mat-flat-button color="primary"  class="login-button" type="submit" >
         Iniciar sesión
-
       </button>
 
       <div class="links-container">

@@ -41,17 +41,7 @@ export class SignInTwoFactorComponent {
         const email = this.form.value.email;
         const verificationCode = this.form.value.verificationCode;
 
-        this.auth.twoFactor(email, verificationCode).subscribe({
-            next: (response) => {
-                console.log('Verificación exitosa:', response);
-                this.dialogRef.close(); // Cierra el modal
-                this.router.navigate(['/']); // Redirige al home
-            },
-            error: (error) => {
-                console.error('Código incorrecto', error);
-                // Aquí podrías mostrar un mensaje de error visual
-            }
-        });
+        this.auth.twoFactor(email, verificationCode);
     }
 
 

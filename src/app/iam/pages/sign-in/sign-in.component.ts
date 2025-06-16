@@ -33,6 +33,7 @@ import {Router} from "@angular/router";
 export class SignInComponent extends BaseFormComponent implements OnInit {
   form!: FormGroup;
   submitted = false;
+  onLoading = false;
 
   constructor(  private router: Router,
                 private builder: FormBuilder,
@@ -44,8 +45,11 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
   openLoginModal() {
     this.dialog.open(SignInTwoFactorComponent, {
       width: '600px',
-      disableClose: true // opcional
+      disableClose: true
     });
+  }
+  closeLoginModal(){
+    this.dialog.closeAll();
   }
 
   ngOnInit(): void {
@@ -53,15 +57,26 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
+    this.authenticationService.currentRequestTwoFactorModal.subscribe(show => {
+      if (show) {
+        this.openLoginModal();
+        this.onLoading=false;
+        this.submitted=true;
+      }else{
+        this.closeLoginModal();
+      }
+    });
+
   }
 
   onSubmit() {
-    if (this.form.invalid) return;
+    if (this.form.invalid) return    alert("Invalid fields");
+    this.onLoading=true;
     let email = this.form.value.email;
     let password = this.form.value.password;
     const signInRequest = new SignInRequest(email, password);
     this.authenticationService.signIn(signInRequest);
-    this.submitted = true;
+
   }
 
   navigateToRegister(): void {
