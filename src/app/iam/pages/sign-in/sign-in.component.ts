@@ -26,7 +26,6 @@ import {Router} from "@angular/router";
     CommonModule,
     MatIconModule,
     MatDialogModule,
-    SignInTwoFactorComponent
   ],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css'
