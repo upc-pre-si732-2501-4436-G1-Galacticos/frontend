@@ -19,7 +19,7 @@
   }
 
   .form-section {
-    background-color: #d9ff3f; // Neón similar al login
+    background-color: #d9ff3f; 
   padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
