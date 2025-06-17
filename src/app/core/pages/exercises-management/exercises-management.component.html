@@ -1,0 +1,51 @@
+<div class="exercise-management-container">
+
+  <mat-card>
+    <mat-card-title>{{ selectedExercise.id ? 'Actualizar Ejercicio' : 'Crear Ejercicio' }}</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="selectedExercise.id ? updateExercise() : createExercise()">
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Título</mat-label>
+          <input matInput placeholder="Título del ejercicio" [(ngModel)]="selectedExercise.title" name="title" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Descripción</mat-label>
+          <input matInput placeholder="Descripción del ejercicio" [(ngModel)]="selectedExercise.description" name="description" required>
+        </mat-form-field>
+
+        <div class="button-group">
+          <button mat-raised-button color="primary" type="submit">
+            {{ selectedExercise.id ? 'Actualizar' : 'Crear' }}
+          </button>
+          <button mat-button type="button" (click)="resetForm()">Limpiar</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="mt-20">
+    <mat-card-title>Lista de Ejercicios</mat-card-title>
+    <mat-list>
+      <mat-list-item *ngFor="let exercise of exercises">
+        <div class="list-content">
+          <div class="info">
+            <h4 matLine>{{ exercise.title }}</h4>
+            <p matLine>{{ exercise.description }}</p>
+          </div>
+          <div class="actions">
+            <button mat-icon-button color="accent" (click)="editExercise(exercise)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteExercise(exercise.id!)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+
+</div>

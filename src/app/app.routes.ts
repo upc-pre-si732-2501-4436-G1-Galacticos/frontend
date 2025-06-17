@@ -52,6 +52,13 @@ export const routes: Routes = [
             "./core/pages/profile-management/profile-management.component"
             ).then((m) => m.ProfileManagementComponent),
       },
+      {
+        path: "exercises",
+        loadComponent:()=>
+          import(
+            "./core/pages/exercises-management/exercises-management.component"
+            ).then((m)=>m.ExercisesManagementComponent),
+      }
     ],
   },
   {
