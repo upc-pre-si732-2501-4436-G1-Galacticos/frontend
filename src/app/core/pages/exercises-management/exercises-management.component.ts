@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ExercisesService } from '../../services/exercises.service';
 import { Exercise } from '../../model/exercise.model';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
-// Angular Material Standalone imports
+// Angular Material
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './exercises-management.component.html',
   standalone: true,
   imports: [
+    CommonModule,
     FormsModule,
     MatCardModule,
     MatListModule,
@@ -30,31 +32,29 @@ export class ExercisesManagementComponent implements OnInit {
 
   exercises: Exercise[] = [];
   selectedExercise: Exercise = this.createEmptyExercise();
+  userId: number | null = null;
 
   constructor(private exercisesService: ExercisesService) {}
 
   ngOnInit(): void {
-    this.getAllExercises();
+    const storedUserId = localStorage.getItem('userId');
+    this.userId = storedUserId !== null && !isNaN(Number(storedUserId)) ? Number(storedUserId) : null;
+
+    if (this.userId !== null) {
+      this.getExercisesByUser(this.userId);
+    } else {
+      console.error('No se encontró un userId válido en localStorage');
+    }
   }
 
-  getAllExercises(): void {
-    this.exercisesService.getAllExercises().subscribe({
+  getExercisesByUser(userId: number): void {
+    this.exercisesService.getExercisesByUser(userId).subscribe({
       next: (data) => this.exercises = data,
-      error: (err) => console.error('Error al obtener ejercicios:', err)
+      error: (err) => console.error('Error al obtener ejercicios del usuario:', err)
     });
   }
 
-  createExercise(): void {
-    this.exercisesService.createExercise(this.selectedExercise).subscribe({
-      next: (created) => {
-        this.exercises.push(created);
-        this.resetForm();
-      },
-      error: (err) => console.error('Error al crear ejercicio:', err)
-    });
-  }
-
-  updateExercise(): void {
+  saveExercise(): void {
     if (this.selectedExercise.id) {
       this.exercisesService.updateExercise(this.selectedExercise.id, this.selectedExercise).subscribe({
         next: (updated) => {
@@ -66,16 +66,15 @@ export class ExercisesManagementComponent implements OnInit {
         },
         error: (err) => console.error('Error al actualizar ejercicio:', err)
       });
+    } else {
+      this.exercisesService.createExercise(this.selectedExercise).subscribe({
+        next: (created) => {
+          this.exercises.push(created);
+          this.resetForm();
+        },
+        error: (err) => console.error('Error al crear ejercicio:', err)
+      });
     }
-  }
-
-  deleteExercise(id: number): void {
-    this.exercisesService.deleteExercise(id).subscribe({
-      next: () => {
-        this.exercises = this.exercises.filter(e => e.id !== id);
-      },
-      error: (err) => console.error('Error al eliminar ejercicio:', err)
-    });
   }
 
   editExercise(exercise: Exercise): void {

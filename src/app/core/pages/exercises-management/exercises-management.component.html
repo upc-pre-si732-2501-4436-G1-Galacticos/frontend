@@ -1,51 +1,33 @@
-<div class="exercise-management-container">
+<div class="dietas-wrapper">
 
-  <mat-card>
-    <mat-card-title>{{ selectedExercise.id ? 'Actualizar Ejercicio' : 'Crear Ejercicio' }}</mat-card-title>
-    <mat-card-content>
-      <form (ngSubmit)="selectedExercise.id ? updateExercise() : createExercise()">
+  <!-- Sección izquierda: crear / actualizar ejercicio -->
+  <div class="create-diet-section">
+    <h3>{{ selectedExercise.id ? 'Actualizar Ejercicio' : 'Crear Ejercicio' }}</h3>
+    <form (ngSubmit)="saveExercise()">
 
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Título</mat-label>
-          <input matInput placeholder="Título del ejercicio" [(ngModel)]="selectedExercise.title" name="title" required>
-        </mat-form-field>
+      <input type="text" [(ngModel)]="selectedExercise.title" name="title" placeholder="Título del ejercicio" required>
 
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Descripción</mat-label>
-          <input matInput placeholder="Descripción del ejercicio" [(ngModel)]="selectedExercise.description" name="description" required>
-        </mat-form-field>
+      <input type="text" [(ngModel)]="selectedExercise.description" name="description" placeholder="Descripción del ejercicio" required>
 
-        <div class="button-group">
-          <button mat-raised-button color="primary" type="submit">
-            {{ selectedExercise.id ? 'Actualizar' : 'Crear' }}
-          </button>
-          <button mat-button type="button" (click)="resetForm()">Limpiar</button>
-        </div>
+      <button type="submit" class="add-diet-btn">
+        {{ selectedExercise.id ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button type="button" (click)="resetForm()" class="add-diet-btn" style="background-color: #ddd; color: black; margin-top: 5px;">
+        Limpiar
+      </button>
+    </form>
+  </div>
 
-      </form>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card class="mt-20">
-    <mat-card-title>Lista de Ejercicios</mat-card-title>
-    <mat-list>
-      <mat-list-item *ngFor="let exercise of exercises">
-        <div class="list-content">
-          <div class="info">
-            <h4 matLine>{{ exercise.title }}</h4>
-            <p matLine>{{ exercise.description }}</p>
-          </div>
-          <div class="actions">
-            <button mat-icon-button color="accent" (click)="editExercise(exercise)">
-              <mat-icon>edit</mat-icon>
-            </button>
-            <button mat-icon-button color="warn" (click)="deleteExercise(exercise.id!)">
-              <mat-icon>delete</mat-icon>
-            </button>
-          </div>
-        </div>
-      </mat-list-item>
-    </mat-list>
-  </mat-card>
+  <!-- Sección derecha: lista de ejercicios -->
+  <div class="right-section">
+    <div class="community-diets">
+      <h3>Lista de Ejercicios</h3>
+      <p *ngIf="exercises.length === 0">No hay ejercicios para mostrar.</p>
+      <div *ngFor="let exercise of exercises" class="diet-card" (click)="editExercise(exercise)">
+        <strong>{{ exercise.title }}</strong>
+        <p>{{ exercise.description }}</p>
+      </div>
+    </div>
+  </div>
 
 </div>
