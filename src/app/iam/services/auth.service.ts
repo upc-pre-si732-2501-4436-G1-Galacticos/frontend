@@ -19,6 +19,8 @@ export class AuthService {
   private signedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private signedInUserId: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   private signedInEmail: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private requestTwoFactorModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
 
   constructor(private router: Router, private http: HttpClient) {
     const token = localStorage.getItem('token');
@@ -44,6 +46,11 @@ export class AuthService {
     return this.signedInEmail.asObservable();
   }
 
+  get currentRequestTwoFactorModal() {
+    return this.requestTwoFactorModal.asObservable();
+  }
+
+
   /**
    * Sign Up
    * @summary
@@ -64,34 +71,23 @@ export class AuthService {
       });
   }
 
-  /**
-   * Sign In
-   * @summary
-   * This method sends a POST request to the server to sign in the user.
-   * @param signInRequest - Sign In Request containing the email and password
-   */
   signIn(signInRequest: SignInRequest) {
-    return this.http.post<SignInResponse>(`${this.basePath}/authentication/sign-in`, signInRequest, this.httpOptions)
-      .subscribe({
-        next: (response) => {
-          this.signedIn.next(true);
-          this.signedInUserId.next(response.id);
-          this.signedInEmail.next(response.email);
-          localStorage.setItem('token', response.token);
-          localStorage.setItem('email', response.email);
-          localStorage.setItem('userId', response.id.toString());
-          console.log(`Signed In as ${response.email} with ID: ${response.id} with token: ${response.token}`);
-          this.router.navigate(['/']).then();
-        },
-        error: (error) => {
-          this.signedIn.next(false);
-          this.signedInUserId.next(0);
-          this.signedInEmail.next('');
-          localStorage.removeItem('token');
-          console.error();
-          this.router.navigate(['/sign-in']).then();
-        }
-      });
+    return this.http.post<{ message: string }>(
+      `${this.basePath}/authentication/sign-in`,
+      signInRequest,
+      this.httpOptions
+    ).subscribe({
+      next: (_) => {
+        alert(`Verification code sent to ${signInRequest.email}`)
+        console.log(`Verification code sent to ${signInRequest.email}`);
+        this.signedInEmail.next(signInRequest.email);
+        this.requestTwoFactorModal.next(true);
+      },
+      error: (_) => {
+        console.error();
+        this.requestTwoFactorModal.next(true);
+      }
+    });
   }
 
   private clearStorage() {
@@ -140,12 +136,33 @@ export class AuthService {
       this.httpOptions
     );
   }
-  twoFactor(email: string, verificationCode: string ) {
-    return this.http.post<{ message: string }>(
+
+  twoFactor(email: string, verificationCode: string) {
+    return this.http.post<SignInResponse>(
       `${this.basePath}/authentication/sign-in-two-factor`,
-      {email, verificationCode},
+      { email, verificationCode },
       this.httpOptions
-    );
+    ).subscribe({
+      next: (response) => {
+        this.signedIn.next(true);
+        this.signedInUserId.next(response.id);
+        this.signedInEmail.next(response.email);
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('email', response.email);
+        localStorage.setItem('userId', response.id.toString());
+        console.log(`2FA success: logged in ${response.email}`);
+        this.requestTwoFactorModal.next(false);
+        this.router.navigate(['/']).then();
+      },
+      error: (_) => {
+        this.signedIn.next(false);
+        this.signedInUserId.next(0);
+        this.signedInEmail.next('');
+        this.clearStorage();
+        alert("2FA wrong code")
+      }
+    });
   }
+
 
 }
