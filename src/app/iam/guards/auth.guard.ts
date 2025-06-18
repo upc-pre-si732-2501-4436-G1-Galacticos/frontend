@@ -1,12 +1,12 @@
-import { CanActivateFn, Router } from '@angular/router';
+import {CanActivateFn, Router} from '@angular/router';
 import {inject} from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {map, take} from 'rxjs/operators';
 
 export const authGuard: CanActivateFn = () => {
-  const authenticationService = inject(AuthService);
+  const auth = inject(AuthService);
   const router = inject(Router);
-  return authenticationService.isSignedIn.pipe(
+  return auth.isSignedIn.pipe(
     take(1),
     map(isSignedIn => {
       const token = localStorage.getItem('token');

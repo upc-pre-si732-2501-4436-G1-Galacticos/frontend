@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 // import {environment} from '../../../environments/environment';
-import {environment} from '../../../environments/environment.development';
+import {environment} from '../../../environments/environment';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs';
 import {Router} from '@angular/router';
@@ -19,6 +19,8 @@ export class AuthService {
   private signedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private signedInUserId: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   private signedInEmail: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private requestTwoFactorModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
 
   constructor(private router: Router, private http: HttpClient) {
     const token = localStorage.getItem('token');
@@ -44,6 +46,11 @@ export class AuthService {
     return this.signedInEmail.asObservable();
   }
 
+  get currentRequestTwoFactorModal() {
+    return this.requestTwoFactorModal.asObservable();
+  }
+
+
   /**
    * Sign Up
    * @summary
@@ -58,40 +65,37 @@ export class AuthService {
           this.router.navigate(['/sign-in']).then();
         },
         error: (error) => {
-          console.error(`Error while signing up: ${error.message}`);
+          console.error();
           this.router.navigate(['/sign-up']).then();
         }
       });
   }
 
-  /**
-   * Sign In
-   * @summary
-   * This method sends a POST request to the server to sign in the user.
-   * @param signInRequest - Sign In Request containing the email and password
-   */
   signIn(signInRequest: SignInRequest) {
-    return this.http.post<SignInResponse>(`${this.basePath}/authentication/sign-in`, signInRequest, this.httpOptions)
-      .subscribe({
-        next: (response) => {
-          this.signedIn.next(true);
-          this.signedInUserId.next(response.id);
-          this.signedInEmail.next(response.email);
-          localStorage.setItem('token', response.token);
-          localStorage.setItem('email',     response.email);
-          localStorage.setItem('userId',    response.id.toString());
-          console.log(`Signed In as ${response.email} with token: ${response.token}`);
-          this.router.navigate(['/']).then();
-        },
-        error: (error) => {
-          this.signedIn.next(false);
-          this.signedInUserId.next(0);
-          this.signedInEmail.next('');
-          localStorage.removeItem('token');
-          console.error(`Error while signing in: ${error.message}`);
-          this.router.navigate(['/sign-in']).then();
+    return this.http.post<{ message: string }>(
+      `${this.basePath}/authentication/sign-in`,
+      signInRequest,
+      this.httpOptions
+    ).subscribe({
+      next: (_) => {
+        alert(`Verification code sent to ${signInRequest.email}`)
+        console.log(`Verification code sent to ${signInRequest.email}`);
+        this.signedInEmail.next(signInRequest.email);
+        this.requestTwoFactorModal.next(true);
+      },
+      error: (err) => {
+        if (err.error && err.error.message) {
+          alert(`Error: ${err.error.message}`);
+        } else {
+          alert('An unexpected error occurred.');
         }
-      });
+        this.requestTwoFactorModal.next(true);
+      }
+    });
+  }
+
+  private clearStorage() {
+    ['token', 'userId', 'email'].forEach(key => localStorage.removeItem(key));
   }
 
   /**
@@ -103,8 +107,71 @@ export class AuthService {
     this.signedIn.next(false);
     this.signedInUserId.next(0);
     this.signedInEmail.next('');
-    localStorage.removeItem('token');
-    localStorage.removeItem('email');
+    this.clearStorage();
     this.router.navigate(['/sign-in']).then();
   }
+
+  /**
+   * Forgot Password
+   * @summary
+   * Sends an email with a reset password link to the user.
+   * @param email - User's email
+   */
+  forgotPassword(email: string) {
+    return this.http.post<{ message: string }>(
+      `${this.basePath}/authentication/forgot-password`,
+      {email},
+      this.httpOptions
+    );
+  }
+
+  /**
+   * Reset Password
+   * @summary
+   * Resets the user's password using a token.
+   * @param token - Reset token sent via email
+   * @param email - User's email
+   * @param password - New password to set
+   */
+  resetPassword(verificationCode: string, email: string, password: string) {
+    return this.http.post<{ message: string }>(
+      `${this.basePath}/authentication/reset-password`,
+      {verificationCode, email, password},
+      this.httpOptions
+    );
+  }
+
+  twoFactor(email: string, verificationCode: string) {
+
+    return this.http.post<SignInResponse>(
+      `${this.basePath}/authentication/sign-in-two-factor`,
+      { email, verificationCode },
+      this.httpOptions
+    ).subscribe({
+      next: (response) => {
+        this.signedIn.next(true);
+        this.signedInUserId.next(response.id);
+        this.signedInEmail.next(response.email);
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('email', response.email);
+        localStorage.setItem('userId', response.id.toString());
+        console.log(`2FA success: logged in ${response.email}`);
+        this.requestTwoFactorModal.next(false);
+        this.router.navigate(['/']).then();
+      },
+      error: (err) => {
+        this.signedIn.next(false);
+        this.signedInUserId.next(0);
+        this.signedInEmail.next('');
+        this.clearStorage();
+        if (err.error && err.error.message) {
+          alert(`Error: ${err.error.message}`);
+        } else {
+          alert('An unexpected error occurred.');
+        }
+      }
+    });
+  }
+
+
 }

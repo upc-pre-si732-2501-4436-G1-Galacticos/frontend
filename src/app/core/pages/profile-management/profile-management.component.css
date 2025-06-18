@@ -1,0 +1,149 @@
+*{
+  color: black;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: black;
+}
+
+header h1 {
+  display: inline-block;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+hr {
+  display: inline-block;
+  width: 40%;
+  border: none;
+  border-top: 2px solid black;
+  vertical-align: middle;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.photo-section {
+  background-color: #d1ff3d;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  max-width: 200px;
+}
+
+.photo-section img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-color: white;
+}
+
+.photo-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.form-section {
+  background-color: #d1ff3d;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.form-section input {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.7rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 14px;
+}
+
+.nivel-label {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.nivel-options {
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nivel {
+  background-color: #ccc;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  flex: 1;
+  margin: 0.2rem;
+  text-transform: capitalize;
+}
+
+.nivel.active {
+  background-color: black;
+  color: white;
+}
+
+.update-btn {
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Responsive: diseño en columna para pantallas pequeñas */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo-section,
+  .form-section {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  hr {
+    width: 30%;
+  }
+}

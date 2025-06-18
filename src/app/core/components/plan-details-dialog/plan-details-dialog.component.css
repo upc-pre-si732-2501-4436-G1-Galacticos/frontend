@@ -1,0 +1,20 @@
+h2 {
+  margin-bottom: 10px;
+  color: #000;
+}
+
+p {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  background-color: #d1f2eb;
+  color: #117a65;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}

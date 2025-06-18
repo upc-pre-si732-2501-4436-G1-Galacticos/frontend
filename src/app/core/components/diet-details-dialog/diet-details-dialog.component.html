@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ data.title }}</mat-card-title>
+    <mat-card-subtitle>{{ data.note }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <h4>Comidas incluidas:</h4>
+    <ul *ngIf="data.meals?.length; else noMeals">
+      <li *ngFor="let meal of data.meals">{{ meal.title }}</li>
+    </ul>
+    <ng-template #noMeals>
+      <p><em>No hay comidas registradas en esta dieta.</em></p>
+    </ng-template>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-button (click)="onClose()">Cerrar</button>
+    <button mat-raised-button color="primary" (click)="onAssign()">Asignar a mi FitWise Plan</button>
+  </mat-card-actions>
+</mat-card>

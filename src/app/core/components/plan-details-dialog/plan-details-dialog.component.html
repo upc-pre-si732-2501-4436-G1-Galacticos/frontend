@@ -1,0 +1,11 @@
+<h2>{{ data.title }}</h2>
+<p>{{ data.description }}</p>
+
+<div *ngIf="data.tagNames?.length">
+  <h4>Tags:</h4>
+  <div>
+    <span class="tag" *ngFor="let tag of data.tagNames">#{{ tag }}</span>
+  </div>
+</div>
+
+<button mat-button mat-dialog-close>Cerrar</button>

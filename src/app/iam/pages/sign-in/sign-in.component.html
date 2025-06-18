@@ -1,43 +1,43 @@
-<div class="sign-in-container">
-  <!-- Image: Desktop-only view -->
-  <div class="image-section">
-    <img src="/auth-page-main.png" alt="Fitness image" />
+<div class="sign-in-wrapper">
+  <div class="left-section">
+    <img src="/logos/FitWiseLogo.png" alt="FitWise" class="logo-img" />
   </div>
 
-  <!-- Form: Always visible -->
-  <mat-card class="form-section">
-    <div class="logo-wrapper">
-      <img src="/logos/FitWiseLogo.png" alt="FitWise Logo" />
-    </div>
+  <div class="right-section">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-section">
+      <div class="logo-title">FitWise</div>
 
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-content">
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" formControlName="email" />
-      </mat-form-field>
+      <input
+        matInput
+        placeholder="Correo electrónico"
+        formControlName="email"
+        class="custom-input"
+      />
 
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password" />
-      </mat-form-field>
+      <input
+        matInput
+        placeholder="Contraseña"
+        type="password"
+        formControlName="password"
+        class="custom-input"
+      />
 
-      <button mat-flat-button class="login-button full-width" type="submit">
-        Sign In
+      <button [disabled]="onLoading" mat-flat-button color="primary"  class="login-button" type="submit" >
+        Iniciar sesión
       </button>
-    </form>
 
-    <div class="container-actions">
-      <div class="links full-width">
-        <span>Forgot your password? <strong class="link">Reset password</strong></span>
-        <span>No account? <strong class="link" (click)="navigateToRegister()">Sign Up</strong></span>
+      <div class="links-container">
+        <span>¿Olvidaste tu contraseña? <strong class="link" (click)="navigateToForgotPassword()">Recuperar</strong></span>
+        <span>¿No tienes cuenta? <strong class="link" (click)="navigateToRegister()">Registrarse</strong></span>
       </div>
 
-      <div class="divider full-width">
-        <hr/>
-        <span>Sign In with</span>
+      <div class="divider">
+        <hr />
+        <span>O inicia sesión con</span>
+        <hr />
       </div>
 
       <button mat-stroked-button class="google-btn">G</button>
-    </div>
-  </mat-card>
+    </form>
+  </div>
 </div>
