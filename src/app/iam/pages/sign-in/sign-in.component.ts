@@ -53,6 +53,7 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.form = this.builder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
@@ -76,6 +77,9 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
     let password = this.form.value.password;
     const signInRequest = new SignInRequest(email, password);
     this.authenticationService.signIn(signInRequest);
+    this.router.navigate([], {
+      queryParams: { email: email },
+    });
 
   }
 

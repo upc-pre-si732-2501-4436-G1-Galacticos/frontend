@@ -83,8 +83,12 @@ export class AuthService {
         this.signedInEmail.next(signInRequest.email);
         this.requestTwoFactorModal.next(true);
       },
-      error: (_) => {
-        console.error();
+      error: (err) => {
+        if (err.error && err.error.message) {
+          alert(`Error: ${err.error.message}`);
+        } else {
+          alert('An unexpected error occurred.');
+        }
         this.requestTwoFactorModal.next(true);
       }
     });
@@ -138,6 +142,7 @@ export class AuthService {
   }
 
   twoFactor(email: string, verificationCode: string) {
+
     return this.http.post<SignInResponse>(
       `${this.basePath}/authentication/sign-in-two-factor`,
       { email, verificationCode },
@@ -154,12 +159,16 @@ export class AuthService {
         this.requestTwoFactorModal.next(false);
         this.router.navigate(['/']).then();
       },
-      error: (_) => {
+      error: (err) => {
         this.signedIn.next(false);
         this.signedInUserId.next(0);
         this.signedInEmail.next('');
         this.clearStorage();
-        alert("2FA wrong code")
+        if (err.error && err.error.message) {
+          alert(`Error: ${err.error.message}`);
+        } else {
+          alert('An unexpected error occurred.');
+        }
       }
     });
   }
