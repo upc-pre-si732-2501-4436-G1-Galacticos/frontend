@@ -1,0 +1,39 @@
+<div class="sign-up-container">
+  <!-- Imagen visible solo en escritorio -->
+  <div class="image-section">
+    <img src="/auth-page-main.png" alt="Fitness image" />
+  </div>
+
+  <!-- Formulario -->
+  <mat-card class="form-section">
+    <div class="logo-wrapper">
+      <img src="/logos/FitWiseNoBG.png" alt="FitWise Logo" />
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-content">
+
+      <input placeholder="Correo electrónico" type="email" formControlName="email" class="custom" />
+      <mat-error *ngIf="form.controls['email'].hasError('required')">
+        <a class="emailText">Email es obligatorio</a>
+      </mat-error>
+      <mat-error *ngIf="form.controls['email'].hasError('email')">
+        <a class="emailText">Correo no válido</a>
+      </mat-error>
+
+      <input placeholder="Contraseña" type="password" formControlName="password" class="custom" />
+      <mat-error *ngIf="form.controls['password'].hasError('required')">
+        <a class="emailText">Contraseña es obligatoria</a>
+      </mat-error>
+
+      <button mat-flat-button color="primary" class="full-width submit-btn" type="submit">
+        Registrarse
+      </button>
+    </form>
+
+    <div class="bottom-links">
+      <span>¿Ya tienes una cuenta?
+        <a class="link" (click)="navigateToLogin()">Inicia sesión</a>
+      </span>
+    </div>
+  </mat-card>
+</div>

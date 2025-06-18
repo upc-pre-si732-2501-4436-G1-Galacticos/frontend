@@ -35,6 +35,14 @@
       <mat-icon>edit</mat-icon>
       <span>Planner</span>
     </a>
+    <a mat-button routerLink="/exercises" routerLinkActive="active-link">
+      <mat-icon>fitness_center</mat-icon> <!-- Cambiado a icono más adecuado -->
+      <span>Exercises</span> <!-- Añadido emoji -->
+    </a>
+    <a mat-button routerLink="/meals" routerLinkActive="active-link">
+      <mat-icon>restaurant</mat-icon> <!-- Cambiado a icono más adecuado -->
+      <span>Meals</span> <!-- Añadido emoji -->
+    </a>
   </div>
 
   <!-- Menu button - Always visible -->
@@ -42,14 +50,19 @@
     <mat-icon>account_circle</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/profile">
-      <mat-icon>person</mat-icon>
-      <span>Profile</span>
-    </button>
-    <button mat-menu-item routerLink="/logout">
-      <mat-icon>logout</mat-icon>
-      <span>Logout</span>
-    </button>
+    <ng-container *ngIf="isSignedIn">
+      <button mat-menu-item disabled>
+        <mat-icon>person</mat-icon>
+        <span>Welcome, {{ currentEmail }}</span>
+      </button>
+      <button mat-menu-item (click)="goToProfile()">
+        <mat-icon>manage_accounts</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item (click)="onSignOut()">
+        <mat-icon>logout</mat-icon>
+        <span>Sign Out</span>
+      </button>
+    </ng-container>
   </mat-menu>
 </mat-toolbar>
-

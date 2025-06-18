@@ -1,0 +1,40 @@
+<div class="dietas-wrapper">
+
+  <div class="create-diet-section">
+    <h3>{{ selectedMeal.id ? 'Actualizar Meal' : 'Crear Meal' }}</h3>
+    <form (ngSubmit)="saveMeal()">
+      <input
+        type="text"
+        [(ngModel)]="selectedMeal.title"
+        name="title"
+        placeholder="Título del meal"
+        required>
+
+      <input
+        type="text"
+        [(ngModel)]="selectedMeal.description"
+        name="description"
+        placeholder="Descripción del meal"
+        required>
+
+      <button type="submit" class="add-diet-btn">
+        {{ selectedMeal.id ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button type="button" class="add-diet-btn" style="background-color: #ddd; color: black;" (click)="resetForm()">
+        Limpiar
+      </button>
+    </form>
+  </div>
+
+  <div class="right-section">
+    <div class="community-diets">
+      <h3>Lista de Meals</h3>
+      <p *ngIf="meals.length === 0">No hay meals para mostrar.</p>
+      <div *ngFor="let meal of meals" class="diet-card" (click)="editMeal(meal)">
+        <strong>{{ meal.title }}</strong>
+        <p>{{ meal.description }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

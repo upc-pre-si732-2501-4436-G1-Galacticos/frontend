@@ -1,0 +1,147 @@
+.sign-in-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f6f5;
+}
+
+.sign-in-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.left-section {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  width: 300px;
+  max-width: 100%;
+}
+
+.right-section {
+  background-color: #d4ff33;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 30px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 4px solid black;
+
+}
+.link {
+  cursor: pointer;
+  font-weight: bold;
+  color: black; /* Color inicial */
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #007BFF; /* Azul al pasar el cursor */
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+
+}
+
+.login-button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  border-radius: 25px;
+
+}
+.login-button:hover {
+  color: #007BFF; /* Azul al pasar el cursor */
+}
+
+.links-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.link {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+}
+
+.divider hr {
+  width: 40%;
+  border: none;
+  border-top: 1px solid black;
+}
+
+.google-btn {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+}
+.custom-input {
+  padding: 0.75rem;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  background-color: white;
+  color: black;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.right-section {
+  background-color: #d4ff33; /* Amarillo claro */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .sign-in-wrapper {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .left-section {
+    padding: 1rem;
+  }
+
+  .right-section {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 1rem;
+  }
+}
+
+

@@ -1,0 +1,33 @@
+<div class="dietas-wrapper">
+
+  <!-- Sección izquierda: crear / actualizar ejercicio -->
+  <div class="create-diet-section">
+    <h3>{{ selectedExercise.id ? 'Actualizar Ejercicio' : 'Crear Ejercicio' }}</h3>
+    <form (ngSubmit)="saveExercise()">
+
+      <input type="text" [(ngModel)]="selectedExercise.title" name="title" placeholder="Título del ejercicio" required>
+
+      <input type="text" [(ngModel)]="selectedExercise.description" name="description" placeholder="Descripción del ejercicio" required>
+
+      <button type="submit" class="add-diet-btn">
+        {{ selectedExercise.id ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button type="button" (click)="resetForm()" class="add-diet-btn" style="background-color: #ddd; color: black; margin-top: 5px;">
+        Limpiar
+      </button>
+    </form>
+  </div>
+
+  <!-- Sección derecha: lista de ejercicios -->
+  <div class="right-section">
+    <div class="community-diets">
+      <h3>Lista de Ejercicios</h3>
+      <p *ngIf="exercises.length === 0">No hay ejercicios para mostrar.</p>
+      <div *ngFor="let exercise of exercises" class="diet-card" (click)="editExercise(exercise)">
+        <strong>{{ exercise.title }}</strong>
+        <p>{{ exercise.description }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

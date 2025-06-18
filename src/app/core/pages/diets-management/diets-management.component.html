@@ -1,1 +1,33 @@
-<p>diets-management works!</p>
+<h2>DIETAS</h2>
+
+<div class="dietas-wrapper">
+  <!-- Crea tu nueva dieta -->
+  <div class="create-diet-section">
+    <h3>Crea tu nueva dieta</h3>
+    <input type="text" placeholder="Ingrese el nombre de la dieta" [(ngModel)]="newDiet.title" />
+    <input type="text" placeholder="Ingrese detalles de la dieta" [(ngModel)]="newDiet.note" />
+    <button class="add-diet-btn" (click)="createDiet()">Agregar dieta</button>
+  </div>
+
+  <!-- Mi dieta actual y comunidad -->
+  <div class="right-section">
+    <!-- Dieta actual -->
+    <div class="current-diet">
+      <h3>Mi dieta actual</h3>
+      <div *ngIf="currentDiet" class="diet-card">
+        <h4>{{ currentDiet.title }}</h4>
+        <p>{{ currentDiet.note }}</p>
+      </div>
+      <div *ngIf="!currentDiet">
+        <p>No has seleccionado una dieta aún.</p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- Dietas de la comunidad -->
+<div class="community-diets">
+  <h3>Dietas de la comunidad</h3>
+  <app-diet-list [diets]="diets" (dietSelected)="openDietDetails($event)"></app-diet-list>
+</div>

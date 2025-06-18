@@ -1,0 +1,122 @@
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+mat-card {
+  margin: 20px auto;
+  max-width: 600px;
+  width: 95%;
+}
+
+mat-card-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+}
+
+mat-card-content {
+  margin-top: 15px;
+}
+
+.quick-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.quick-actions h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.quick-actions button {
+  margin: 10px;
+  font-size: 1rem;
+  padding: 10px 15px;
+}
+
+div:has(> p:first-child + button) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+div:has(> p:first-child + button) p {
+  margin-bottom: 15px;
+}
+
+/* Media Query para pantallas más pequeñas (ejemplo: tablets - max-width: 768px) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    margin-top: 15px;
+  }
+
+  mat-card {
+    margin: 15px auto;
+  }
+
+  .quick-actions h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .quick-actions button {
+    margin: 8px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  div:has(> p:first-child + button) {
+    margin-top: 15px;
+  }
+
+  div:has(> p:first-child + button) p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+
+  div:has(> p:first-child + button) button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+/* Media Query para pantallas aún más pequeñas (ejemplo: móviles - max-width: 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+
+  mat-card {
+    margin: 10px auto;
+  }
+
+  mat-card-title {
+    font-size: 1.3rem;
+  }
+
+  .quick-actions h2 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .quick-actions button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  div:has(> p:first-child + button) button {
+    width: 80%;
+  }
+}

@@ -1,1 +1,53 @@
-<p>profile-management works!</p>
+<div class="container">
+  <header>
+    <hr />
+    <h1>PERFIL</h1>
+    <hr />
+    <p>Actualiza tus datos</p>
+  </header>
+
+  <main class="profile-container">
+    <div class="photo-section">
+      <img src="/logos/FitWiseLogo.png" alt="Foto de perfil" />
+      <button class="photo-btn" type="button">Actualizar foto</button>
+    </div>
+
+    <form class="form-section" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2>Actualiza tus datos</h2>
+
+      <input type="text" placeholder="Ingresa tus nombres" formControlName="firstName" />
+      <input type="text" placeholder="Ingresa tu apellido" formControlName="lastName" />
+      <input type="text" placeholder="Ingresa tu sexo (M/F)" formControlName="gender" />
+      <input type="number" placeholder="Ingresa tu altura (cm)" formControlName="height" />
+      <input type="number" placeholder="Ingresa tu peso (kg)" formControlName="weight" />
+
+      <div class="nivel-label">Nivel de actividad</div>
+      <div class="nivel-options">
+        <button
+          class="nivel"
+          type="button"
+          *ngFor="let level of activityLevels"
+          [class.active]="form.value.activityLevelId === level.id"
+          (click)="form.patchValue({ activityLevelId: level.id })">
+          {{ level.levelName }}
+        </button>
+      </div>
+
+      <div class="nivel-label">Objetivo</div>
+      <div class="nivel-options">
+        <button
+          class="nivel"
+          type="button"
+          *ngFor="let goal of goals"
+          [class.active]="form.value.goalId === goal.id"
+          (click)="form.patchValue({ goalId: goal.id })">
+          {{ goal.goalName }}
+        </button>
+      </div>
+
+      <button class="update-btn" type="submit">
+        {{ isEdit ? 'Actualizar perfil' : 'Crear perfil' }}
+      </button>
+    </form>
+  </main>
+</div>

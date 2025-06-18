@@ -1,1 +1,26 @@
-<p>planner-management works!</p>
+<h2>Planes FitWise Recomendados</h2>
+
+<div *ngIf="recommendedPlans.length === 0">
+  <p>No se encontraron planes recomendados para tu perfil.</p>
+</div>
+
+<div class="plan-list">
+  <mat-card *ngFor="let plan of recommendedPlans" class="plan-card">
+    <mat-card-header>
+      <mat-card-title>{{ plan.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ plan.description }}</p>
+      <div *ngIf="plan.tagNames?.length">
+        <span class="tag" *ngFor="let tag of plan.tagNames">#{{ tag }}</span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="openPlanDetails(plan)">
+        Ver detalles
+      </button>
+      <button mat-raised-button color="accent">Asignar a mi cuenta</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

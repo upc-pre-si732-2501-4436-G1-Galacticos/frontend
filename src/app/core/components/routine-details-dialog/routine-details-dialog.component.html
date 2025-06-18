@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ data.title }}</mat-card-title>
+    <mat-card-subtitle>{{ data.note }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <h4>Ejercicios incluidos:</h4>
+    <ul *ngIf="data.exercises?.length; else noExercises">
+      <li *ngFor="let exercise of data.exercises">{{ exercise.title }}</li>
+    </ul>
+    <ng-template #noExercises>
+      <p><em>No hay ejercicios registrados en esta rutina.</em></p>
+    </ng-template>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-button (click)="onClose()">Cerrar</button>
+    <button mat-raised-button color="primary" (click)="onAssign()">Asignar a mi FitWise Plan</button>
+  </mat-card-actions>
+</mat-card>

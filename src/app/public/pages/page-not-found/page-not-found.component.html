@@ -1,1 +1,24 @@
-<p>page-not-found works!</p>
+<main class="main-container flex flex-col items-center justify-center min-h-screen text-center p-4"
+      style="background-color: #4E5366; color: white;">
+  <div class="mb-6">
+    <img
+      ngSrc="logos/FitWiseNoBG.png"
+      width="100"
+      height="50"
+      alt="FitWise Logo"
+      priority
+    />
+  </div>
+  <h1 class="text-6xl font-bold">404</h1>
+  <p class="text-2xl mt-4">Page not found</p>
+  <p class="mt-2">Sorry, the page you were looking for is not available</p>
+  <button
+    (click)="goHome()"
+    class="mt-6 px-6 py-2 rounded border-none cursor-pointer"
+    style="background-color: white; color: #4E5366; font-weight: bold; transition: background-color 0.3s;"
+    (mouseover)="hovering=true"
+    (mouseout)="hovering=false"
+    [style.background-color]="hovering ? '#e0e0e0' : 'white'">
+    Go back to home
+  </button>
+</main>

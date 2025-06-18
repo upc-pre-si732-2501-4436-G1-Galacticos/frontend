@@ -1,18 +1,24 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {MatButton} from "@angular/material/button";
 import {ActivatedRoute, Router} from "@angular/router";
-import {MatCard} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
+
 
 @Component({
   selector: 'app-page-not-found',
   standalone: true,
   imports: [
-    MatButton, MatCard
+    MatButtonModule,
+    MatCardModule,
+    CommonModule,
+    NgOptimizedImage,
   ],
   templateUrl: './page-not-found.component.html',
   styleUrl: './page-not-found.component.css'
 })
 export class PageNotFoundComponent implements OnInit {
+  hovering: boolean = false;
   protected invalidUrl: string;
   private route: ActivatedRoute = inject(ActivatedRoute);
   private router: Router = inject(Router);
@@ -27,5 +33,9 @@ export class PageNotFoundComponent implements OnInit {
 
   protected onNavigateHome() {
     this.router.navigate(['']).then();
+  }
+
+  goHome() {
+    this.router.navigate(['/home']).then();
   }
 }

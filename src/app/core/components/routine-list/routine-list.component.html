@@ -1,0 +1,13 @@
+<div *ngFor="let routine of paginatedRoutines" class="diet-card" (click)="onRoutineClick(routine.id)">
+  <mat-card>
+    <mat-card-title>{{ routine.title }}</mat-card-title>
+    <mat-card-content>{{ routine.note }}</mat-card-content>
+  </mat-card>
+</div>
+
+<mat-paginator
+  [length]="routines.length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 20]"
+  (page)="onPageChange($event)">
+</mat-paginator>
