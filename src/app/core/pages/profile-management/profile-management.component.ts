@@ -67,7 +67,7 @@ export class ProfileManagementComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.form.invalid) return;
+    if (this.form.invalid) return alert('Invalid fields');
     const req = this.form.value;
     const call = this.isEdit
       ? this.profileSvc.updateProfile(this.userId, req)
