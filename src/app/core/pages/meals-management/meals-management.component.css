@@ -1,0 +1,62 @@
+* {
+  color: black;
+}
+
+.dietas-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px;
+}
+
+.create-diet-section {
+  background-color: #ccf400;
+  flex: 1;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.create-diet-section input {
+  display: block;
+  width: 97%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.add-diet-btn {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border: none;
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.right-section {
+  flex: 1;
+}
+
+.community-diets {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.diet-card {
+  background-color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+
+.diet-card:hover {
+  background-color: #f0fff0;
+}

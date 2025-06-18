@@ -58,6 +58,13 @@ export const routes: Routes = [
           import(
             "./core/pages/exercises-management/exercises-management.component"
             ).then((m)=>m.ExercisesManagementComponent),
+      },
+      {
+        path: "meals",
+        loadComponent: () =>
+          import(
+            "./core/pages/meals-management/meals-management.component"
+            ).then((m) => m.MealsManagementComponent),
       }
     ],
   },

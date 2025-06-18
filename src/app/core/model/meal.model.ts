@@ -1,6 +1,5 @@
 export interface Meal {
-  id: number;
+  id?: number;
   title: string;
-  createdAt: string;
-  updatedAt: string;
+  description: string;
 }
