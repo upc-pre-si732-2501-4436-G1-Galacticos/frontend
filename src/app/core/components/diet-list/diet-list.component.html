@@ -1,7 +1,7 @@
 <div *ngFor="let diet of paginatedDiets" class="diet-card" (click)="onDietClick(diet.id)">
   <mat-card>
     <mat-card-title>{{ diet.title }}</mat-card-title>
-    <mat-card-content>{{ diet.note }}</mat-card-content>
+    <mat-card-content>{{ diet.description }}</mat-card-content>
   </mat-card>
 </div>
 

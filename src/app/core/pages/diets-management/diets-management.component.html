@@ -5,7 +5,7 @@
   <div class="create-diet-section">
     <h3>Crea tu nueva dieta</h3>
     <input type="text" placeholder="Ingrese el nombre de la dieta" [(ngModel)]="newDiet.title" />
-    <input type="text" placeholder="Ingrese detalles de la dieta" [(ngModel)]="newDiet.note" />
+    <input type="text" placeholder="Ingrese detalles de la dieta" [(ngModel)]="newDiet.description" />
     <button class="add-diet-btn" (click)="createDiet()">Agregar dieta</button>
   </div>
 
@@ -16,7 +16,7 @@
       <h3>Mi dieta actual</h3>
       <div *ngIf="currentDiet" class="diet-card">
         <h4>{{ currentDiet.title }}</h4>
-        <p>{{ currentDiet.note }}</p>
+        <p>{{ currentDiet.description }}</p>
       </div>
       <div *ngIf="!currentDiet">
         <p>No has seleccionado una dieta aún.</p>
