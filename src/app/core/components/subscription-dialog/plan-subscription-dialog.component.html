@@ -1,0 +1,21 @@
+<div class="dialog-container">
+  <div class="dialog-header">
+    <h2>Duración de la suscripción</h2>
+  </div>
+
+  <div class="dialog-body">
+    <p>¿Cuántos días deseas suscribirte al plan?</p>
+    <input
+      type="number"
+      [(ngModel)]="days"
+      min="1"
+      class="input-days"
+      placeholder="Ej: 30"
+    />
+  </div>
+
+  <div class="dialog-actions">
+    <button mat-button (click)="cancel()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="confirm()">Aceptar</button>
+  </div>
+</div>

@@ -16,5 +16,9 @@ export class WorkoutsService {
     return this.http.get<Workout>(`${this.baseUrl}/${dietId}`);
   }
 
+  getAllWorkouts(): Observable<Workout[]> {
+    return this.http.get<Workout[]>(`${this.baseUrl}`);
+  }
+
 
 }

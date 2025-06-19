@@ -3,76 +3,141 @@
   box-sizing: border-box;
 }
 
+/* Columna izquierda */
+.planner-form {
+  flex: 1 1 300px;
+
+}
+.planner-form-content{
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Inputs de texto y textarea */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para mat-form-field */
+mat-form-field.full-width {
+  width: 100%;
+}
+
+/* Estilo para el botón */
+button[type="submit"] {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #333;
+}
+
+
 h2 {
   text-align: center;
   margin-top: 20px;
   color: #333;
 }
 
-/* Contenedor general de los planes */
-.plan-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+.card-actions button {
+  background-color: #000;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.planner-container {
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-  margin: 0 auto;
-  max-width: 1200px;
 }
 
-/* Tarjeta individual de plan */
+
+
+
+/* Columna derecha */
+.planner-lists {
+  flex: 2 1 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.plan-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
 .plan-card {
-  background-color: #f9f9f9;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
 }
 
 .plan-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-mat-card-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #222;
+.card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
 }
 
-mat-card-content p {
+.card-content p {
   margin: 10px 0;
-  color: #444;
 }
 
-/* Estilos de los tags */
-.tag {
-  display: inline-block;
-  margin-right: 8px;
-  margin-top: 5px;
-  background-color: #e0f7fa;
-  color: #00796b;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-/* Botones */
-mat-card-actions {
+.card-actions {
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
-  padding: 10px 16px 16px;
+  gap: 10px;
 }
 
-button[mat-button] {
-  font-weight: 600;
-}
-
-button[mat-raised-button] {
-  background-color: #000;
-  color: #fff;
-  border-radius: 8px;
-}
-
-button[mat-raised-button]:hover {
-  background-color: #333;
+.tag {
+  display: inline-block;
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 4px 8px;
+  margin: 4px 4px 0 0;
+  border-radius: 10px;
+  font-size: 0.8rem;
 }

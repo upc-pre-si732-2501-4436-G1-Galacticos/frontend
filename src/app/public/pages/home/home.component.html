@@ -43,7 +43,7 @@
       <div *ngFor="let day of calendarDays" class="calendar-day">
         <h4>
           {{ day.date | date:'fullDate' }}
-          <span *ngIf="day.date === todayString" class="today-tag">HOY DIA</span>
+          <span *ngIf="day.date === todayString" class="today-tag">HOY</span>
         </h4>
         <div>
           <strong>Ejercicios:</strong>

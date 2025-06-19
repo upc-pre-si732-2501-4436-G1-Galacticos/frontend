@@ -24,7 +24,7 @@ export class DietsManagementComponent implements OnInit {
   currentDiet?: Diet;
   newDiet: Partial<Diet> = {
     title: '',
-    note: '',
+    description: '',
     meals: []
   };
 
@@ -39,16 +39,16 @@ export class DietsManagementComponent implements OnInit {
   }
 
   createDiet(): void {
-    if (this.newDiet.title && this.newDiet.note) {
+    if (this.newDiet.title && this.newDiet.description) {
       const fakeId = Date.now();
       const newDiet: Diet = {
         id: fakeId,
         title: this.newDiet.title!,
-        note: this.newDiet.note!,
+        description: this.newDiet.description!,
         meals: []
       };
       this.diets.push(newDiet);
-      this.newDiet = { title: '', note: '', meals: [] };
+      this.newDiet = { title: '', description: '', meals: [] };
     }
   }
 
