@@ -1,13 +1,9 @@
-<div *ngFor="let diet of paginatedDiets" class="diet-card" (click)="onDietClick(diet.id)">
-  <mat-card>
-    <mat-card-title>{{ diet.title }}</mat-card-title>
-    <mat-card-content>{{ diet.note }}</mat-card-content>
-  </mat-card>
+<div class="diet-list">
+  <div class="diet-card" *ngFor="let d of diets" (click)="onSelect(d)">
+  <h3>{{ d.title }}</h3>
+  <ul>
+    <li *ngFor="let m of d.meals">{{ m.title }}</li>
+  </ul>
 </div>
 
-<mat-paginator
-  [length]="diets.length"
-  [pageSize]="pageSize"
-  [pageSizeOptions]="[5, 10, 20]"
-  (page)="onPageChange($event)">
-</mat-paginator>
+</div>

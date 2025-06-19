@@ -1,71 +1,108 @@
-/* Estilo general del card */
-mat-card {
-  background-color: white;
-  border: 2px solid #ccf400;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s;
+/* diet-details-dialog.component.css */
+
+/* Fuentes (asegúrate de importarlas en global styles) */
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap'); */
+
+.dialog {
+  max-width: 500px;
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  color: #4E5366;
 }
 
 /* Header */
-mat-card-header {
-  margin-bottom: 10px;
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #f7f7f7;
 }
 
-/* Título */
-mat-card-title {
+.dialog-title {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #000;
+  line-height: 1;
+  cursor: pointer;
+  color: #4E5366;
 }
 
-/* Subtítulo */
-mat-card-subtitle {
+/* Body */
+.dialog-body {
+  padding: 16px 24px;
+}
+
+.note {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+.section-label {
+  margin: 16px 0 8px;
   font-size: 1rem;
-  color: #444;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Contenido */
-mat-card-content h4 {
-  margin-top: 15px;
-  color: #000;
+.meals-list {
+  margin: 0;
+  padding-left: 16px;
+  list-style-type: disc;
 }
 
-mat-card-content ul {
-  padding-left: 20px;
-  margin-top: 5px;
+.meals-list li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
 }
 
-mat-card-content li {
-  margin-bottom: 5px;
-  color: #333;
+.meal-title {
+  font-weight: 600;
 }
 
-/* Estilo del texto cuando no hay comidas */
-mat-card-content p em {
-  color: #777;
+.meal-desc {
+  font-style: italic;
+  opacity: 0.8;
 }
 
-/* Acciones */
-mat-card-actions {
-  margin-top: 20px;
+/* Footer */
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #f7f7f7;
 }
 
 /* Botones */
-mat-card-actions button[mat-button] {
-  color: black;
-  font-weight: bold;
+.btn-secondary,
+.btn-primary {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  font-size: 0.95rem;
 }
 
-mat-card-actions button[mat-raised-button] {
-  background-color: #ccf400;
-  color: black;
-  font-weight: bold;
-  border-radius: 10px;
-  transition: background-color 0.3s;
+/* Secundario (outline) */
+.btn-secondary {
+  background: transparent;
+  color: #4E5366;
+  border: 1px solid #4E5366;
 }
 
-mat-card-actions button[mat-raised-button]:hover {
-  background-color: #b5da00;
+/* Primario (accent) */
+.btn-primary {
+  background: #BEED00;
+  color: #ffffff;
 }
