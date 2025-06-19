@@ -24,7 +24,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
   ],
   styleUrls: ['./exercises-management.component.css']
 })

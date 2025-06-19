@@ -28,4 +28,8 @@ export class ExercisesService {
   updateExercise(exerciseId: number, data: Exercise): Observable<Exercise> {
     return this.http.put<Exercise>(`${this.base}/exercises/${exerciseId}`, data);
   }
+  /** (Opcional) Obtiene todas las exercises de la comunidad */
+  getAllCommunityExercises(): Observable<Exercise[]> {
+    return this.http.get<Exercise[]>(`${this.base}/exercises`);
+  }
 }

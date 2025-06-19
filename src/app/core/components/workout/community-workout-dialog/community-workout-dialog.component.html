@@ -1,0 +1,20 @@
+<div class="dialog">
+  <header class="dialog-header">
+    <h2>Dietas de la comunidad</h2>
+    <button class="close-btn" (click)="close()">×</button>
+  </header>
+  <section class="dialog-body">
+    <div
+      class="diet-card"
+      *ngFor="let d of communityWorkouts"
+      (click)="openDetails(d)">
+      <h3>{{ d.title }}</h3>
+      <ul>
+        <li *ngFor="let m of d.exercises">{{ m.title }}</li>
+      </ul>
+    </div>
+  </section>
+  <footer class="dialog-actions">
+    <button class="btn-secondary" (click)="close()">Cerrar</button>
+  </footer>
+</div>

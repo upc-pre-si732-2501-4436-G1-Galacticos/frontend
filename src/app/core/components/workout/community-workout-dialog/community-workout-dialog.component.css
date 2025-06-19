@@ -1,0 +1,89 @@
+/* Contenedor general */
+.dialog {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  color: #4e5366;
+}
+
+/* Header */
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #f7f7f7;
+}
+
+.dialog-title {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #4e5366;
+}
+
+/* Body */
+.dialog-body {
+  padding: 16px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* Tarjeta de dieta */
+.diet-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.diet-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.card-title {
+  margin: 0 0 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #4e5366;
+}
+
+.card-meals {
+  margin: 0;
+  padding-left: 16px;
+  list-style-type: disc;
+  font-size: 0.9rem;
+  color: #4e5366;
+}
+
+/* Footer de acciones */
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 24px;
+  background: #f7f7f7;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #4e5366;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+}
