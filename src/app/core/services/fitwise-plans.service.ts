@@ -15,6 +15,8 @@ export class FitwisePlansService {
     return this.http.get<any[]>(this.baseUrl);
   }
 
+
+
   assignDietToPlan(planId: number, dietId: number): Observable<any> {
     return this.http.post(`${this.baseUrl}/${planId}/diets/${dietId}`, {});
   }
