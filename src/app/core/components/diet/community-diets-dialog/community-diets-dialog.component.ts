@@ -3,8 +3,8 @@ import { Component, OnInit }           from '@angular/core';
 import { CommonModule, NgForOf }        from '@angular/common';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { DietDetailsDialogComponent }   from '../diet-details-dialog/diet-details-dialog.component';
-import { Diet }                         from '../../model/diet.model';
-import { DietsService }                 from '../../services/diets.service';
+import { Diet }                         from '../../../model/diet.model';
+import { DietsService }                 from '../../../services/diets.service';
 import {forkJoin} from 'rxjs';
 
 @Component({

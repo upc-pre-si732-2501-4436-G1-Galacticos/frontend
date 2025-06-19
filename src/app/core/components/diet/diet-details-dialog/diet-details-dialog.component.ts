@@ -1,5 +1,5 @@
 import {Component, Inject, Input} from '@angular/core';
-import { Diet } from '../../model/diet.model';
+import { Diet } from '../../../model/diet.model';
 import {
   MAT_DIALOG_DATA, MatDialog,
   MatDialogActions,
@@ -7,7 +7,7 @@ import {
   MatDialogRef,
   MatDialogTitle
 } from '@angular/material/dialog';
-import { DietsService } from '../../services/diets.service';
+import { DietsService } from '../../../services/diets.service';
 import {NgForOf, NgIf} from '@angular/common';
 import {MatButton} from '@angular/material/button';
 import {DietCreateDialogComponent} from '../diet-create-dialog/diet-create-dialog.component';
@@ -18,10 +18,6 @@ import {DietCreateDialogComponent} from '../diet-create-dialog/diet-create-dialo
   imports: [
     NgForOf,
     NgIf,
-    MatButton,
-    MatDialogActions,
-    MatDialogContent,
-    MatDialogTitle
   ],
   styleUrls: ['./diet-details-dialog.component.css']
 })
@@ -38,17 +34,6 @@ export class DietDetailsDialogComponent {
     this.dialogRef.close();
   }
 
-  assignToMy() {
-    if (!this.data.userId) return;
-    this.dietsSvc
-      .assignDietToUser(this.data.userId, this.data.diet.id)
-      .subscribe(() => this.dialogRef.close({ assigned: true }));
-  }
-
-  /** Cierra el diálogo indicando que queremos convertir esta dieta en "actual" */
-  addToCurrent() {
-    this.dialogRef.close({ setCurrent: this.data.diet });
-  }
   makeCurrent() {
     this.dialogRef.close({ setCurrent: this.data.diet });
   }

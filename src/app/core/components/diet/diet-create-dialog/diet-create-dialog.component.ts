@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogActions, MatDialogRef, MatDialogTitle} from '@angular/material/dialog';
-import { MealsService } from '../../services/meals.service';
-import { DietsService } from '../../services/diets.service';
-import { Meal } from '../../model/meal.model';
-import { Diet } from '../../model/diet.model';
+import { MealsService } from '../../../services/meals.service';
+import { DietsService } from '../../../services/diets.service';
+import { Meal } from '../../../model/meal.model';
+import { Diet } from '../../../model/diet.model';
 import { MatFormField } from '@angular/material/form-field';
 import {MatInput, MatLabel} from '@angular/material/input';
 import { MatButton } from '@angular/material/button';
@@ -17,16 +17,8 @@ import {NgForOf, NgIf} from '@angular/common';
   styleUrls: ['./diet-create-dialog.component.css'],
   standalone: true,
   imports: [
-    MatFormField,
-    MatInput,
-    MatButton,
-    MatTabGroup,
-    MatTab,
     FormsModule,
     NgForOf,
-    MatDialogActions,
-    MatLabel,
-    MatDialogTitle,
     NgIf
   ]
 })

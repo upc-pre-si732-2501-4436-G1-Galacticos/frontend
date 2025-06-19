@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Diet } from '../../model/diet.model';
+import { Diet } from '../../../model/diet.model';
 import {NgForOf} from '@angular/common';
 
 @Component({

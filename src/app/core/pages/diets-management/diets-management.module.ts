@@ -8,10 +8,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { DietsManagementComponent } from './diets-management.component';
-import { DietListComponent } from '../../components/diet-list/diet-list.component';
-import { DietDetailsDialogComponent } from '../../components/diet-details-dialog/diet-details-dialog.component';
-import { DietCreateDialogComponent } from '../../components/diet-create-dialog/diet-create-dialog.component';
-import { CommunityDietsDialogComponent } from '../../components/community-diets-dialog/community-diets-dialog.component';
+import { DietListComponent } from '../../components/diet/diet-list/diet-list.component';
+import { DietDetailsDialogComponent } from '../../components/diet/diet-details-dialog/diet-details-dialog.component';
+import { DietCreateDialogComponent } from '../../components/diet/diet-create-dialog/diet-create-dialog.component';
+import { CommunityDietsDialogComponent } from '../../components/diet/community-diets-dialog/community-diets-dialog.component';
 
 @NgModule({
   declarations: [

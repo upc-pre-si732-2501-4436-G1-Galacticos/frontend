@@ -7,10 +7,10 @@ import { MatDialog, MatDialogModule }  from '@angular/material/dialog';
 import { Diet }                 from '../../model/diet.model';
 import { DietsService }         from '../../services/diets.service';
 
-import { DietCreateDialogComponent }     from '../../components/diet-create-dialog/diet-create-dialog.component';
-import { DietDetailsDialogComponent }    from '../../components/diet-details-dialog/diet-details-dialog.component';
-import { CommunityDietsDialogComponent } from '../../components/community-diets-dialog/community-diets-dialog.component';
-import { DietListComponent }             from '../../components/diet-list/diet-list.component';
+import { DietCreateDialogComponent }     from '../../components/diet/diet-create-dialog/diet-create-dialog.component';
+import { DietDetailsDialogComponent }    from '../../components/diet/diet-details-dialog/diet-details-dialog.component';
+import { CommunityDietsDialogComponent } from '../../components/diet/community-diets-dialog/community-diets-dialog.component';
+import { DietListComponent }             from '../../components/diet/diet-list/diet-list.component';
 
 import { tap, switchMap }       from 'rxjs/operators';
 import { of }                   from 'rxjs';
@@ -25,7 +25,6 @@ import { of }                   from 'rxjs';
     MatButtonModule,
     MatDialogModule,
     DietListComponent,
-    CommunityDietsDialogComponent    // <- necesario para abrir el diálogo de comunidad
   ],
   templateUrl: './diets-management.component.html',
   styleUrls: ['./diets-management.component.css']
@@ -113,12 +112,4 @@ export class DietsManagementComponent implements OnInit {
     localStorage.setItem('currentDietId', d.id.toString());
   }
 
-  openEditDialog(diet: Diet) {
-    const ref = this.dialog.open(DietCreateDialogComponent, {
-      data: { userId: this.currentUserId, diet }
-    });
-    ref.afterClosed().subscribe(saved => {
-      if (saved) this.loadMyDiets();
-    });
-  }
 }
