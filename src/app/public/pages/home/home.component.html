@@ -1,11 +1,13 @@
 <h1>Bienvenido a FitWise</h1>
 
-<mat-card *ngIf="currentPlan">
+<mat-card *ngIf="currentPlan && latestSubscription">
   <mat-card-header>
     <mat-card-title>Tu plan actual</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <p><strong>Nombre:</strong> {{ currentPlan.name }}</p>
+
+    <p><strong>Finaliza el:</strong> {{ latestSubscription.endDate | date: 'longDate' }}</p>
 
     <div *ngIf="currentPlan.diet">
       <p><strong>Dieta:</strong> {{ currentPlan.diet.title }}</p>

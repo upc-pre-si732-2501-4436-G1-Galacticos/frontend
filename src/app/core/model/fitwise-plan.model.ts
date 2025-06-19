@@ -6,3 +6,5 @@ export interface FitwisePlanModel {
   workoutId: number;
   tagNames: string[];
 }
+
+
