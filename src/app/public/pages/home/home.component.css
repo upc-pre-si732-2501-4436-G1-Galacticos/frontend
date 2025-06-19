@@ -1,122 +1,125 @@
-h1 {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 2.5rem;
+.home-container {
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  color: #222;
 }
 
-mat-card {
-  margin: 20px auto;
-  max-width: 600px;
-  width: 95%;
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  word-wrap: break-word;
+  line-height: 1.2;
 }
 
-mat-card-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+.plan-card {
+  background-color: #d1ff3d;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-mat-card-title {
-  font-size: 1.5rem;
+.card-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
-mat-card-content {
-  margin-top: 15px;
+.card-content p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
 }
+
+.expired-warning {
+  margin-top: 1rem;
+  color: red;
+  font-weight: bold;
+}
+
+.no-plan {
+  margin-top: 2rem;
+}
+
+
 
 .quick-actions {
-  text-align: center;
-  margin-top: 40px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 }
 
 .quick-actions h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
-.quick-actions button {
-  margin: 10px;
-  font-size: 1rem;
-  padding: 10px 15px;
-}
-
-div:has(> p:first-child + button) {
+.buttons-grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-div:has(> p:first-child + button) p {
-  margin-bottom: 15px;
+.flat-btn {
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* Media Query para pantallas más pequeñas (ejemplo: tablets - max-width: 768px) */
+.flat-btn:hover {
+  background-color: #ddd;
+}
+
+
+
+.calendar {
+  margin-top: 3rem;
+  font-family: Arial, sans-serif;
+}
+
+.calendar h2 {
+  margin-bottom: 1rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.calendar-day {
+  background-color: #d1ff3d;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.calendar-day h4 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+.today-tag {
+  background-color: #ff3d3d;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+
+
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-    margin-top: 15px;
-  }
-
-  mat-card {
-    margin: 15px auto;
-  }
-
-  .quick-actions h2 {
+  .title {
     font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-
-  .quick-actions button {
-    margin: 8px;
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-
-  div:has(> p:first-child + button) {
-    margin-top: 15px;
-  }
-
-  div:has(> p:first-child + button) p {
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-  }
-
-  div:has(> p:first-child + button) button {
-    font-size: 0.9rem;
-    padding: 10px 15px;
-  }
-}
-
-/* Media Query para pantallas aún más pequeñas (ejemplo: móviles - max-width: 480px) */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
-    margin-top: 10px;
-  }
-
-  mat-card {
-    margin: 10px auto;
-  }
-
-  mat-card-title {
-    font-size: 1.3rem;
-  }
-
-  .quick-actions h2 {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
-  }
-
-  .quick-actions button {
-    display: block;
-    width: 80%;
-    margin: 10px auto;
-    font-size: 1rem;
-    padding: 12px;
-  }
-
-  div:has(> p:first-child + button) button {
-    width: 80%;
+    text-align: center;
   }
 }

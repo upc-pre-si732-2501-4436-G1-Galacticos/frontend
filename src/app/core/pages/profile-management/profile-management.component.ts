@@ -59,7 +59,7 @@ export class ProfileManagementComponent implements OnInit {
       this.activityLevels = levels;
       if (profile) {
         this.isEdit = true;
-        // Mapear fullName a first/last
+        localStorage.setItem('profileId', profile.id.toString());
         const [firstName, lastName] = profile.fullName.split(' ');
         this.form.patchValue({ ...profile, firstName, lastName });
       }
@@ -67,7 +67,7 @@ export class ProfileManagementComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.form.invalid) return;
+    if (this.form.invalid) return alert('Invalid fields');
     const req = this.form.value;
     const call = this.isEdit
       ? this.profileSvc.updateProfile(this.userId, req)
@@ -79,6 +79,7 @@ export class ProfileManagementComponent implements OnInit {
         firstName: res.fullName.split(' ')[0],
         lastName: res.fullName.split(' ')[1]
       });
+      localStorage.setItem('profileId', res.id.toString());
       alert('Perfil guardado correctamente');
     });
   }
