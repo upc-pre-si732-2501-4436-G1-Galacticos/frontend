@@ -1,0 +1,36 @@
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  min-width: 280px;
+  max-width: 400px;
+  background-color: #fff;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333;
+  text-align: center;
+}
+
+.dialog-body p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.input-days {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}

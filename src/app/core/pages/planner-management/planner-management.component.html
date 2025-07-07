@@ -1,26 +1,81 @@
-<h2>Planes FitWise Recomendados</h2>
+<div class="planner-container">
+  <!-- Columna izquierda: crear plan -->
+  <div class="planner-form">
+    <h2>Crear nuevo plan</h2>
+    <!-- Aquí puedes agregar tu formulario de creación -->
+    <form class="planner-form-content" (ngSubmit)="submitNewPlan()" #planForm="ngForm">
+      <label>Título</label>
+      <input  type="text" [(ngModel)]="newPlan.title" name="title" required />
 
-<div *ngIf="recommendedPlans.length === 0">
-  <p>No se encontraron planes recomendados para tu perfil.</p>
-</div>
+      <label>Descripción</label>
+      <textarea [(ngModel)]="newPlan.description" name="description" required></textarea>
 
-<div class="plan-list">
-  <mat-card *ngFor="let plan of recommendedPlans" class="plan-card">
-    <mat-card-header>
-      <mat-card-title>{{ plan.title }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>{{ plan.description }}</p>
-      <div *ngIf="plan.tagNames?.length">
-        <span class="tag" *ngFor="let tag of plan.tagNames">#{{ tag }}</span>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Selecciona tags</mat-label>
+        <mat-select [(ngModel)]="newPlan.tagNames" name="tagNames" multiple>
+          <mat-option *ngFor="let tag of availableTags" [value]="tag.title">
+            {{ tag.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button type="submit" [disabled]="!planForm.form.valid">Crear Plan</button>
+
+    </form>
+  </div>
+
+  <!-- Columna derecha: listas -->
+  <div class="planner-lists">
+
+    <section>
+      <h2>Planes de la comunidad</h2>
+      <div *ngIf="communityPlans.length === 0">
+        <p>No se encontraron planes.</p>
       </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button color="primary" (click)="openPlanDetails(plan)">
-        Ver detalles
-      </button>
-      <button mat-raised-button color="accent">Asignar a mi cuenta</button>
-    </mat-card-actions>
 
-  </mat-card>
+      <div class="plan-list">
+        <div class="plan-card" *ngFor="let plan of communityPlans">
+          <div class="card-header">
+            <h3 class="card-title">{{ plan.title }}</h3>
+          </div>
+          <div class="card-content">
+            <p>{{ plan.description }}</p>
+            <div *ngIf="plan.tagNames?.length">
+              <span class="tag" *ngFor="let tag of plan.tagNames">#{{ tag }}</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button (click)="openPlanDetails(plan)">Ver detalles</button>
+            <button (click)="assignPlanToUser(plan.id)">Asignar a mi cuenta</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Planes FitWise Recomendados</h2>
+      <div *ngIf="recommendedPlans.length === 0">
+        <p>No se encontraron planes.</p>
+      </div>
+
+      <div class="plan-list">
+        <div class="plan-card" *ngFor="let plan of recommendedPlans">
+          <div class="card-header">
+            <h3 class="card-title">{{ plan.title }}</h3>
+          </div>
+          <div class="card-content">
+            <p>{{ plan.description }}</p>
+            <div *ngIf="plan.tagNames?.length">
+              <span class="tag" *ngFor="let tag of plan.tagNames">#{{ tag }}</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button (click)="openPlanDetails(plan)">Ver detalles</button>
+            <button (click)="assignPlanToUser(plan.id)">Asignar a mi cuenta</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
 </div>
