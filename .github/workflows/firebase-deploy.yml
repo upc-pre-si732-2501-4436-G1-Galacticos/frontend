@@ -1,9 +1,9 @@
-name: Deploy Angular App to Firebase Hosting on main
+name: Deploy Angular App to Firebase Hosting on master
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
