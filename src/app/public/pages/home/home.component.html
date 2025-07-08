@@ -1,64 +1,66 @@
 <div class="home-container">
-  <h1 class="title">Bienvenido a FitWise {{userName}}</h1>
+  <h1 class="title">{{ 'HOME.WELCOME' | translate:{ user: userName } }}</h1>
+
   <section class="quick-actions">
-    <h2>Accesos rápidos</h2>
+    <h2>{{ 'HOME.QUICK_ACCESS' | translate }}</h2>
     <div class="buttons-grid">
-      <button class="flat-btn" [routerLink]="['/diets']">Ver Dietas</button>
-      <button class="flat-btn" [routerLink]="['/routines']">Ver Rutinas</button>
-      <button class="flat-btn" [routerLink]="['/planner']">Mis Planes</button>
-      <button class="flat-btn" [routerLink]="['/exercises']">Mis Ejercicios</button>
-      <button class="flat-btn" [routerLink]="['/meals']">Mis Comidas</button>
+      <button class="flat-btn" [routerLink]="['/diets']">{{ 'HOME.BUTTONS.VIEW_DIETS' | translate }}</button>
+      <button class="flat-btn" [routerLink]="['/routines']">{{ 'HOME.BUTTONS.VIEW_ROUTINES' | translate }}</button>
+      <button class="flat-btn" [routerLink]="['/planner']">{{ 'HOME.BUTTONS.MY_PLANS' | translate }}</button>
+      <button class="flat-btn" [routerLink]="['/exercises']">{{ 'HOME.BUTTONS.MY_EXERCISES' | translate }}</button>
+      <button class="flat-btn" [routerLink]="['/meals']">{{ 'HOME.BUTTONS.MY_MEALS' | translate }}</button>
     </div>
   </section>
+
   <div *ngIf="currentPlan && latestSubscription" class="plan-card">
     <div class="card-header">
-      <h2>Tu última suscripción activa</h2>
+      <h2>{{ 'HOME.ACTIVE_SUBSCRIPTION' | translate }}</h2>
     </div>
     <div class="card-content">
-      <p><strong>Nombre:</strong> {{ currentPlan.title }}</p>
-      <p><strong>Finaliza el:</strong> {{ latestSubscription.endDate | date: 'longDate' }}</p>
-      <p><strong>Inicio el:</strong> {{ latestSubscription.subscriptionStartDate | date: 'longDate' }}</p>
+      <p><strong>{{ 'HOME.NAME' | translate }}:</strong> {{ currentPlan.title }}</p>
+      <p><strong>{{ 'HOME.ENDS_ON' | translate }}:</strong> {{ latestSubscription.endDate | date: 'longDate' }}</p>
+      <p><strong>{{ 'HOME.STARTS_ON' | translate }}:</strong> {{ latestSubscription.subscriptionStartDate | date: 'longDate' }}</p>
 
       <div *ngIf="dietTitle">
-        <p><strong>Dieta:</strong> {{ dietTitle }}</p>
+        <p><strong>{{ 'HOME.DIET' | translate }}:</strong> {{ dietTitle }}</p>
       </div>
 
       <div *ngIf="workoutTitle">
-        <p><strong>Rutina:</strong> {{ workoutTitle }}</p>
+        <p><strong>{{ 'HOME.ROUTINE' | translate }}:</strong> {{ workoutTitle }}</p>
       </div>
 
       <p *ngIf="latestSubscription.endDate && (latestSubscription.endDate < todayString)" class="expired-warning">
-        ⚠️ Tu suscripción ha expirado.
+        ⚠️ {{ 'HOME.SUBSCRIPTION_EXPIRED' | translate }}
       </p>
     </div>
   </div>
 
   <div *ngIf="!currentPlan" class="no-plan">
-    <p>No tienes un plan activo todavía.</p>
+    <p>{{ 'HOME.NO_ACTIVE_PLAN' | translate }}</p>
   </div>
 
   <div *ngIf="calendarDays.length > 0" class="calendar">
-    <h2>Calendario de Comidas y Ejercicios segun tu plan</h2>
+    <h2>{{ 'HOME.CALENDAR_TITLE' | translate }}</h2>
     <div class="calendar-grid">
       <div *ngFor="let day of calendarDays" class="calendar-day">
         <h4>
           {{ day.date | date:'fullDate' }}
-          <span *ngIf="day.date === todayString" class="today-tag">HOY</span>
+          <span *ngIf="day.date === todayString" class="today-tag">{{ 'HOME.TODAY' | translate }}</span>
         </h4>
         <div>
-          <strong>Ejercicios:</strong>
+          <strong>{{ 'HOME.EXERCISES' | translate }}:</strong>
           <ul>
-            <li><strong>Mañana:</strong> {{ day.exercises[0]?.title }}</li>
-            <li><strong>Tarde:</strong> {{ day.exercises[1]?.title }}</li>
-            <li><strong>Noche:</strong> {{ day.exercises[2]?.title }}</li>
+            <li><strong>{{ 'HOME.MORNING' | translate }}:</strong> {{ day.exercises[0]?.title }}</li>
+            <li><strong>{{ 'HOME.AFTERNOON' | translate }}:</strong> {{ day.exercises[1]?.title }}</li>
+            <li><strong>{{ 'HOME.NIGHT' | translate }}:</strong> {{ day.exercises[2]?.title }}</li>
           </ul>
         </div>
         <div>
-          <strong>Comidas:</strong>
+          <strong>{{ 'HOME.MEALS' | translate }}:</strong>
           <ul>
-            <li><strong>Desayuno:</strong> {{ day.meals[0]?.title }}</li>
-            <li><strong>Almuerzo:</strong> {{ day.meals[1]?.title }}</li>
-            <li><strong>Cena:</strong> {{ day.meals[2]?.title }}</li>
+            <li><strong>{{ 'HOME.BREAKFAST' | translate }}:</strong> {{ day.meals[0]?.title }}</li>
+            <li><strong>{{ 'HOME.LUNCH' | translate }}:</strong> {{ day.meals[1]?.title }}</li>
+            <li><strong>{{ 'HOME.DINNER' | translate }}:</strong> {{ day.meals[2]?.title }}</li>
           </ul>
         </div>
       </div>

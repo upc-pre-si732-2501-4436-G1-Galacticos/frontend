@@ -1,0 +1,41 @@
+{
+  "HEADER": {
+    "DIETS": "Dietas",
+    "ROUTINES": "Rutinas",
+    "PLANNER": "Planificador",
+    "EXERCISES": "Ejercicios",
+    "MEALS": "Comidas",
+    "WELCOME": "Bienvenido",
+    "PROFILE": "Perfil",
+    "SIGN_OUT": "Cerrar sesión"
+  },
+  "HOME": {
+    "WELCOME": "Bienvenido a FitWise {{user}}",
+    "QUICK_ACCESS": "Accesos rápidos",
+    "BUTTONS": {
+      "VIEW_DIETS": "Ver Dietas",
+      "VIEW_ROUTINES": "Ver Rutinas",
+      "MY_PLANS": "Mis Planes",
+      "MY_EXERCISES": "Mis Ejercicios",
+      "MY_MEALS": "Mis Comidas"
+    },
+    "ACTIVE_SUBSCRIPTION": "Tu última suscripción activa",
+    "NAME": "Nombre",
+    "ENDS_ON": "Finaliza el",
+    "STARTS_ON": "Inicia el",
+    "DIET": "Dieta",
+    "ROUTINE": "Rutina",
+    "SUBSCRIPTION_EXPIRED": "Tu suscripción ha expirado.",
+    "NO_ACTIVE_PLAN": "No tienes un plan activo todavía.",
+    "CALENDAR_TITLE": "Calendario de Comidas y Ejercicios según tu plan",
+    "TODAY": "HOY",
+    "EXERCISES": "Ejercicios",
+    "MEALS": "Comidas",
+    "MORNING": "Mañana",
+    "AFTERNOON": "Tarde",
+    "NIGHT": "Noche",
+    "BREAKFAST": "Desayuno",
+    "LUNCH": "Almuerzo",
+    "DINNER": "Cena"
+  }
+}

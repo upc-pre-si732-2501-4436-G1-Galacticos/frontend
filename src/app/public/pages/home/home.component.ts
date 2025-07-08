@@ -14,6 +14,7 @@ import { DietsService } from '../../../core/services/diets.service';
 import { WorkoutsService } from '../../../core/services/workouts.service';
 import {Diet} from '../../../core/model/diet.model';
 import {Workout} from '../../../core/model/workout.model';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,8 @@ import {Workout} from '../../../core/model/workout.model';
     CommonModule,
     RouterModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    TranslateModule
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
