@@ -151,7 +151,34 @@
     "DIETS": "Diets",
     "ROUTINES": "Routines",
     "PLANNER": "Planner"
+  },
+  "WORKOUT_DETAILS": {
+    "NOTE": "Note",
+    "EXERCISES_INCLUDED": "Exercises included",
+    "SET_AS_CURRENT": "Set as current workout"
+  },
+  "COMMON": {
+    "CLOSE": "Close",
+    "EDIT": "Edit"
+  },
+  "DIET_DIALOG": {
+    "EDIT_TITLE": "Edit Workout",
+    "CREATE_TITLE": "Create Workout",
+    "LABEL_TITLE": "Title",
+    "PLACEHOLDER_TITLE": "Enter a title",
+    "LABEL_NOTE": "Note",
+    "PLACEHOLDER_NOTE": "Enter a note",
+    "TAB_MY_EXERCISES": "My Exercises",
+    "TAB_COMMUNITY": "Community",
+    "SELECTED_COUNT": "Selected: {{count}} / 3"
+  },
+  "COMMON2": {
+    "CANCEL": "Cancel",
+    "CONFIRM": "Confirm",
+    "SAVE_CHANGES": "Save changes"
   }
+
+
 
 
 

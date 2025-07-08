@@ -1,8 +1,7 @@
-<!-- diet-create-dialog.component.html -->
 <div class="dialog">
   <header class="dialog-header">
     <h2 class="dialog-title">
-      {{ isEdit ? 'Editar Rutina' : 'Crear Rutina' }}
+      {{ isEdit ? ('DIET_DIALOG.EDIT_TITLE' | translate) : ('DIET_DIALOG.CREATE_TITLE' | translate) }}
     </h2>
     <button class="close-btn" (click)="cancel()">×</button>
   </header>
@@ -10,32 +9,29 @@
   <form class="dialog-body" (ngSubmit)="confirm()">
     <!-- Título -->
     <div class="form-group">
-      <label for="diet-title">Título</label>
+      <label for="diet-title">{{ 'DIET_DIALOG.LABEL_TITLE' | translate }}</label>
       <input
         id="diet-title"
         type="text"
         name="title"
         [(ngModel)]="title"
-        placeholder="Ingrese un título"
+        [placeholder]="'DIET_DIALOG.PLACEHOLDER_TITLE' | translate"
         required
       />
     </div>
 
     <!-- Nota -->
     <div class="form-group">
-      <label for="diet-note">Nota</label>
+      <label for="diet-note">{{ 'DIET_DIALOG.LABEL_NOTE' | translate }}</label>
       <textarea
         id="diet-note"
         name="note"
         rows="3"
         [(ngModel)]="description"
-        placeholder="Ingrese una nota"
+        [placeholder]="'DIET_DIALOG.PLACEHOLDER_NOTE' | translate"
       ></textarea>
     </div>
 
-    <!-- *************************************************************** -->
-    <!-- Estas pestañas y listas solo aparecen si NO estás editando -->
-    <!-- *************************************************************** -->
     <ng-container *ngIf="!isEdit">
       <!-- Pestañas -->
       <nav class="tabs">
@@ -43,15 +39,16 @@
           type="button"
           [class.active]="selectedTabIndex === 0"
           (click)="onTabChanged(0)"
-        >Mis Exercises</button>
+        >{{ 'DIET_DIALOG.TAB_MY_EXERCISES' | translate }}</button>
+
         <button
           type="button"
           [class.active]="selectedTabIndex === 1"
           (click)="onTabChanged(1)"
-        >Comunidad</button>
+        >{{ 'DIET_DIALOG.TAB_COMMUNITY' | translate }}</button>
       </nav>
 
-      <!-- Contenido de la pestaña -->
+      <!-- Contenido -->
       <section class="tab-content">
         <div *ngIf="selectedTabIndex === 0" class="exercises-list">
           <button
@@ -63,6 +60,7 @@
             {{ m.title }}
           </button>
         </div>
+
         <div *ngIf="selectedTabIndex === 1" class="exercises-list">
           <button
             type="button"
@@ -77,22 +75,22 @@
 
       <!-- Contador -->
       <div class="selection-count">
-        Seleccionadas: {{ selectedExercises.length }} / 3
+        {{ 'DIET_DIALOG.SELECTED_COUNT' | translate:{ count: selectedExercises.length } }}
       </div>
     </ng-container>
-    <!-- *************************************************************** -->
 
     <!-- Botones -->
     <footer class="dialog-actions">
       <button type="button" class="btn-secondary" (click)="cancel()">
-        Cancelar
+        {{ 'COMMON2.CANCEL' | translate }}
       </button>
+
       <button
         type="submit"
         class="btn-primary"
         [disabled]="!isEdit && selectedExercises.length < 3"
       >
-        {{ isEdit ? 'Guardar cambios' : 'Confirmar' }}
+        {{ isEdit ? ('COMMON2.SAVE_CHANGES' | translate) : ('COMMON2.CONFIRM' | translate) }}
       </button>
     </footer>
   </form>

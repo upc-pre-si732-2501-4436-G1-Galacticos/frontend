@@ -6,13 +6,15 @@ import {ExercisesService} from '../../../services/exercises.service';
 import {WorkoutsService} from '../../../services/workouts.service';
 import {FormsModule} from '@angular/forms';
 import {NgForOf, NgIf} from '@angular/common';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-workout-create-dialog',
   imports: [
     FormsModule,
     NgForOf,
-    NgIf
+    NgIf,
+    TranslateModule
   ],
   templateUrl: './workout-create-dialog.component.html',
   styleUrl: './workout-create-dialog.component.css'

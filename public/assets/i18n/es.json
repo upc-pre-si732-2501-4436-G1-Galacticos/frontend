@@ -152,7 +152,34 @@
     "DIETS": "Dietas",
     "ROUTINES": "Rutinas",
     "PLANNER": "Planes"
+  },
+  "WORKOUT_DETAILS": {
+    "NOTE": "Nota",
+    "EXERCISES_INCLUDED": "Ejercicios incluidos",
+    "SET_AS_CURRENT": "Establecer como rutina actual"
+  },
+  "COMMON": {
+    "CLOSE": "Cerrar",
+    "EDIT": "Editar"
+  },
+  "DIET_DIALOG": {
+    "EDIT_TITLE": "Editar Rutina",
+    "CREATE_TITLE": "Crear Rutina",
+    "LABEL_TITLE": "Título",
+    "PLACEHOLDER_TITLE": "Ingrese un título",
+    "LABEL_NOTE": "Nota",
+    "PLACEHOLDER_NOTE": "Ingrese una nota",
+    "TAB_MY_EXERCISES": "Mis Ejercicios",
+    "TAB_COMMUNITY": "Comunidad",
+    "SELECTED_COUNT": "Seleccionadas: {{count}} / 3"
+  },
+  "COMMON2": {
+    "CANCEL": "Cancelar",
+    "CONFIRM": "Confirmar",
+    "SAVE_CHANGES": "Guardar cambios"
   }
+
+
 
 
 

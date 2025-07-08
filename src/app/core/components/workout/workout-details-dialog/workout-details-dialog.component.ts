@@ -4,12 +4,14 @@ import {Workout} from '../../../model/workout.model';
 import {WorkoutsService} from '../../../services/workouts.service';
 import {WorkoutCreateDialogComponent} from '../workout-create-dialog/workout-create-dialog.component';
 import {NgForOf, NgIf} from '@angular/common';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-workout-details-dialog',
   imports: [
     NgForOf,
-    NgIf
+    NgIf,
+    TranslateModule
   ],
   templateUrl: './workout-details-dialog.component.html',
   styleUrl: './workout-details-dialog.component.css'
