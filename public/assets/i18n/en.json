@@ -199,7 +199,21 @@
   },
   "COMMON5": {
     "CLOSE": "Close"
+  },
+  "ASSOCIATION": {
+    "WORKOUT_TITLE": "Workout:",
+    "NO_WORKOUT": "No workout associated.",
+    "SELECT_WORKOUT": "Select a workout:",
+    "ASSOCIATE_WORKOUT": "Associate workout",
+    "DIET_TITLE": "Diet:",
+    "NO_DIET": "No diet associated.",
+    "SELECT_DIET": "Select a diet:",
+    "ASSOCIATE_DIET": "Associate diet"
+  },
+  "COMMON6": {
+    "CLOSE": "Close"
   }
+
 
 
 

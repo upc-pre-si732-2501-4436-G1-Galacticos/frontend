@@ -4,7 +4,7 @@
 
   <!-- WORKOUT -->
   <div *ngIf="data.workout; else noWorkout">
-    <h4>Workout: {{ data.workout.title }}</h4>
+    <h4>{{ 'ASSOCIATION.WORKOUT_TITLE' | translate }} {{ data.workout.title }}</h4>
     <p>{{ data.workout.description }}</p>
     <ul>
       <li *ngFor="let exercise of data.workout.exercises">{{ exercise.title }}</li>
@@ -12,22 +12,24 @@
   </div>
   <ng-template #noWorkout>
     <div class="no-association">
-      <p class="warning-text">No hay workout asociado.</p>
+      <p class="warning-text">{{ 'ASSOCIATION.NO_WORKOUT' | translate }}</p>
 
-      <label for="workout-select" class="label">Selecciona un workout:</label>
+      <label for="workout-select" class="label">{{ 'ASSOCIATION.SELECT_WORKOUT' | translate }}</label>
       <select id="workout-select" [(ngModel)]="selectedWorkoutId" class="select">
         <option *ngFor="let workout of workouts" [value]="workout.id">
           {{ workout.title }}
         </option>
       </select>
 
-      <button class="btn-black" (click)="confirmAssociateWorkout()">Asociar workout</button>
+      <button class="btn-black" (click)="confirmAssociateWorkout()">
+        {{ 'ASSOCIATION.ASSOCIATE_WORKOUT' | translate }}
+      </button>
     </div>
   </ng-template>
 
-  <!-- DIETA -->
+  <!-- DIET -->
   <div *ngIf="data.diet; else noDiet">
-    <h4>Dieta: {{ data.diet.title }}</h4>
+    <h4>{{ 'ASSOCIATION.DIET_TITLE' | translate }} {{ data.diet.title }}</h4>
     <p>{{ data.diet.description }}</p>
     <ul>
       <li *ngFor="let meal of data.diet.meals">{{ meal.title }}</li>
@@ -35,18 +37,20 @@
   </div>
   <ng-template #noDiet>
     <div class="no-association">
-      <p class="warning-text">No hay dieta asociada.</p>
+      <p class="warning-text">{{ 'ASSOCIATION.NO_DIET' | translate }}</p>
 
-      <label for="diet-select" class="label">Selecciona una dieta:</label>
+      <label for="diet-select" class="label">{{ 'ASSOCIATION.SELECT_DIET' | translate }}</label>
       <select id="diet-select" [(ngModel)]="selectedDietId" class="select">
         <option *ngFor="let diet of diets" [value]="diet.id">
           {{ diet.title }}
         </option>
       </select>
 
-      <button class="btn-black" (click)="confirmAssociateDiet()">Asociar dieta</button>
+      <button class="btn-black" (click)="confirmAssociateDiet()">
+        {{ 'ASSOCIATION.ASSOCIATE_DIET' | translate }}
+      </button>
     </div>
   </ng-template>
 
-  <button mat-button mat-dialog-close>Cerrar</button>
+  <button mat-button mat-dialog-close>{{ 'COMMON6.CLOSE' | translate }}</button>
 </div>
