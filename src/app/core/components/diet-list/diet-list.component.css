@@ -1,38 +1,42 @@
-/* Contenedor de la tarjeta */
+.diet-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
 .diet-card {
-  margin-bottom: 20px;
-  transition: transform 0.2s, box-shadow 0.3s, background-color 0.3s;
   cursor: pointer;
-  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Tarjeta Angular Material personalizada */
-.diet-card mat-card {
-  padding: 20px;
-  border-radius: 15px;
-  background-color: white;
-  border: 2px solid #ccf400;
-  transition: background-color 0.3s, border-color 0.3s;
+.diet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover de toda la tarjeta */
-.diet-card:hover mat-card {
-  background-color: #fdfde2; /* amarillo claro sutil */
-  border-color: black;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  transform: scale(1.02);
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  background: white;
 }
 
-/* Título */
-.diet-card mat-card-title {
-  font-size: 1.2rem;
+.card-title {
   font-weight: bold;
-  color: #000;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Contenido */
-.diet-card mat-card-content {
+.card-content {
   font-size: 0.95rem;
-  color: #333;
+  color: #555;
+}
+.loading-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }

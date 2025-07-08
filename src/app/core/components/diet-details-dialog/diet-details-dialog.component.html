@@ -12,6 +12,15 @@
     <ng-template #noMeals>
       <p><em>No hay comidas registradas en esta dieta.</em></p>
     </ng-template>
+
+    <!-- Spinner y Gemini info -->
+    <div *ngIf="loadingGemini" class="gemini-loading">
+      <mat-spinner diameter="24"></mat-spinner> Obteniendo recomendaciones...
+    </div>
+    <div *ngIf="!loadingGemini">
+      <p *ngIf="geminiTip"><strong>Tip:</strong> {{ geminiTip }}</p>
+      <p *ngIf="geminiStatistic"><strong>Estadística:</strong> {{ geminiStatistic }}</p>
+    </div>
   </mat-card-content>
 
   <mat-card-actions align="end">

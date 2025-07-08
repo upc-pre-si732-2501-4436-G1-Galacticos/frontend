@@ -12,6 +12,15 @@
     <ng-template #noExercises>
       <p><em>No hay ejercicios registrados en esta rutina.</em></p>
     </ng-template>
+
+    <div *ngIf="loadingGemini" class="gemini-loading">
+      <mat-spinner diameter="24"></mat-spinner> Cargando recomendaciones...
+    </div>
+
+    <div *ngIf="!loadingGemini">
+      <p *ngIf="geminiTip"><strong>Tip:</strong> {{ geminiTip }}</p>
+      <p *ngIf="geminiStatistic"><strong>Estadística:</strong> {{ geminiStatistic }}</p>
+    </div>
   </mat-card-content>
 
   <mat-card-actions align="end">
