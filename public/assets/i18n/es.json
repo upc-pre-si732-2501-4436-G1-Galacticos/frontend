@@ -83,7 +83,25 @@
     "VIEW_COMMUNITY": "Ver Comunidad",
     "MY_WORKOUTS": "Mis rutinas",
     "LAST_SAVED_TITLE": "Última rutina guardada"
+  },
+
+  "PROFILE": {
+    "TITLE": "PERFIL",
+    "SUBTITLE": "Actualiza tus datos",
+    "PHOTO_ALT": "Foto de perfil",
+    "UPDATE_PHOTO": "Actualizar foto",
+    "FORM_TITLE": "Actualiza tus datos",
+    "FIRST_NAME": "Ingresa tus nombres",
+    "LAST_NAME": "Ingresa tu apellido",
+    "GENDER": "Ingresa tu sexo (M/F)",
+    "HEIGHT": "Ingresa tu altura (cm)",
+    "WEIGHT": "Ingresa tu peso (kg)",
+    "ACTIVITY_LEVEL": "Nivel de actividad",
+    "GOAL": "Objetivo",
+    "UPDATE": "Actualizar perfil",
+    "CREATE": "Crear perfil"
   }
+
 
 
 

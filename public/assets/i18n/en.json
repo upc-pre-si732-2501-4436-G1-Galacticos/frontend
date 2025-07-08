@@ -83,7 +83,25 @@
     "VIEW_COMMUNITY": "View Community",
     "MY_WORKOUTS": "My Workouts",
     "LAST_SAVED_TITLE": "Last Saved Workout"
+  },
+  "PROFILE": {
+    "TITLE": "PROFILE",
+    "SUBTITLE": "Update your information",
+    "PHOTO_ALT": "Profile photo",
+    "UPDATE_PHOTO": "Update photo",
+    "FORM_TITLE": "Update your data",
+    "FIRST_NAME": "Enter your first name",
+    "LAST_NAME": "Enter your last name",
+    "GENDER": "Enter your gender (M/F)",
+    "HEIGHT": "Enter your height (cm)",
+    "WEIGHT": "Enter your weight (kg)",
+    "ACTIVITY_LEVEL": "Activity level",
+    "GOAL": "Goal",
+    "UPDATE": "Update profile",
+    "CREATE": "Create profile"
   }
+
+
 
 
 
