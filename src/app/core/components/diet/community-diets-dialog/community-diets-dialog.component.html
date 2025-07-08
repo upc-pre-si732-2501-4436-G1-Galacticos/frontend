@@ -1,8 +1,9 @@
 <div class="dialog">
   <header class="dialog-header">
-    <h2>Dietas de la comunidad</h2>
+    <h2>{{ 'COMMUNITY_DIETS.TITLE' | translate }}</h2>
     <button class="close-btn" (click)="close()">×</button>
   </header>
+
   <section class="dialog-body">
     <div
       class="diet-card"
@@ -14,7 +15,10 @@
       </ul>
     </div>
   </section>
+
   <footer class="dialog-actions">
-    <button class="btn-secondary" (click)="close()">Cerrar</button>
+    <button class="btn-secondary" (click)="close()">
+      {{ 'COMMON9.CLOSE' | translate }}
+    </button>
   </footer>
 </div>

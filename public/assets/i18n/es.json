@@ -238,7 +238,14 @@
     "CANCEL": "Cancelar",
     "SAVE_CHANGES": "Guardar cambios",
     "CONFIRM": "Confirmar"
+  },
+  "COMMUNITY_DIETS": {
+    "TITLE": "Dietas de la comunidad"
+  },
+  "COMMON9": {
+    "CLOSE": "Cerrar"
   }
+
 
 
 

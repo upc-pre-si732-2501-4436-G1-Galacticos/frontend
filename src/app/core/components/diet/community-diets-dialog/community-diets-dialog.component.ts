@@ -6,11 +6,12 @@ import { DietDetailsDialogComponent }   from '../diet-details-dialog/diet-detail
 import { Diet }                         from '../../../model/diet.model';
 import { DietsService }                 from '../../../services/diets.service';
 import {forkJoin} from 'rxjs';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-community-diets-dialog',
   standalone: true,
-  imports: [ CommonModule, NgForOf, MatDialogModule ],
+  imports: [ CommonModule, NgForOf, MatDialogModule, TranslateModule ],
   templateUrl: './community-diets-dialog.component.html',
   styleUrls: ['./community-diets-dialog.component.css']
 })
