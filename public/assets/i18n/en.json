@@ -176,7 +176,14 @@
     "CANCEL": "Cancel",
     "CONFIRM": "Confirm",
     "SAVE_CHANGES": "Save changes"
+  },
+  "COMMUNITY_WORKOUTS": {
+    "TITLE": "Community Workouts"
+  },
+  "COMMON3": {
+    "CLOSE": "Close"
   }
+
 
 
 

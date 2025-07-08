@@ -5,11 +5,13 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {forkJoin} from 'rxjs';
 import {WorkoutDetailsDialogComponent} from '../workout-details-dialog/workout-details-dialog.component';
 import {NgForOf} from '@angular/common';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-community-workout-dialog',
   imports: [
-    NgForOf
+    NgForOf,
+    TranslateModule
   ],
   templateUrl: './community-workout-dialog.component.html',
   styleUrl: './community-workout-dialog.component.css'

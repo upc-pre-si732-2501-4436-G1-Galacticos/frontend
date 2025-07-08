@@ -177,7 +177,14 @@
     "CANCEL": "Cancelar",
     "CONFIRM": "Confirmar",
     "SAVE_CHANGES": "Guardar cambios"
+  },
+  "COMMUNITY_WORKOUTS": {
+    "TITLE": "Rutinas de la comunidad"
+  },
+  "COMMON3": {
+    "CLOSE": "Cerrar"
   }
+
 
 
 
