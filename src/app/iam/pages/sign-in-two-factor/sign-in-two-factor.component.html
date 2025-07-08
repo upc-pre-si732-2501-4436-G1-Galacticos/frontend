@@ -1,25 +1,27 @@
 <div class="right-section">
-  <button class="close" mat-button (click)="dialogRef.close()">Cerrar</button>
+  <button class="close" mat-button (click)="dialogRef.close()">
+    {{ 'VERIFY.CLOSE' | translate }}
+  </button>
 
   <div class="logo-title">FitWise</div>
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <input
-    matInput
-    placeholder="Email"
-    formControlName="email"
-    class="custom-input"
-  />
+      matInput
+      placeholder="{{ 'VERIFY.EMAIL_PLACEHOLDER' | translate }}"
+      formControlName="email"
+      class="custom-input"
+    />
+
     <input
       matInput
-      placeholder="Código de verificación"
+      placeholder="{{ 'VERIFY.CODE_PLACEHOLDER' | translate }}"
       formControlName="verificationCode"
       class="custom-input"
     />
 
     <button mat-flat-button color="primary" class="login-button" type="submit">
-      Verificar correo
+      {{ 'VERIFY.SUBMIT' | translate }}
     </button>
-
   </form>
 </div>

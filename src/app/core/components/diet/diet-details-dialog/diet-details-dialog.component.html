@@ -1,0 +1,42 @@
+<div class="dialog">
+  <header class="dialog-header">
+    <h2 class="dialog-title">{{ data.diet.title }}</h2>
+    <button class="close-btn" (click)="close()">×</button>
+  </header>
+
+  <section class="dialog-body">
+    <p class="note">
+      <strong>{{ 'DIET_DETAILS.NOTE' | translate }}:</strong> {{ data.diet.description }}
+    </p>
+    <!-- Spinner y Gemini info -->
+    <div *ngIf="loadingGemini" class="gemini-loading">
+      <mat-spinner diameter="24"></mat-spinner> Obteniendo recomendaciones...
+    </div>
+    <div *ngIf="!loadingGemini">
+      <p *ngIf="geminiTip"><strong>Tip:</strong> {{ geminiTip }}</p>
+      <p *ngIf="geminiStatistic"><strong>Estadística:</strong> {{ geminiStatistic }}</p>
+    </div>
+
+    <p class="section-label">
+      <strong>{{ 'DIET_DETAILS.MEALS_INCLUDED' | translate }}</strong>
+    </p>
+    <ul class="meals-list">
+      <li *ngFor="let m of data.diet.meals">
+        <span class="meal-title">{{ m.title }}</span> – <span class="meal-desc">{{ m.description }}</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="dialog-actions">
+    <button class="btn-secondary" (click)="close()">{{ 'COMMON7.CLOSE' | translate }}</button>
+    <button
+      class="btn-secondary"
+      *ngIf="!data.isCommunity"
+      (click)="edit()">
+      {{ 'COMMON7.EDIT' | translate }}
+    </button>
+    <button class="btn-primary" (click)="makeCurrent()">
+      {{ 'DIET_DETAILS.SET_CURRENT_DIET' | translate }}
+    </button>
+  </footer>
+</div>

@@ -1,21 +1,25 @@
 <div class="dialog-container">
   <div class="dialog-header">
-    <h2>Duración de la suscripción</h2>
+    <h2>{{ 'SUBSCRIPTION_DURATION.TITLE' | translate }}</h2>
   </div>
 
   <div class="dialog-body">
-    <p>¿Cuántos días deseas suscribirte al plan?</p>
+    <p>{{ 'SUBSCRIPTION_DURATION.QUESTION' | translate }}</p>
     <input
       type="number"
       [(ngModel)]="days"
       min="1"
       class="input-days"
-      placeholder="Ej: 30"
+      [placeholder]="'SUBSCRIPTION_DURATION.PLACEHOLDER' | translate"
     />
   </div>
 
   <div class="dialog-actions">
-    <button mat-button (click)="cancel()">Cancelar</button>
-    <button mat-raised-button color="primary" (click)="confirm()">Aceptar</button>
+    <button mat-button (click)="cancel()">
+      {{ 'COMMON4.CANCEL' | translate }}
+    </button>
+    <button mat-raised-button color="primary" (click)="confirm()">
+      {{ 'COMMON4.CONFIRM' | translate }}
+    </button>
   </div>
 </div>

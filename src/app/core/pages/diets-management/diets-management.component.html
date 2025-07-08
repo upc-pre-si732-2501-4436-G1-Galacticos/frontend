@@ -1,34 +1,34 @@
-<h2>DIETAS</h2>
+<div class="diets-management">
+  <header class="dm-header">
+    <button class="btn-primary" (click)="openCreateDialog()">
+      {{ 'DIETS.NEW_DIET' | translate }}
+    </button>
+    <button class="btn-secondary" (click)="openCommunityDialog()">
+      {{ 'DIETS.VIEW_COMMUNITY' | translate }}
+    </button>
+  </header>
 
-<div class="dietas-wrapper">
-  <!-- Crea tu nueva dieta -->
-  <div class="create-diet-section">
-    <h3>Crea tu nueva dieta</h3>
-    <input type="text" placeholder="Ingrese el nombre de la dieta" [(ngModel)]="newDiet.title" />
-    <input type="text" placeholder="Ingrese detalles de la dieta" [(ngModel)]="newDiet.description" />
-    <button class="add-diet-btn" (click)="createDiet()">Agregar dieta</button>
+  <div class="dm-body">
+    <!-- Lista de mis dietas -->
+    <section class="dm-list">
+      <h2 class="dm-title">{{ 'DIETS.MY_DIETS' | translate }}</h2>
+      <app-diet-list
+        [diets]="myDiets"
+        (selectDiet)="openDetails($event, false)">
+      </app-diet-list>
+    </section>
+
+    <!-- Sidebar: última dieta guardada -->
+    <aside *ngIf="currentDiet" class="dm-sidebar">
+      <h3 class="sidebar-title">{{ 'DIETS.LAST_SAVED' | translate }}</h3>
+      <h4 class="sidebar-title">{{ currentDiet.title }}</h4>
+      <p class="sidebar-note">{{ currentDiet.description }}</p>
+      <ul class="sidebar-meals">
+        <li *ngFor="let m of currentDiet.meals">
+          <span class="meal-name">{{ m.title }}</span> –
+          <span class="meal-desc">{{ m.description }}</span>
+        </li>
+      </ul>
+    </aside>
   </div>
-
-  <!-- Mi dieta actual y comunidad -->
-  <div class="right-section">
-    <!-- Dieta actual -->
-    <div class="current-diet">
-      <h3>Mi dieta actual</h3>
-      <div *ngIf="currentDiet" class="diet-card">
-        <h4>{{ currentDiet.title }}</h4>
-        <p>{{ currentDiet.description }}</p>
-      </div>
-      <div *ngIf="!currentDiet">
-        <p>No has seleccionado una dieta aún.</p>
-      </div>
-    </div>
-
-
-  </div>
-</div>
-<!-- Dietas de la comunidad -->
-<div class="community-diets">
-  <h3>Dietas de la comunidad</h3>
-  <p></p>
-  <app-diet-list [diets]="diets" (dietSelected)="openDietDetails($event)"></app-diet-list>
 </div>

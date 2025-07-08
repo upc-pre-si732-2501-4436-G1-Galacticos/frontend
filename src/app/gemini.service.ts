@@ -12,6 +12,7 @@ export class GeminiService {
 
   constructor() {
     // Inicializa el SDK de Gemini con tu clave de API
+
     this.genAI = new GoogleGenerativeAI(environment.geminiApiKey);
     this.model = this.genAI.getGenerativeModel({ model: 'gemini-1.5-flash' }); // <-- Usa 'gemini-1.5-flash'
     console.log('GeminiService inicializado con éxito usando gemini-1.5-flash.');

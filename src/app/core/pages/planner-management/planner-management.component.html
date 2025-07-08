@@ -1,17 +1,17 @@
 <div class="planner-container">
   <!-- Columna izquierda: crear plan -->
   <div class="planner-form">
-    <h2>Crear nuevo plan</h2>
-    <!-- Aquí puedes agregar tu formulario de creación -->
-    <form class="planner-form-content" (ngSubmit)="submitNewPlan()" #planForm="ngForm">
-      <label>Título</label>
-      <input  type="text" [(ngModel)]="newPlan.title" name="title" required />
+    <h2>{{ 'PLANNER.CREATE_TITLE' | translate }}</h2>
 
-      <label>Descripción</label>
+    <form class="planner-form-content" (ngSubmit)="submitNewPlan()" #planForm="ngForm">
+      <label>{{ 'PLANNER.FORM.TITLE_LABEL' | translate }}</label>
+      <input type="text" [(ngModel)]="newPlan.title" name="title" required />
+
+      <label>{{ 'PLANNER.FORM.DESCRIPTION_LABEL' | translate }}</label>
       <textarea [(ngModel)]="newPlan.description" name="description" required></textarea>
 
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Selecciona tags</mat-label>
+        <mat-label>{{ 'PLANNER.FORM.TAGS_LABEL' | translate }}</mat-label>
         <mat-select [(ngModel)]="newPlan.tagNames" name="tagNames" multiple>
           <mat-option *ngFor="let tag of availableTags" [value]="tag.title">
             {{ tag.title }}
@@ -19,18 +19,18 @@
         </mat-select>
       </mat-form-field>
 
-      <button type="submit" [disabled]="!planForm.form.valid">Crear Plan</button>
-
+      <button type="submit" [disabled]="!planForm.form.valid">
+        {{ 'PLANNER.FORM.CREATE_BUTTON' | translate }}
+      </button>
     </form>
   </div>
 
   <!-- Columna derecha: listas -->
   <div class="planner-lists">
-
     <section>
-      <h2>Planes de la comunidad</h2>
+      <h2>{{ 'PLANNER.COMMUNITY_TITLE' | translate }}</h2>
       <div *ngIf="communityPlans.length === 0">
-        <p>No se encontraron planes.</p>
+        <p>{{ 'PLANNER.NO_PLANS_FOUND' | translate }}</p>
       </div>
 
       <div class="plan-list">
@@ -45,17 +45,21 @@
             </div>
           </div>
           <div class="card-actions">
-            <button (click)="openPlanDetails(plan)">Ver detalles</button>
-            <button (click)="assignPlanToUser(plan.id)">Asignar a mi cuenta</button>
+            <button (click)="openPlanDetails(plan)">
+              {{ 'PLANNER.DETAILS_BUTTON' | translate }}
+            </button>
+            <button (click)="assignPlanToUser(plan.id)">
+              {{ 'PLANNER.ASSIGN_BUTTON' | translate }}
+            </button>
           </div>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Planes FitWise Recomendados</h2>
+      <h2>{{ 'PLANNER.RECOMMENDED_TITLE' | translate }}</h2>
       <div *ngIf="recommendedPlans.length === 0">
-        <p>No se encontraron planes.</p>
+        <p>{{ 'PLANNER.NO_PLANS_FOUND' | translate }}</p>
       </div>
 
       <div class="plan-list">
@@ -70,12 +74,15 @@
             </div>
           </div>
           <div class="card-actions">
-            <button (click)="openPlanDetails(plan)">Ver detalles</button>
-            <button (click)="assignPlanToUser(plan.id)">Asignar a mi cuenta</button>
+            <button (click)="openPlanDetails(plan)">
+              {{ 'PLANNER.DETAILS_BUTTON' | translate }}
+            </button>
+            <button (click)="assignPlanToUser(plan.id)">
+              {{ 'PLANNER.ASSIGN_BUTTON' | translate }}
+            </button>
           </div>
         </div>
       </div>
     </section>
-
   </div>
 </div>

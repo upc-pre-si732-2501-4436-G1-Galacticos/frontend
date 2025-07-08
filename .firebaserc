@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "fitwise-app-77eaf"
-  }
+    "default": "fitwise-app-77eaf",
+    "experiment": "fitwise-test"
+  },
+  "targets": {},
+  "etags": {}
 }

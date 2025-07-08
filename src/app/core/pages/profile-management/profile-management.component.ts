@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import {MatRadioModule } from '@angular/material/radio';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile-management',
@@ -21,6 +22,7 @@ import {MatRadioModule } from '@angular/material/radio';
     MatButtonModule,
     CommonModule,
     MatRadioModule,
+    TranslateModule
   ],
   styleUrls: ['./profile-management.component.css']
 })

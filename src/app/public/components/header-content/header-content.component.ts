@@ -8,6 +8,8 @@ import {NgIf, NgOptimizedImage} from '@angular/common';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {AuthService} from '../../../iam/services/auth.service';
 import {Router, RouterModule} from '@angular/router';
+import {LanguageSwitcherComponent} from '../language-switcher/language-switcher.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header-content',
@@ -20,6 +22,8 @@ import {Router, RouterModule} from '@angular/router';
     RouterModule,
     NgOptimizedImage,
     NgIf,
+    LanguageSwitcherComponent,
+    TranslateModule
   ],
   templateUrl: './header-content.component.html',
   styleUrl: './header-content.component.css'

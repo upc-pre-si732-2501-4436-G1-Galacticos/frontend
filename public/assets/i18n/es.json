@@ -1,0 +1,269 @@
+{
+  "HEADER": {
+    "DIETS": "Dietas",
+    "ROUTINES": "Rutinas",
+    "PLANNER": "Planificador",
+    "EXERCISES": "Ejercicios",
+    "MEALS": "Comidas",
+    "WELCOME": "Bienvenido",
+    "PROFILE": "Perfil",
+    "SIGN_OUT": "Cerrar sesión"
+  },
+  "HOME": {
+    "WELCOME": "Bienvenido a FitWise {{user}}",
+    "QUICK_ACCESS": "Accesos rápidos",
+    "BUTTONS": {
+      "VIEW_DIETS": "Ver Dietas",
+      "VIEW_ROUTINES": "Ver Rutinas",
+      "MY_PLANS": "Mis Planes",
+      "MY_EXERCISES": "Mis Ejercicios",
+      "MY_MEALS": "Mis Comidas"
+    },
+    "ACTIVE_SUBSCRIPTION": "Tu última suscripción activa",
+    "NAME": "Nombre",
+    "ENDS_ON": "Finaliza el",
+    "STARTS_ON": "Inicia el",
+    "DIET": "Dieta",
+    "ROUTINE": "Rutina",
+    "SUBSCRIPTION_EXPIRED": "Tu suscripción ha expirado.",
+    "NO_ACTIVE_PLAN": "No tienes un plan activo todavía.",
+    "CALENDAR_TITLE": "Calendario de Comidas y Ejercicios según tu plan",
+    "TODAY": "HOY",
+    "EXERCISES": "Ejercicios",
+    "MEALS": "Comidas",
+    "MORNING": "Mañana",
+    "AFTERNOON": "Tarde",
+    "NIGHT": "Noche",
+    "BREAKFAST": "Desayuno",
+    "LUNCH": "Almuerzo",
+    "DINNER": "Cena"
+  },
+  "FORGOT": {
+    "EMAIL_PLACEHOLDER": "Correo electrónico",
+    "EMAIL_REQUIRED": "El correo es obligatorio",
+    "EMAIL_INVALID": "Ingresa un correo válido",
+    "SUBMIT": "Enviar enlace de recuperación",
+    "BACK_TO_LOGIN": "Volver al inicio de sesión"
+  },
+  "RESET": {
+    "TITLE": "Restablecer tu contraseña",
+    "PLACEHOLDER": "Ingresa tu nueva contraseña",
+    "ERROR_REQUIRED": "La contraseña es obligatoria",
+    "ERROR_MINLENGTH": "La longitud mínima es de 6 caracteres",
+    "SUBMIT": "Restablecer contraseña"
+  },
+  "LOGIN": {
+    "EMAIL_PLACEHOLDER": "Correo electrónico",
+    "PASSWORD_PLACEHOLDER": "Contraseña",
+    "SUBMIT": "Iniciar sesión",
+    "FORGOT": "¿Olvidaste tu contraseña?",
+    "RECOVER": "Recuperar",
+    "NO_ACCOUNT": "¿No tienes cuenta?",
+    "REGISTER": "Registrarse",
+    "OR_SIGN_WITH": "O inicia sesión con"
+  },
+  "VERIFY": {
+    "CLOSE": "Cerrar",
+    "EMAIL_PLACEHOLDER": "Correo electrónico",
+    "CODE_PLACEHOLDER": "Código de verificación",
+    "SUBMIT": "Verificar correo"
+  },
+  "SIGNUP": {
+    "EMAIL_PLACEHOLDER": "Correo electrónico",
+    "EMAIL_REQUIRED": "Email es obligatorio",
+    "EMAIL_INVALID": "Correo no válido",
+    "PASSWORD_PLACEHOLDER": "Contraseña",
+    "PASSWORD_REQUIRED": "Contraseña es obligatoria",
+    "SUBMIT": "Registrarse",
+    "ALREADY_HAVE_ACCOUNT": "¿Ya tienes una cuenta?",
+    "LOGIN_LINK": "Inicia sesión"
+  },
+  "WORKOUTS": {
+    "NEW_WORKOUT": "Nueva Rutina",
+    "VIEW_COMMUNITY": "Ver Comunidad",
+    "MY_WORKOUTS": "Mis rutinas",
+    "LAST_SAVED_TITLE": "Última rutina guardada"
+  },
+
+  "PROFILE": {
+    "TITLE": "PERFIL",
+    "SUBTITLE": "Actualiza tus datos",
+    "PHOTO_ALT": "Foto de perfil",
+    "UPDATE_PHOTO": "Actualizar foto",
+    "FORM_TITLE": "Actualiza tus datos",
+    "FIRST_NAME": "Ingresa tus nombres",
+    "LAST_NAME": "Ingresa tu apellido",
+    "GENDER": "Ingresa tu sexo (M/F)",
+    "HEIGHT": "Ingresa tu altura (cm)",
+    "WEIGHT": "Ingresa tu peso (kg)",
+    "ACTIVITY_LEVEL": "Nivel de actividad",
+    "GOAL": "Objetivo",
+    "UPDATE": "Actualizar perfil",
+    "CREATE": "Crear perfil"
+  },
+  "PLANNER": {
+    "CREATE_TITLE": "Crear nuevo plan",
+    "FORM": {
+      "TITLE_LABEL": "Título",
+      "DESCRIPTION_LABEL": "Descripción",
+      "TAGS_LABEL": "Selecciona tags",
+      "CREATE_BUTTON": "Crear Plan"
+    },
+    "COMMUNITY_TITLE": "Planes de la comunidad",
+    "RECOMMENDED_TITLE": "Planes FitWise Recomendados",
+    "NO_PLANS_FOUND": "No se encontraron planes.",
+    "DETAILS_BUTTON": "Ver detalles",
+    "ASSIGN_BUTTON": "Asignar a mi cuenta"
+  },
+  "MEALS": {
+    "CREATE_TITLE": "Crear Meal",
+    "UPDATE_TITLE": "Actualizar Meal",
+    "FORM": {
+      "TITLE_PLACEHOLDER": "Título del meal",
+      "DESCRIPTION_PLACEHOLDER": "Descripción del meal",
+      "CREATE_BUTTON": "Crear",
+      "UPDATE_BUTTON": "Actualizar",
+      "RESET_BUTTON": "Limpiar"
+    },
+    "LIST_TITLE": "Lista de Meals",
+    "NO_MEALS": "No hay meals para mostrar."
+  },
+
+  "EXERCISES": {
+    "CREATE_TITLE": "Crear Ejercicio",
+    "UPDATE_TITLE": "Actualizar Ejercicio",
+    "FORM": {
+      "TITLE_PLACEHOLDER": "Título del ejercicio",
+      "DESCRIPTION_PLACEHOLDER": "Descripción del ejercicio",
+      "CREATE_BUTTON": "Crear",
+      "UPDATE_BUTTON": "Actualizar",
+      "RESET_BUTTON": "Limpiar"
+    },
+    "LIST_TITLE": "Lista de Ejercicios",
+    "NO_EXERCISES": "No hay ejercicios para mostrar."
+  },
+  "DIETS": {
+    "NEW_DIET": "Nueva Dieta",
+    "VIEW_COMMUNITY": "Ver Comunidad",
+    "MY_DIETS": "Mis dietas",
+    "LAST_SAVED": "Última dieta guardada"
+  },
+  "SIDENAV": {
+    "DIETS": "Dietas",
+    "ROUTINES": "Rutinas",
+    "PLANNER": "Planes"
+  },
+  "WORKOUT_DETAILS": {
+    "NOTE": "Nota",
+    "EXERCISES_INCLUDED": "Ejercicios incluidos",
+    "SET_AS_CURRENT": "Establecer como rutina actual"
+  },
+  "COMMON": {
+    "CLOSE": "Cerrar",
+    "EDIT": "Editar"
+  },
+  "DIET_DIALOG": {
+    "EDIT_TITLE": "Editar Rutina",
+    "CREATE_TITLE": "Crear Rutina",
+    "LABEL_TITLE": "Título",
+    "PLACEHOLDER_TITLE": "Ingrese un título",
+    "LABEL_NOTE": "Nota",
+    "PLACEHOLDER_NOTE": "Ingrese una nota",
+    "TAB_MY_EXERCISES": "Mis Ejercicios",
+    "TAB_COMMUNITY": "Comunidad",
+    "SELECTED_COUNT": "Seleccionadas: {{count}} / 3"
+  },
+  "COMMON2": {
+    "CANCEL": "Cancelar",
+    "CONFIRM": "Confirmar",
+    "SAVE_CHANGES": "Guardar cambios"
+  },
+  "COMMUNITY_WORKOUTS": {
+    "TITLE": "Rutinas de la comunidad"
+  },
+  "COMMON3": {
+    "CLOSE": "Cerrar"
+  },
+  "SUBSCRIPTION_DURATION": {
+    "TITLE": "Duración de la suscripción",
+    "QUESTION": "¿Cuántos días deseas suscribirte al plan?",
+    "PLACEHOLDER": "Ej: 30"
+  },
+  "COMMON4": {
+    "CANCEL": "Cancelar",
+    "CONFIRM": "Aceptar"
+  },
+  "WORKOUT_DETAIL": {
+    "EXERCISES_INCLUDED": "Ejercicios incluidos:",
+    "NO_EXERCISES": "No hay ejercicios registrados en esta rutina.",
+    "ASSIGN_BUTTON": "Asignar a mi FitWise Plan"
+  },
+  "COMMON5": {
+    "CLOSE": "Cerrar"
+  },
+  "ASSOCIATION": {
+    "WORKOUT_TITLE": "Workout:",
+    "NO_WORKOUT": "No hay workout asociado.",
+    "SELECT_WORKOUT": "Selecciona un workout:",
+    "ASSOCIATE_WORKOUT": "Asociar workout",
+    "DIET_TITLE": "Dieta:",
+    "NO_DIET": "No hay dieta asociada.",
+    "SELECT_DIET": "Selecciona una dieta:",
+    "ASSOCIATE_DIET": "Asociar dieta"
+  },
+  "COMMON6": {
+    "CLOSE": "Cerrar"
+  },
+  "DIET_DETAILS": {
+    "NOTE": "Nota",
+    "MEALS_INCLUDED": "Meals incluidas",
+    "SET_CURRENT_DIET": "Establecer como dieta actual"
+  },
+  "COMMON7": {
+    "CLOSE": "Cerrar",
+    "EDIT": "Editar"
+  },
+  "DIET_CREATE": {
+    "EDIT_TITLE": "Editar Dieta",
+    "CREATE_TITLE": "Crear Dieta",
+    "LABEL_TITLE": "Título",
+    "PLACEHOLDER_TITLE": "Ingrese un título",
+    "LABEL_NOTE": "Nota",
+    "PLACEHOLDER_NOTE": "Ingrese una nota",
+    "TAB_MY_MEALS": "Mis Meals",
+    "TAB_COMMUNITY": "Comunidad",
+    "SELECTED_COUNT": "Seleccionadas: {{count}} / 3"
+  },
+  "COMMON8": {
+    "CANCEL": "Cancelar",
+    "SAVE_CHANGES": "Guardar cambios",
+    "CONFIRM": "Confirmar"
+  },
+  "COMMUNITY_DIETS": {
+    "TITLE": "Dietas de la comunidad"
+  },
+  "COMMON9": {
+    "CLOSE": "Cerrar"
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

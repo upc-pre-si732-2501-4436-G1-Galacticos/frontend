@@ -1,0 +1,40 @@
+<div class="dialog">
+  <header class="dialog-header">
+    <h2 class="dialog-title">{{ data.workout.title }}</h2>
+    <button class="close-btn" (click)="close()">×</button>
+  </header>
+
+  <section class="dialog-body">
+    <p class="note"><strong>{{ 'WORKOUT_DETAILS.NOTE' | translate }}:</strong> {{ data.workout.description }}</p>
+
+    <p class="section-label"><strong>{{ 'WORKOUT_DETAILS.EXERCISES_INCLUDED' | translate }}:</strong></p>
+
+    <div *ngIf="loadingGemini" class="gemini-loading">
+      <mat-spinner diameter="24"></mat-spinner> Cargando recomendaciones...
+    </div>
+
+    <div *ngIf="!loadingGemini">
+      <p *ngIf="geminiTip"><strong>Tip:</strong> {{ geminiTip }}</p>
+      <p *ngIf="geminiStatistic"><strong>Estadística:</strong> {{ geminiStatistic }}</p>
+    </div>
+    <ul class="meals-list">
+      <li *ngFor="let m of data.workout.exercises">
+        <span class="meal-title">{{ m.title }}</span>
+        –
+        <span class="meal-desc">{{ m.description }}</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="dialog-actions">
+    <button class="btn-secondary" (click)="close()">{{ 'COMMON.CLOSE' | translate }}</button>
+
+    <button class="btn-secondary" *ngIf="!data.isCommunity" (click)="edit()">
+      {{ 'COMMON.EDIT' | translate }}
+    </button>
+
+    <button class="btn-primary" (click)="makeCurrent()">
+      {{ 'WORKOUT_DETAILS.SET_AS_CURRENT' | translate }}
+    </button>
+  </footer>
+</div>

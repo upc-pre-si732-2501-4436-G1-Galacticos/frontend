@@ -1,5 +1,4 @@
 <mat-toolbar>
-  <!-- Burger menu button - Only visible in mobile devices -->
   <button
     mat-icon-button
     *ngIf="isMobile"
@@ -21,31 +20,34 @@
 
   <span class="spacer"></span>
 
-  <!-- Main navigation - Not visible in mobile devices -->
+  <!-- Navegación -->
   <div class="nav-links" [class.is-mobile]="isMobile">
     <a mat-button routerLink="/diets" routerLinkActive="active-link">
       <mat-icon>restaurant</mat-icon>
-      <span>Diets</span>
+      <span>{{ 'HEADER.DIETS' | translate }}</span>
     </a>
     <a mat-button routerLink="/routines" routerLinkActive="active-link">
       <mat-icon>fitness_center</mat-icon>
-      <span>Routines</span>
+      <span>{{ 'HEADER.ROUTINES' | translate }}</span>
     </a>
     <a mat-button routerLink="/planner" routerLinkActive="active-link">
       <mat-icon>edit</mat-icon>
-      <span>Planner</span>
+      <span>{{ 'HEADER.PLANNER' | translate }}</span>
     </a>
     <a mat-button routerLink="/exercises" routerLinkActive="active-link">
-      <mat-icon>fitness_center</mat-icon> <!-- Cambiado a icono más adecuado -->
-      <span>Exercises</span> <!-- Añadido emoji -->
+      <mat-icon>fitness_center</mat-icon>
+      <span>{{ 'HEADER.EXERCISES' | translate }}</span>
     </a>
     <a mat-button routerLink="/meals" routerLinkActive="active-link">
-      <mat-icon>restaurant</mat-icon> <!-- Cambiado a icono más adecuado -->
-      <span>Meals</span> <!-- Añadido emoji -->
+      <mat-icon>restaurant</mat-icon>
+      <span>{{ 'HEADER.MEALS' | translate }}</span>
     </a>
   </div>
 
-  <!-- Menu button - Always visible -->
+  <!-- Selector de idioma -->
+  <app-language-switcher />
+
+  <!-- Menú usuario -->
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="User options">
     <mat-icon>account_circle</mat-icon>
   </button>
@@ -53,15 +55,15 @@
     <ng-container *ngIf="isSignedIn">
       <button mat-menu-item disabled>
         <mat-icon>person</mat-icon>
-        <span>Welcome, {{ currentEmail }}</span>
+        <span>{{ 'HEADER.WELCOME' | translate }}, {{ currentEmail }}</span>
       </button>
       <button mat-menu-item (click)="goToProfile()">
         <mat-icon>manage_accounts</mat-icon>
-        <span>Profile</span>
+        <span>{{ 'HEADER.PROFILE' | translate }}</span>
       </button>
       <button mat-menu-item (click)="onSignOut()">
         <mat-icon>logout</mat-icon>
-        <span>Sign Out</span>
+        <span>{{ 'HEADER.SIGN_OUT' | translate }}</span>
       </button>
     </ng-container>
   </mat-menu>

@@ -6,12 +6,13 @@ import {WorkoutsService} from '../../services/workouts.service';
 import {DietsService} from '../../services/diets.service';
 import {FitwisePlansService} from '../../services/fitwise-plans.service';
 import {FormsModule} from '@angular/forms';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-plan-details-dialog',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, MatButtonModule, FormsModule],
+  imports: [CommonModule, MatDialogModule, MatButtonModule, FormsModule, TranslateModule],
   templateUrl: './plan-details-dialog.component.html',
   styleUrls: ['./plan-details-dialog.component.css']
 })

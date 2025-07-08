@@ -1,0 +1,9 @@
+<div class="diet-list">
+  <div class="diet-card" *ngFor="let d of diets" (click)="onSelect(d)">
+  <h3>{{ d.title }}</h3>
+  <ul>
+    <li *ngFor="let m of d.meals">{{ m.title }}</li>
+  </ul>
+</div>
+
+</div>

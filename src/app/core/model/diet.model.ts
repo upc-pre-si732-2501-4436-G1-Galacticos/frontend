@@ -5,4 +5,7 @@ export interface Diet {
   title: string;
   description: string;
   meals: Meal[];
+  userId?: number;
+  createdAt?: string;
+  updatedAt?: string;
 }

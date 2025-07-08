@@ -1,0 +1,91 @@
+<div class="dialog">
+  <header class="dialog-header">
+    <h2 class="dialog-title">
+      {{ isEdit ? ('DIET_CREATE.EDIT_TITLE' | translate) : ('DIET_CREATE.CREATE_TITLE' | translate) }}
+    </h2>
+    <button class="close-btn" (click)="cancel()">×</button>
+  </header>
+
+  <form class="dialog-body" (ngSubmit)="confirm()">
+    <!-- Título -->
+    <div class="form-group">
+      <label for="diet-title">{{ 'DIET_CREATE.LABEL_TITLE' | translate }}</label>
+      <input
+        id="diet-title"
+        type="text"
+        name="title"
+        [(ngModel)]="title"
+        [placeholder]="'DIET_CREATE.PLACEHOLDER_TITLE' | translate"
+        required
+      />
+    </div>
+
+    <!-- Nota -->
+    <div class="form-group">
+      <label for="diet-note">{{ 'DIET_CREATE.LABEL_NOTE' | translate }}</label>
+      <textarea
+        id="diet-note"
+        name="note"
+        rows="3"
+        [(ngModel)]="description"
+        [placeholder]="'DIET_CREATE.PLACEHOLDER_NOTE' | translate"
+      ></textarea>
+    </div>
+
+    <!-- Pestañas solo si no es edición -->
+    <ng-container *ngIf="!isEdit">
+      <nav class="tabs">
+        <button
+          type="button"
+          [class.active]="selectedTabIndex === 0"
+          (click)="onTabChanged(0)">
+          {{ 'DIET_CREATE.TAB_MY_MEALS' | translate }}
+        </button>
+        <button
+          type="button"
+          [class.active]="selectedTabIndex === 1"
+          (click)="onTabChanged(1)">
+          {{ 'DIET_CREATE.TAB_COMMUNITY' | translate }}
+        </button>
+      </nav>
+
+      <section class="tab-content">
+        <div *ngIf="selectedTabIndex === 0" class="meals-list">
+          <button
+            type="button"
+            *ngFor="let m of mealsMy"
+            (click)="toggleMeal(m)"
+            [class.selected]="selectedMeals.includes(m)">
+            {{ m.title }}
+          </button>
+        </div>
+        <div *ngIf="selectedTabIndex === 1" class="meals-list">
+          <button
+            type="button"
+            *ngFor="let m of mealsComm"
+            (click)="toggleMeal(m)"
+            [class.selected]="selectedMeals.includes(m)">
+            {{ m.title }}
+          </button>
+        </div>
+      </section>
+
+      <div class="selection-count">
+        {{ 'DIET_CREATE.SELECTED_COUNT' | translate:{ count: selectedMeals.length } }}
+      </div>
+    </ng-container>
+
+    <!-- Botones -->
+    <footer class="dialog-actions">
+      <button type="button" class="btn-secondary" (click)="cancel()">
+        {{ 'COMMON8.CANCEL' | translate }}
+      </button>
+      <button
+        type="submit"
+        class="btn-primary"
+        [disabled]="!isEdit && selectedMeals.length < 3">
+        {{ isEdit ? ('COMMON8.SAVE_CHANGES' | translate) : ('COMMON8.CONFIRM' | translate) }}
+      </button>
+    </footer>
+  </form>
+</div>

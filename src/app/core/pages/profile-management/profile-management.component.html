@@ -1,27 +1,27 @@
 <div class="container">
   <header>
     <hr />
-    <h1>PERFIL</h1>
+    <h1>{{ 'PROFILE.TITLE' | translate }}</h1>
     <hr />
-    <p>Actualiza tus datos</p>
+    <p>{{ 'PROFILE.SUBTITLE' | translate }}</p>
   </header>
 
   <main class="profile-container">
     <div class="photo-section">
-      <img src="/logos/FitWiseLogo.png" alt="Foto de perfil" />
-      <button class="photo-btn" type="button">Actualizar foto</button>
+      <img src="/logos/FitWiseLogo.png" alt="{{ 'PROFILE.PHOTO_ALT' | translate }}" />
+      <button class="photo-btn" type="button">{{ 'PROFILE.UPDATE_PHOTO' | translate }}</button>
     </div>
 
     <form class="form-section" [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h2>Actualiza tus datos</h2>
+      <h2>{{ 'PROFILE.FORM_TITLE' | translate }}</h2>
 
-      <input type="text" placeholder="Ingresa tus nombres" formControlName="firstName" />
-      <input type="text" placeholder="Ingresa tu apellido" formControlName="lastName" />
-      <input type="text" placeholder="Ingresa tu sexo (M/F)" formControlName="gender" />
-      <input type="number" placeholder="Ingresa tu altura (cm)" formControlName="height" />
-      <input type="number" placeholder="Ingresa tu peso (kg)" formControlName="weight" />
+      <input type="text" [placeholder]="'PROFILE.FIRST_NAME' | translate" formControlName="firstName" />
+      <input type="text" [placeholder]="'PROFILE.LAST_NAME' | translate" formControlName="lastName" />
+      <input type="text" [placeholder]="'PROFILE.GENDER' | translate" formControlName="gender" />
+      <input type="number" [placeholder]="'PROFILE.HEIGHT' | translate" formControlName="height" />
+      <input type="number" [placeholder]="'PROFILE.WEIGHT' | translate" formControlName="weight" />
 
-      <div class="nivel-label">Nivel de actividad</div>
+      <div class="nivel-label">{{ 'PROFILE.ACTIVITY_LEVEL' | translate }}</div>
       <div class="nivel-options">
         <button
           class="nivel"
@@ -33,7 +33,7 @@
         </button>
       </div>
 
-      <div class="nivel-label">Objetivo</div>
+      <div class="nivel-label">{{ 'PROFILE.GOAL' | translate }}</div>
       <div class="nivel-options">
         <button
           class="nivel"
@@ -46,7 +46,7 @@
       </div>
 
       <button class="update-btn" type="submit">
-        {{ isEdit ? 'Actualizar perfil' : 'Crear perfil' }}
+        {{ isEdit ? ('PROFILE.UPDATE' | translate) : ('PROFILE.CREATE' | translate) }}
       </button>
     </form>
   </main>

@@ -1,35 +1,42 @@
 <div class="dietas-wrapper">
 
   <div class="create-diet-section">
-    <h3>{{ selectedMeal.id ? 'Actualizar Meal' : 'Crear Meal' }}</h3>
+    <h3>{{ selectedMeal.id ? ('MEALS.UPDATE_TITLE' | translate) : ('MEALS.CREATE_TITLE' | translate) }}</h3>
+
     <form (ngSubmit)="saveMeal()">
       <input
         type="text"
         [(ngModel)]="selectedMeal.title"
         name="title"
-        placeholder="Título del meal"
+        [placeholder]="'MEALS.FORM.TITLE_PLACEHOLDER' | translate"
         required>
 
       <input
         type="text"
         [(ngModel)]="selectedMeal.description"
         name="description"
-        placeholder="Descripción del meal"
+        [placeholder]="'MEALS.FORM.DESCRIPTION_PLACEHOLDER' | translate"
         required>
 
       <button type="submit" class="add-diet-btn">
-        {{ selectedMeal.id ? 'Actualizar' : 'Crear' }}
+        {{ selectedMeal.id ? ('MEALS.FORM.UPDATE_BUTTON' | translate) : ('MEALS.FORM.CREATE_BUTTON' | translate) }}
       </button>
-      <button type="button" class="add-diet-btn" style="background-color: #ddd; color: black;" (click)="resetForm()">
-        Limpiar
+
+      <button
+        type="button"
+        class="add-diet-btn"
+        style="background-color: #ddd; color: black;"
+        (click)="resetForm()">
+        {{ 'MEALS.FORM.RESET_BUTTON' | translate }}
       </button>
     </form>
   </div>
 
   <div class="right-section">
     <div class="community-diets">
-      <h3>Lista de Meals</h3>
-      <p *ngIf="meals.length === 0">No hay meals para mostrar.</p>
+      <h3>{{ 'MEALS.LIST_TITLE' | translate }}</h3>
+      <p *ngIf="meals.length === 0">{{ 'MEALS.NO_MEALS' | translate }}</p>
+
       <div *ngFor="let meal of meals" class="diet-card" (click)="editMeal(meal)">
         <strong>{{ meal.title }}</strong>
         <p>{{ meal.description }}</p>
