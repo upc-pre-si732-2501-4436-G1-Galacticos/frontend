@@ -11,6 +11,7 @@ import { DietsService } from '../../../services/diets.service';
 import {NgForOf, NgIf} from '@angular/common';
 import {MatButton} from '@angular/material/button';
 import {DietCreateDialogComponent} from '../diet-create-dialog/diet-create-dialog.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-diet-details-dialog',
@@ -18,6 +19,7 @@ import {DietCreateDialogComponent} from '../diet-create-dialog/diet-create-dialo
   imports: [
     NgForOf,
     NgIf,
+    TranslateModule
   ],
   styleUrls: ['./diet-details-dialog.component.css']
 })

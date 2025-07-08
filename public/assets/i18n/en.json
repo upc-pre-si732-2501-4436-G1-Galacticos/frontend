@@ -212,7 +212,17 @@
   },
   "COMMON6": {
     "CLOSE": "Close"
+  },
+  "DIET_DETAILS": {
+    "NOTE": "Note",
+    "MEALS_INCLUDED": "Included meals",
+    "SET_CURRENT_DIET": "Set as current diet"
+  },
+  "7": {
+    "CLOSE": "Close",
+    "EDIT": "Edit"
   }
+
 
 
 
