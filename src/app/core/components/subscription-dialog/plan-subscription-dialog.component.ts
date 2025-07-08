@@ -3,11 +3,12 @@ import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from '@angular/material/
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-subscription-days-dialog',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, MatButtonModule, FormsModule],
+  imports: [CommonModule, MatDialogModule, MatButtonModule, FormsModule, TranslateModule],
   templateUrl: './plan-subscription-dialog.component.html',
   styleUrls: ['./plan-subscription-dialog.component.css']
 })

@@ -183,7 +183,18 @@
   },
   "COMMON3": {
     "CLOSE": "Cerrar"
+  },
+  "SUBSCRIPTION_DURATION": {
+    "TITLE": "Duración de la suscripción",
+    "QUESTION": "¿Cuántos días deseas suscribirte al plan?",
+    "PLACEHOLDER": "Ej: 30"
+  },
+  "COMMON4": {
+    "CANCEL": "Cancelar",
+    "CONFIRM": "Aceptar"
   }
+
+
 
 
 

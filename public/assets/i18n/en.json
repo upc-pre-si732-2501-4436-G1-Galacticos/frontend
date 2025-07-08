@@ -182,7 +182,18 @@
   },
   "COMMON3": {
     "CLOSE": "Close"
+  },
+  "SUBSCRIPTION_DURATION": {
+    "TITLE": "Subscription Duration",
+    "QUESTION": "How many days do you want to subscribe to the plan?",
+    "PLACEHOLDER": "E.g.: 30"
+  },
+  "COMMON4": {
+    "CANCEL": "Cancel",
+    "CONFIRM": "Confirm"
   }
+
+
 
 
 
