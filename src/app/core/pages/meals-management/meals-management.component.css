@@ -1,5 +1,5 @@
 * {
-  color: black;
+  color: var(--text-primary-color);
 }
 
 .dietas-wrapper {
@@ -10,7 +10,7 @@
 }
 
 .create-diet-section {
-  background-color: #ccf400;
+  background-color: var(--accent-color);
   flex: 1;
   padding: 20px;
   border-radius: 15px;
@@ -26,8 +26,8 @@
 }
 
 .add-diet-btn {
-  background-color: black;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-primary-color);
   padding: 15px;
   border: none;
   width: 100%;
@@ -41,22 +41,22 @@
 }
 
 .community-diets {
-  background-color: #ffffff;
+  background-color: var(--background-color);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .diet-card {
-  background-color: white;
+  background-color: var(--background-color);
   padding: 10px;
   margin-top: 10px;
   border-radius: 10px;
   cursor: pointer;
-  border: 1px solid #eee;
+  border: 1px solid var(--surface-color);
   transition: background-color 0.3s;
 }
 
 .diet-card:hover {
-  background-color: #f0fff0;
+  background-color: var(--surface-color);
 }

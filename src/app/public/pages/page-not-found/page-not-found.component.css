@@ -1,5 +1,5 @@
 .main-container {
-  background-color: #4E5366;
+  background-color: var(--background-color);
   color: white;
   min-height: 100vh;
   display: flex;

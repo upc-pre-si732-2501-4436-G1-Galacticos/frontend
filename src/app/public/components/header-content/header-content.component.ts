@@ -9,6 +9,7 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {AuthService} from '../../../iam/services/auth.service';
 import {Router, RouterModule} from '@angular/router';
 import {LanguageSwitcherComponent} from '../language-switcher/language-switcher.component';
+import {ThemeService, Theme} from '../../../shared/services/theme.service';
 import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
@@ -35,10 +36,14 @@ export class HeaderContentComponent implements OnInit {
   isSignedIn: boolean = false;
   currentEmail: string = '';
 
+  // Estado del tema
+  currentTheme: Theme = 'light';
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     private authenticationService: AuthService,
-    private router: Router
+    private router: Router,
+    private themeService: ThemeService
   ) {
   }
 
@@ -50,6 +55,10 @@ export class HeaderContentComponent implements OnInit {
       });
     this.authenticationService.isSignedIn.subscribe(flag => this.isSignedIn = flag);
     this.authenticationService.currentUserMail.subscribe(email => this.currentEmail = email);
+    this.themeService.currentTheme$.subscribe(theme => {
+      this.currentTheme = theme;
+    });
+
   }
 
   goToProfile() {
@@ -59,4 +68,9 @@ export class HeaderContentComponent implements OnInit {
   onSignOut() {
     this.authenticationService.signOut();
   }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
+
 }

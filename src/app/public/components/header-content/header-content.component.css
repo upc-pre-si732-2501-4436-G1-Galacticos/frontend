@@ -1,6 +1,6 @@
 mat-toolbar {
-  background-color: #4E5366;
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--text-primary-color);
   padding: 20px;
   display: flex;
   flex-wrap: nowrap;

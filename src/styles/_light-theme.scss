@@ -1,0 +1,79 @@
+@use '@angular/material' as mat;
+@use './variables' as vars;
+
+// Paleta personalizada para modo claro
+$custom-light-primary: mat.m2-define-palette((
+  50: #F3F4F6,
+  100: #E5E7EB,
+  200: #D1D5DB,
+  300: #9CA3AF,
+  400: #6B7280,
+  500: #4E5366,
+  600: #374151,
+  700: #1F2937,
+  800: #111827,
+  900: #0F172A,
+  A100: #E5E7EB,
+  A200: #D1D5DB,
+  A400: #6B7280,
+  A700: #374151,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  )
+));
+
+$custom-light-accent: mat.m2-define-palette((
+  50: #F7FDE4,
+  100: #ECFCCB,
+  200: #D9F99D,
+  300: #BEF264,
+  400: #A3E635,
+  500: #BEED00,
+  600: #65A30D,
+  700: #4D7C0F,
+  800: #365314,
+  900: #1A2E05,
+  A100: #ECFCCB,
+  A200: #D9F99D,
+  A400: #A3E635,
+  A700: #4D7C0F,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #ffffff,
+  )
+));
+
+$light-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $custom-light-primary,
+    accent: $custom-light-accent,
+    warn: mat.m2-define-palette(mat.$m2-red-palette),
+  ),
+  typography: mat.m2-define-typography-config(),
+  density: 0,
+));

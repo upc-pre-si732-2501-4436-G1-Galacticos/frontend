@@ -47,6 +47,16 @@
   <!-- Selector de idioma -->
   <app-language-switcher />
 
+  <!-- Botón de cambio de tema -->
+  <button
+    mat-icon-button
+    (click)="toggleTheme()"
+    aria-label="Toggle theme"
+    class="theme-toggle-button"
+  >
+    <mat-icon>{{ currentTheme === 'light' ? 'dark_mode' : 'light_mode' }}</mat-icon>
+  </button>
+
   <!-- Menú usuario -->
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="User options">
     <mat-icon>account_circle</mat-icon>
