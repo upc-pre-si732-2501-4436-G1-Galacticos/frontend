@@ -2,7 +2,8 @@
   min-height: 100vh;
   padding: 2rem;
   font-family: Arial, sans-serif;
-  color: #222;
+  color: var(--text-primary-color);
+  background-color: var(--background-color);
 }
 
 .title {
@@ -14,11 +15,12 @@
 }
 
 .plan-card {
-  background-color: #d1ff3d;
+  background-color: var(--accent-color); /* verde lima */
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--text-primary-color);
 }
 
 .card-header h2 {
@@ -34,7 +36,6 @@
 
 .expired-warning {
   margin-top: 1rem;
-  color: red;
   font-weight: bold;
 }
 
@@ -42,14 +43,14 @@
   margin-top: 2rem;
 }
 
-
 .quick-actions {
   margin-top: 3rem;
   margin-bottom: 3rem;
   padding: 1.5rem;
-  background-color: #ffffff;
+  background-color: var(--surface-color); /* para caja clara u oscura */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
+  color: var(--text-primary-color);
 }
 
 .quick-actions h2 {
@@ -64,19 +65,18 @@
 }
 
 .flat-btn {
-  background-color: #eeeeee;
-  border: 1px solid #ccc;
+  background-color: var(--surface-color);
+  border: 1px solid var(--divider-color);
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 6px;
   cursor: pointer;
+  color: var(--text-primary-color);
 }
 
 .flat-btn:hover {
-  background-color: #ddd;
+  background-color: rgba(0, 0, 0, 0.05); /* usa sombra ligera */
 }
-
-
 
 .calendar {
   margin-top: 3rem;
@@ -94,19 +94,21 @@
 }
 
 .calendar-day {
-  background-color: #d1ff3d;
+  background-color: var(--accent-color); /* mismo verde lima */
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: var(--text-primary-color);
 }
 
 .calendar-day h4 {
   margin-top: 0;
   font-size: 1rem;
 }
+
 .today-tag {
   background-color: #ff3d3d;
-  color: white;
+  color: #ffffff;
   font-size: 0.75rem;
   padding: 2px 6px;
   border-radius: 12px;
@@ -117,9 +119,9 @@
 .motivational-message {
   font-size: 1.8rem;
   font-weight: 500;
-  color: #4caf50;
+  color: var(#4caf50);
   margin-bottom: 1.5rem;
-  white-space: pre-wrap; /* conserva espacios */
+  white-space: pre-wrap;
 }
 
 .char {
@@ -144,6 +146,3 @@
     text-align: center;
   }
 }
-
-
-

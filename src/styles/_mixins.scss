@@ -1,0 +1,46 @@
+@use './variables' as vars;
+
+// Mixin para aplicar tema a componentes
+@mixin theme-component($theme) {
+  .theme-#{$theme} & {
+    @content;
+  }
+}
+
+// Mixin para colores de fondo
+@mixin theme-background($theme) {
+  @include theme-component($theme) {
+    background-color: vars.get-color($theme, background);
+    color: vars.get-color($theme, text-primary);
+  }
+}
+
+
+// Mixin para superficies (cards, dialogs)
+@mixin theme-surface($theme) {
+  @include theme-component($theme) {
+    background-color: vars.get-color($theme, surface);
+    color: vars.get-color($theme, text-primary);
+  }
+}
+
+// Mixin para texto primario
+@mixin theme-text-primary($theme) {
+  @include theme-component($theme) {
+    color: vars.get-color($theme, text-primary);
+  }
+}
+
+// Mixin para texto secundario
+@mixin theme-text-secondary($theme) {
+  @include theme-component($theme) {
+    color: vars.get-color($theme, text-secondary);
+  }
+}
+
+// Mixin para bordes
+@mixin theme-border($theme) {
+  @include theme-component($theme) {
+    border-color: vars.get-color($theme, divider);
+  }
+}

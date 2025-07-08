@@ -1,0 +1,80 @@
+@use '@angular/material' as mat;
+@use './styles/light-theme' as *;
+@use './styles/dark-theme' as *;
+@use './styles/variables' as *;
+@use './styles/mixins';
+
+// Incluir estilos base de Angular Material
+@include mat.core();
+
+// Aplicar tema claro por defecto
+@include mat.all-component-themes($light-theme);
+
+// Aplicar tema oscuro cuando la clase 'theme-dark' esté presente
+.theme-dark {
+  @include mat.all-component-colors($dark-theme);
+}
+
+// Estilos base globales
+html, body {
+  height: 100%;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  @include mixins.theme-background('light');
+
+  &.theme-dark {
+    @include mixins.theme-background('dark');
+  }
+}
+
+
+// Títulos y navegación
+h1, h2, h3, h4, h5, h6, a {
+  font-family: "Poppins", sans-serif;
+  transition: color 0.3s ease;
+}
+
+// Estilos para transiciones suaves
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+// Estilos globales por tema
+.theme-light {
+  --primary-color: #{get-color('light', primary)};
+  --accent-color: #{get-color('light', accent)};
+  --background-color: #{get-color('light', background)};
+  --surface-color: #{get-color('light', surface)};
+  --text-primary-color: #{get-color('light', text-primary)};
+  --text-secondary-color: #{get-color('light', text-secondary)};
+  --divider-color: #{get-color('light', divider)};
+}
+
+.theme-dark {
+  --primary-color: #{get-color('dark', primary)};
+  --accent-color: #{get-color('dark', accent)};
+  --background-color: #{get-color('dark', background)};
+  --surface-color: #{get-color('dark', surface)};
+  --text-primary-color: #{get-color('dark', text-primary)};
+  --text-secondary-color: #{get-color('dark', text-secondary)};
+  --divider-color: #{get-color('dark', divider)};
+}
+
+// Personalización adicional para Material Components
+.mat-mdc-dialog-container {
+  .theme-dark & {
+    background-color: get-color('dark', surface);
+    color: get-color('dark', text-primary);
+  }
+}
+
+.mat-mdc-card {
+  .theme-dark & {
+    background-color: get-color('dark', surface);
+    color: get-color('dark', text-primary);
+  }
+}

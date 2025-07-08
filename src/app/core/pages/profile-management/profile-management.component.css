@@ -1,13 +1,12 @@
 *{
-  color: black;
+  color: var(--text-primary-color);
 }
 body {
-  font-family: Arial, sans-serif;
-  background-color: white;
+  background-color: var(--background-color);
   margin: 0;
   padding: 0;
   text-align: center;
-  color: black;
+  color: var(--text-primary-color);
 }
 
 header h1 {
@@ -25,7 +24,7 @@ hr {
   display: inline-block;
   width: 40%;
   border: none;
-  border-top: 2px solid black;
+  border-top: 2px solid var(--divider-color);
   vertical-align: middle;
 }
 
@@ -41,7 +40,7 @@ hr {
 }
 
 .photo-section {
-  background-color: #d1ff3d;
+  background-color: var(--accent-color);
   padding: 1rem;
   border-radius: 1rem;
   text-align: center;
@@ -56,7 +55,7 @@ hr {
 }
 
 .photo-btn {
-  background-color: black;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   margin-top: 1rem;
@@ -66,7 +65,7 @@ hr {
 }
 
 .form-section {
-  background-color: #d1ff3d;
+  background-color: var(--accent-color);
   padding: 2rem;
   border-radius: 1.5rem;
   width: 300px;
@@ -85,7 +84,7 @@ hr {
   margin-bottom: 0.7rem;
   padding: 0.5rem;
   border-radius: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--divider-color);
   text-align: center;
   font-size: 14px;
 }
@@ -104,7 +103,7 @@ hr {
 }
 
 .nivel {
-  background-color: #ccc;
+  background-color: var(--primary-color);
   border: none;
   padding: 0.5rem;
   border-radius: 2rem;
@@ -115,14 +114,14 @@ hr {
 }
 
 .nivel.active {
-  background-color: black;
-  color: white;
+  background-color: var(--background-color);
+  color: var(--text-primary-color);
 }
 
 .update-btn {
   width: 100%;
-  background-color: black;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-primary-color);
   border: none;
   padding: 0.8rem;
   border-radius: 1.5rem;

@@ -1,0 +1,79 @@
+@use '@angular/material' as mat;
+@use './variables' as vars;
+
+// Paleta personalizada para modo oscuro
+$custom-dark-primary: mat.m2-define-palette((
+  50: #F8FAFC,
+  100: #F1F5F9,
+  200: #E2E8F0,
+  300: #CBD5E1,
+  400: #94A3B8,
+  500: #7B8199,
+  600: #64748B,
+  700: #475569,
+  800: #334155,
+  900: #1E293B,
+  A100: #F1F5F9,
+  A200: #E2E8F0,
+  A400: #94A3B8,
+  A700: #475569,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #ffffff,
+  )
+));
+
+$custom-dark-accent: mat.m2-define-palette((
+  50: #F7FDE4,
+  100: #ECFCCB,
+  200: #D9F99D,
+  300: #BEF264,
+  400: #A3E635,
+  500: #C8E600,
+  600: #84CC16,
+  700: #65A30D,
+  800: #4D7C0F,
+  900: #365314,
+  A100: #ECFCCB,
+  A200: #D9F99D,
+  A400: #A3E635,
+  A700: #65A30D,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #ffffff,
+  )
+));
+
+$dark-theme: mat.m2-define-dark-theme((
+  color: (
+    primary: $custom-dark-primary,
+    accent: $custom-dark-accent,
+    warn: mat.m2-define-palette(mat.$m2-red-palette),
+  ),
+  typography: mat.m2-define-typography-config(),
+  density: 0,
+));
