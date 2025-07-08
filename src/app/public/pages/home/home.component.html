@@ -1,5 +1,13 @@
 <div class="home-container">
-  <h1 class="title">Bienvenido a FitWise {{userName}}</h1>
+  <h1 class="title">Bienvenido a FitWise {{ userName }}</h1>
+
+  <!-- Frase motivacional -->
+  <p class="motivational-message">
+    <ng-container *ngFor="let char of animatedMessage">
+      <span class="char">{{ char }}</span>
+    </ng-container>
+  </p>
+
   <section class="quick-actions">
     <h2>Accesos rápidos</h2>
     <div class="buttons-grid">
@@ -10,6 +18,7 @@
       <button class="flat-btn" [routerLink]="['/meals']">Mis Comidas</button>
     </div>
   </section>
+
   <div *ngIf="currentPlan && latestSubscription" class="plan-card">
     <div class="card-header">
       <h2>Tu última suscripción activa</h2>
@@ -38,7 +47,7 @@
   </div>
 
   <div *ngIf="calendarDays.length > 0" class="calendar">
-    <h2>Calendario de Comidas y Ejercicios segun tu plan</h2>
+    <h2>Calendario de Comidas y Ejercicios según tu plan</h2>
     <div class="calendar-grid">
       <div *ngFor="let day of calendarDays" class="calendar-day">
         <h4>
