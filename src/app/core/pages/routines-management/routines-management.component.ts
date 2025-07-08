@@ -15,6 +15,7 @@ import {
 import {WorkoutDetailsDialogComponent} from '../../components/workout/workout-details-dialog/workout-details-dialog.component';
 import {DietListComponent} from '../../components/diet/diet-list/diet-list.component';
 import {WorkoutListComponent} from '../../components/workout/workout-list/workout-list.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @Component({
@@ -25,6 +26,7 @@ import {WorkoutListComponent} from '../../components/workout/workout-list/workou
     FormsModule,
     MatDialogModule,
     WorkoutListComponent,
+    TranslateModule
   ],
   templateUrl: './routines-management.component.html',
   styleUrl: './routines-management.component.css'

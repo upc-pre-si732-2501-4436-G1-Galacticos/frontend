@@ -69,14 +69,20 @@
     "SUBMIT": "Verificar correo"
   },
   "SIGNUP": {
-    "EMAIL_PLACEHOLDER": "Email",
-    "EMAIL_REQUIRED": "Email is required",
-    "EMAIL_INVALID": "Invalid email",
-    "PASSWORD_PLACEHOLDER": "Password",
-    "PASSWORD_REQUIRED": "Password is required",
-    "SUBMIT": "Register",
-    "ALREADY_HAVE_ACCOUNT": "Already have an account?",
-    "LOGIN_LINK": "Login"
+    "EMAIL_PLACEHOLDER": "Correo electrónico",
+    "EMAIL_REQUIRED": "Email es obligatorio",
+    "EMAIL_INVALID": "Correo no válido",
+    "PASSWORD_PLACEHOLDER": "Contraseña",
+    "PASSWORD_REQUIRED": "Contraseña es obligatoria",
+    "SUBMIT": "Registrarse",
+    "ALREADY_HAVE_ACCOUNT": "¿Ya tienes una cuenta?",
+    "LOGIN_LINK": "Inicia sesión"
+  },
+  "WORKOUTS": {
+    "NEW_WORKOUT": "Nueva Rutina",
+    "VIEW_COMMUNITY": "Ver Comunidad",
+    "MY_WORKOUTS": "Mis rutinas",
+    "LAST_SAVED_TITLE": "Última rutina guardada"
   }
 
 

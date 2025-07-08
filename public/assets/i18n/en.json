@@ -77,7 +77,14 @@
     "SUBMIT": "Register",
     "ALREADY_HAVE_ACCOUNT": "Already have an account?",
     "LOGIN_LINK": "Login"
+  },
+  "WORKOUTS": {
+    "NEW_WORKOUT": "New Workout",
+    "VIEW_COMMUNITY": "View Community",
+    "MY_WORKOUTS": "My Workouts",
+    "LAST_SAVED_TITLE": "Last Saved Workout"
   }
+
 
 
 

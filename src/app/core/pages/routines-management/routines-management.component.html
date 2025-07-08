@@ -1,13 +1,17 @@
 <div class="workouts-management">
   <header class="dm-header">
-    <button class="btn-primary" (click)="openCreateDialog()">Nueva Rutina</button>
-    <button class="btn-secondary" (click)="openCommunityDialog()">Ver Comunidad</button>
+    <button class="btn-primary" (click)="openCreateDialog()">
+      {{ 'WORKOUTS.NEW_WORKOUT' | translate }}
+    </button>
+    <button class="btn-secondary" (click)="openCommunityDialog()">
+      {{ 'WORKOUTS.VIEW_COMMUNITY' | translate }}
+    </button>
   </header>
 
   <div class="dm-body">
     <!-- Lista de mis workoutas -->
     <section class="dm-list">
-      <h2 class="dm-title">Mis rutinas</h2>
+      <h2 class="dm-title">{{ 'WORKOUTS.MY_WORKOUTS' | translate }}</h2>
       <app-workout-list
         [workout]="myWorkouts"
         (selectWorkout)="openDetails($event, false)">
@@ -16,7 +20,7 @@
 
     <!-- Sidebar: última workouta guardada -->
     <aside *ngIf="currentWorkout" class="dm-sidebar">
-      <h3 class="sidebar-title">Última rutina guardada</h3>
+      <h3 class="sidebar-title">{{ 'WORKOUTS.LAST_SAVED_TITLE' | translate }}</h3>
       <h4 class="sidebar-title">{{ currentWorkout.title }}</h4>
       <p class="sidebar-note">{{ currentWorkout.description }}</p>
       <ul class="sidebar-exercises">
