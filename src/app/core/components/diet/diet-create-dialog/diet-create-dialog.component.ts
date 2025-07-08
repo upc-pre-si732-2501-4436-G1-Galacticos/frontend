@@ -10,6 +10,7 @@ import { MatButton } from '@angular/material/button';
 import { MatTabGroup, MatTab } from '@angular/material/tabs';
 import { FormsModule } from '@angular/forms';
 import {NgForOf, NgIf} from '@angular/common';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-diet-create-dialog',
@@ -19,7 +20,8 @@ import {NgForOf, NgIf} from '@angular/common';
   imports: [
     FormsModule,
     NgForOf,
-    NgIf
+    NgIf,
+    TranslateModule
   ]
 })
 export class DietCreateDialogComponent implements OnInit {

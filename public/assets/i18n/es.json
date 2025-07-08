@@ -222,7 +222,24 @@
   "COMMON7": {
     "CLOSE": "Cerrar",
     "EDIT": "Editar"
+  },
+  "DIET_CREATE": {
+    "EDIT_TITLE": "Editar Dieta",
+    "CREATE_TITLE": "Crear Dieta",
+    "LABEL_TITLE": "Título",
+    "PLACEHOLDER_TITLE": "Ingrese un título",
+    "LABEL_NOTE": "Nota",
+    "PLACEHOLDER_NOTE": "Ingrese una nota",
+    "TAB_MY_MEALS": "Mis Meals",
+    "TAB_COMMUNITY": "Comunidad",
+    "SELECTED_COUNT": "Seleccionadas: {{count}} / 3"
+  },
+  "COMMON8": {
+    "CANCEL": "Cancelar",
+    "SAVE_CHANGES": "Guardar cambios",
+    "CONFIRM": "Confirmar"
   }
+
 
 
 

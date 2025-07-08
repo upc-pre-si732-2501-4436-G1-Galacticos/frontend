@@ -218,10 +218,27 @@
     "MEALS_INCLUDED": "Included meals",
     "SET_CURRENT_DIET": "Set as current diet"
   },
-  "7": {
+  "COMMON7": {
     "CLOSE": "Close",
     "EDIT": "Edit"
+  },
+  "DIET_CREATE": {
+    "EDIT_TITLE": "Edit Diet",
+    "CREATE_TITLE": "Create Diet",
+    "LABEL_TITLE": "Title",
+    "PLACEHOLDER_TITLE": "Enter a title",
+    "LABEL_NOTE": "Note",
+    "PLACEHOLDER_NOTE": "Enter a note",
+    "TAB_MY_MEALS": "My Meals",
+    "TAB_COMMUNITY": "Community",
+    "SELECTED_COUNT": "Selected: {{count}} / 3"
+  },
+  "COMMON8": {
+    "CANCEL": "Cancel",
+    "SAVE_CHANGES": "Save changes",
+    "CONFIRM": "Confirm"
   }
+
 
 
 
