@@ -9,8 +9,8 @@
       class="diet-card"
       *ngFor="let d of communityDiets"
       (click)="openDetails(d)">
-      <h3>{{ d.title }}</h3>
-      <ul>
+      <h3 class="card-title">{{ d.title }}</h3>
+      <ul class="card-meals">
         <li *ngFor="let m of d.meals">{{ m.title }}</li>
       </ul>
     </div>

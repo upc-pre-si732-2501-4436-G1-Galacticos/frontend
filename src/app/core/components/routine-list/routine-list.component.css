@@ -16,10 +16,10 @@
 }
 
 .card {
-  border: 1px solid #ccc;
+  border: 1px solid var(--divider-color);
   padding: 1rem;
   border-radius: 8px;
-  background: white;
+  background: var(--background-color);
 }
 
 .card-title {
@@ -30,5 +30,5 @@
 
 .card-content {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--text-secondary-color);
 }

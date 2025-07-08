@@ -5,20 +5,20 @@
   padding: 20px;
   min-width: 280px;
   max-width: 400px;
-  background-color: #fff;
+  background-color: var(--background-color);
 }
 
 .dialog-header h2 {
   margin: 0;
   font-size: 1.4rem;
-  color: #333;
+  color: var(--text-primary-color);
   text-align: center;
 }
 
 .dialog-body p {
   margin-bottom: 10px;
   font-size: 1rem;
-  color: #555;
+  color: var(--text-secondary-color);
 }
 
 .input-days {
@@ -26,7 +26,7 @@
   padding: 8px 12px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--divider-color);
 }
 
 .dialog-actions {

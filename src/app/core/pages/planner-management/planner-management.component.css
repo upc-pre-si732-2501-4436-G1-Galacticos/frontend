@@ -48,7 +48,7 @@ mat-form-field.full-width {
 
 /* Estilo para el botón */
 button[type="submit"] {
-  background-color: var(--background-color);
+  background-color: var(--accent-color);
   color: var(--text-primary-color);
   border: none;
   padding: 10px 16px;
