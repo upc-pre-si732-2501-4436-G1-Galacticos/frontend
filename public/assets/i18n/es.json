@@ -37,5 +37,49 @@
     "BREAKFAST": "Desayuno",
     "LUNCH": "Almuerzo",
     "DINNER": "Cena"
+  },
+  "FORGOT": {
+    "EMAIL_PLACEHOLDER": "Correo electrónico",
+    "EMAIL_REQUIRED": "El correo es obligatorio",
+    "EMAIL_INVALID": "Ingresa un correo válido",
+    "SUBMIT": "Enviar enlace de recuperación",
+    "BACK_TO_LOGIN": "Volver al inicio de sesión"
+  },
+  "RESET": {
+    "TITLE": "Restablecer tu contraseña",
+    "PLACEHOLDER": "Ingresa tu nueva contraseña",
+    "ERROR_REQUIRED": "La contraseña es obligatoria",
+    "ERROR_MINLENGTH": "La longitud mínima es de 6 caracteres",
+    "SUBMIT": "Restablecer contraseña"
+  },
+  "LOGIN": {
+    "EMAIL_PLACEHOLDER": "Correo electrónico",
+    "PASSWORD_PLACEHOLDER": "Contraseña",
+    "SUBMIT": "Iniciar sesión",
+    "FORGOT": "¿Olvidaste tu contraseña?",
+    "RECOVER": "Recuperar",
+    "NO_ACCOUNT": "¿No tienes cuenta?",
+    "REGISTER": "Registrarse",
+    "OR_SIGN_WITH": "O inicia sesión con"
+  },
+  "VERIFY": {
+    "CLOSE": "Cerrar",
+    "EMAIL_PLACEHOLDER": "Correo electrónico",
+    "CODE_PLACEHOLDER": "Código de verificación",
+    "SUBMIT": "Verificar correo"
+  },
+  "SIGNUP": {
+    "EMAIL_PLACEHOLDER": "Email",
+    "EMAIL_REQUIRED": "Email is required",
+    "EMAIL_INVALID": "Invalid email",
+    "PASSWORD_PLACEHOLDER": "Password",
+    "PASSWORD_REQUIRED": "Password is required",
+    "SUBMIT": "Register",
+    "ALREADY_HAVE_ACCOUNT": "Already have an account?",
+    "LOGIN_LINK": "Login"
   }
+
+
+
+
 }

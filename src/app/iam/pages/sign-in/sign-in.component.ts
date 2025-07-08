@@ -13,6 +13,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { SignInTwoFactorComponent } from  '../sign-in-two-factor/sign-in-two-factor.component'
 
 import {Router} from "@angular/router";
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-in',
@@ -26,6 +27,7 @@ import {Router} from "@angular/router";
     CommonModule,
     MatIconModule,
     MatDialogModule,
+    TranslateModule
   ],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css'

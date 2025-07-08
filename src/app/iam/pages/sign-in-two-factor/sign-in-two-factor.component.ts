@@ -7,6 +7,7 @@ import {CommonModule} from '@angular/common';
 import {AuthService} from '../../services/auth.service';
 
 import {Router, ActivatedRoute} from "@angular/router";
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-sign-in-modal',
@@ -19,6 +20,7 @@ import {Router, ActivatedRoute} from "@angular/router";
         MatDialogModule,
         MatButtonModule,
         MatInputModule,
+      TranslateModule
     ]
 })
 export class SignInTwoFactorComponent {

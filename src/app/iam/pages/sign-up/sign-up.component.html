@@ -12,27 +12,27 @@
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-content">
 
-      <input placeholder="Correo electrónico" type="email" formControlName="email" class="custom" />
+      <input placeholder="{{ 'SIGNUP.EMAIL_PLACEHOLDER' | translate }}" type="email" formControlName="email" class="custom" />
       <mat-error *ngIf="form.controls['email'].hasError('required')">
-        <a class="emailText">Email es obligatorio</a>
+        <a class="emailText">{{ 'SIGNUP.EMAIL_REQUIRED' | translate }}</a>
       </mat-error>
       <mat-error *ngIf="form.controls['email'].hasError('email')">
-        <a class="emailText">Correo no válido</a>
+        <a class="emailText">{{ 'SIGNUP.EMAIL_INVALID' | translate }}</a>
       </mat-error>
 
-      <input placeholder="Contraseña" type="password" formControlName="password" class="custom" />
+      <input placeholder="{{ 'SIGNUP.PASSWORD_PLACEHOLDER' | translate }}" type="password" formControlName="password" class="custom" />
       <mat-error *ngIf="form.controls['password'].hasError('required')">
-        <a class="emailText">Contraseña es obligatoria</a>
+        <a class="emailText">{{ 'SIGNUP.PASSWORD_REQUIRED' | translate }}</a>
       </mat-error>
 
       <button mat-flat-button color="primary" class="full-width submit-btn" type="submit">
-        Registrarse
+        {{ 'SIGNUP.SUBMIT' | translate }}
       </button>
     </form>
 
     <div class="bottom-links">
-      <span>¿Ya tienes una cuenta?
-        <a class="link" (click)="navigateToLogin()">Inicia sesión</a>
+      <span>{{ 'SIGNUP.ALREADY_HAVE_ACCOUNT' | translate }}
+        <a class="link" (click)="navigateToLogin()">{{ 'SIGNUP.LOGIN_LINK' | translate }}</a>
       </span>
     </div>
   </mat-card>

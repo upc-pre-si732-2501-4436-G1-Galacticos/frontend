@@ -9,31 +9,43 @@
 
       <input
         matInput
-        placeholder="Correo electrónico"
+        placeholder="{{ 'LOGIN.EMAIL_PLACEHOLDER' | translate }}"
         formControlName="email"
         class="custom-input"
       />
 
       <input
         matInput
-        placeholder="Contraseña"
+        placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}"
         type="password"
         formControlName="password"
         class="custom-input"
       />
 
-      <button [disabled]="onLoading" mat-flat-button color="primary"  class="login-button" type="submit" >
-        Iniciar sesión
+      <button
+        [disabled]="onLoading"
+        mat-flat-button
+        color="primary"
+        class="login-button"
+        type="submit"
+      >
+        {{ 'LOGIN.SUBMIT' | translate }}
       </button>
 
       <div class="links-container">
-        <span>¿Olvidaste tu contraseña? <strong class="link" (click)="navigateToForgotPassword()">Recuperar</strong></span>
-        <span>¿No tienes cuenta? <strong class="link" (click)="navigateToRegister()">Registrarse</strong></span>
+        <span>
+          {{ 'LOGIN.FORGOT' | translate }}
+          <strong class="link" (click)="navigateToForgotPassword()">{{ 'LOGIN.RECOVER' | translate }}</strong>
+        </span>
+        <span>
+          {{ 'LOGIN.NO_ACCOUNT' | translate }}
+          <strong class="link" (click)="navigateToRegister()">{{ 'LOGIN.REGISTER' | translate }}</strong>
+        </span>
       </div>
 
       <div class="divider">
         <hr />
-        <span>O inicia sesión con</span>
+        <span>{{ 'LOGIN.OR_SIGN_WITH' | translate }}</span>
         <hr />
       </div>
 

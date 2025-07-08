@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-up',
@@ -19,7 +20,8 @@ import { Router } from '@angular/router';
     MatButtonModule,
     CommonModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'

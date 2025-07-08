@@ -37,5 +37,48 @@
     "BREAKFAST": "Breakfast",
     "LUNCH": "Lunch",
     "DINNER": "Dinner"
+  },
+  "FORGOT": {
+    "EMAIL_PLACEHOLDER": "Email address",
+    "EMAIL_REQUIRED": "Email is required",
+    "EMAIL_INVALID": "Enter a valid email",
+    "SUBMIT": "Send recovery link",
+    "BACK_TO_LOGIN": "Back to login"
+  },
+  "RESET": {
+    "TITLE": "Reset your password",
+    "PLACEHOLDER": "Enter your new password",
+    "ERROR_REQUIRED": "Password is required",
+    "ERROR_MINLENGTH": "Minimum length is 6 characters",
+    "SUBMIT": "Reset Password"
+  },
+  "LOGIN": {
+    "EMAIL_PLACEHOLDER": "Email",
+    "PASSWORD_PLACEHOLDER": "Password",
+    "SUBMIT": "Sign In",
+    "FORGOT": "Forgot your password?",
+    "RECOVER": "Recover",
+    "NO_ACCOUNT": "Don't have an account?",
+    "REGISTER": "Register",
+    "OR_SIGN_WITH": "Or sign in with"
+  },
+  "VERIFY": {
+    "CLOSE": "Close",
+    "EMAIL_PLACEHOLDER": "Email",
+    "CODE_PLACEHOLDER": "Verification Code",
+    "SUBMIT": "Verify Email"
+  },
+  "SIGNUP": {
+    "EMAIL_PLACEHOLDER": "Email",
+    "EMAIL_REQUIRED": "Email is required",
+    "EMAIL_INVALID": "Invalid email",
+    "PASSWORD_PLACEHOLDER": "Password",
+    "PASSWORD_REQUIRED": "Password is required",
+    "SUBMIT": "Register",
+    "ALREADY_HAVE_ACCOUNT": "Already have an account?",
+    "LOGIN_LINK": "Login"
   }
+
+
+
 }
