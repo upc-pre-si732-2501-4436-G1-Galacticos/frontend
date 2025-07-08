@@ -22,11 +22,16 @@ export class UserProfileService {
 
   /** Crear perfil */
   createProfile(userId: number, data: UserProfileRequest): Observable<UserProfileResponse> {
+    localStorage.setItem('heightProfile', data.height.toString());
+    localStorage.setItem('weightProfile', data.weight.toString());
     return this.http.post<UserProfileResponse>(`${this.base}/users/${userId}/profile`, data);
   }
 
   /** Actualizar perfil */
   updateProfile(userId: number, data: UserProfileRequest): Observable<UserProfileResponse> {
+
+    localStorage.setItem('heightProfile', data.height.toString());
+    localStorage.setItem('weightProfile', data.weight.toString());
     return this.http.put<UserProfileResponse>(`${this.base}/users/${userId}/profile`, data);
   }
 

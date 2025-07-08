@@ -1,6 +1,14 @@
 <div class="home-container">
   <h1 class="title">{{ 'HOME.WELCOME' | translate:{ user: userName } }}</h1>
 
+  <!-- Frase motivacional -->
+  <p class="motivational-message">
+    <ng-container *ngFor="let char of animatedMessage">
+      <span class="char">{{ char }}</span>
+    </ng-container>
+  </p>
+
+
   <section class="quick-actions">
     <h2>{{ 'HOME.QUICK_ACCESS' | translate }}</h2>
     <div class="buttons-grid">

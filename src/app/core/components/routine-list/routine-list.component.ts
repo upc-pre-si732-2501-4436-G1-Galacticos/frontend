@@ -1,7 +1,6 @@
-import { Component, EventEmitter, OnChanges, Input, Output } from '@angular/core';
-import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
-import { MatCardModule } from '@angular/material/card';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 import { Workout } from '../../model/workout.model';
 
 @Component({
@@ -9,37 +8,16 @@ import { Workout } from '../../model/workout.model';
   standalone: true,
   imports: [
     CommonModule,
-    MatCardModule,
-    MatPaginatorModule
+    MatCardModule
   ],
   templateUrl: './routine-list.component.html',
   styleUrls: ['./routine-list.component.css']
 })
-export class RoutineListComponent implements OnChanges {
-  @Input() routines: any[] = [];
+export class RoutineListComponent {
+  @Input() routines: Workout[] = [];
   @Output() routineSelected = new EventEmitter<number>();
 
-  paginatedRoutines: Workout[] = [];
-  pageSize = 5;
-  currentPage = 0;
-
-  ngOnChanges(): void {
-    this.updatePaginatedRoutines();
-  }
-
-  onPageChange(event: PageEvent) {
-    this.currentPage = event.pageIndex;
-    this.pageSize = event.pageSize;
-    this.updatePaginatedRoutines();
-  }
-
-  updatePaginatedRoutines(): void {
-    const start = this.currentPage * this.pageSize;
-    const end = start + this.pageSize;
-    this.paginatedRoutines = this.routines.slice(start, end);
-  }
-
-  onRoutineClick(id: number) {
+  onRoutineClick(id: number): void {
     this.routineSelected.emit(id);
   }
 }
