@@ -147,7 +147,13 @@
     "VIEW_COMMUNITY": "Ver Comunidad",
     "MY_DIETS": "Mis dietas",
     "LAST_SAVED": "Última dieta guardada"
+  },
+  "SIDENAV": {
+    "DIETS": "Dietas",
+    "ROUTINES": "Rutinas",
+    "PLANNER": "Planes"
   }
+
 
 
 

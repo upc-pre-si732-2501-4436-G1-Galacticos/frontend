@@ -146,7 +146,13 @@
     "VIEW_COMMUNITY": "View Community",
     "MY_DIETS": "My Diets",
     "LAST_SAVED": "Last Saved Diet"
+  },
+  "SIDENAV": {
+    "DIETS": "Diets",
+    "ROUTINES": "Routines",
+    "PLANNER": "Planner"
   }
+
 
 
 

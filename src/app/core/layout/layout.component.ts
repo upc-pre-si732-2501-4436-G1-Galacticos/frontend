@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-layout',
@@ -23,6 +24,7 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    TranslateModule
   ],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
