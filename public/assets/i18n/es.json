@@ -114,6 +114,19 @@
     "NO_PLANS_FOUND": "No se encontraron planes.",
     "DETAILS_BUTTON": "Ver detalles",
     "ASSIGN_BUTTON": "Asignar a mi cuenta"
+  },
+  "MEALS": {
+    "CREATE_TITLE": "Crear Meal",
+    "UPDATE_TITLE": "Actualizar Meal",
+    "FORM": {
+      "TITLE_PLACEHOLDER": "Título del meal",
+      "DESCRIPTION_PLACEHOLDER": "Descripción del meal",
+      "CREATE_BUTTON": "Crear",
+      "UPDATE_BUTTON": "Actualizar",
+      "RESET_BUTTON": "Limpiar"
+    },
+    "LIST_TITLE": "Lista de Meals",
+    "NO_MEALS": "No hay meals para mostrar."
   }
 
 

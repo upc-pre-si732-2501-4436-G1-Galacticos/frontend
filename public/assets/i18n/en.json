@@ -113,10 +113,23 @@
     "NO_PLANS_FOUND": "No plans found.",
     "DETAILS_BUTTON": "View Details",
     "ASSIGN_BUTTON": "Assign to My Account"
+  },
+
+  "MEALS": {
+    "CREATE_TITLE": "Create Meal",
+    "UPDATE_TITLE": "Update Meal",
+    "FORM": {
+      "TITLE_PLACEHOLDER": "Meal title",
+      "DESCRIPTION_PLACEHOLDER": "Meal description",
+      "CREATE_BUTTON": "Create",
+      "UPDATE_BUTTON": "Update",
+      "RESET_BUTTON": "Clear"
+    },
+    "LIST_TITLE": "Meals List",
+    "NO_MEALS": "There are no meals to display."
   }
 
-
-
+  
 
 
 
