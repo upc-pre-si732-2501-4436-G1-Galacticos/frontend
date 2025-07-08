@@ -2,18 +2,36 @@
 
   <!-- Sección izquierda: crear / actualizar ejercicio -->
   <div class="create-diet-section">
-    <h3>{{ selectedExercise.id ? 'Actualizar Ejercicio' : 'Crear Ejercicio' }}</h3>
+    <h3>{{ selectedExercise.id ? ('EXERCISES.UPDATE_TITLE' | translate) : ('EXERCISES.CREATE_TITLE' | translate) }}</h3>
+
     <form (ngSubmit)="saveExercise()">
+      <input
+        type="text"
+        [(ngModel)]="selectedExercise.title"
+        name="title"
+        [placeholder]="'EXERCISES.FORM.TITLE_PLACEHOLDER' | translate"
+        required
+      />
 
-      <input type="text" [(ngModel)]="selectedExercise.title" name="title" placeholder="Título del ejercicio" required>
-
-      <input type="text" [(ngModel)]="selectedExercise.description" name="description" placeholder="Descripción del ejercicio" required>
+      <input
+        type="text"
+        [(ngModel)]="selectedExercise.description"
+        name="description"
+        [placeholder]="'EXERCISES.FORM.DESCRIPTION_PLACEHOLDER' | translate"
+        required
+      />
 
       <button type="submit" class="add-diet-btn">
-        {{ selectedExercise.id ? 'Actualizar' : 'Crear' }}
+        {{ selectedExercise.id ? ('EXERCISES.FORM.UPDATE_BUTTON' | translate) : ('EXERCISES.FORM.CREATE_BUTTON' | translate) }}
       </button>
-      <button type="button" (click)="resetForm()" class="add-diet-btn" style="background-color: #ddd; color: black; margin-top: 5px;">
-        Limpiar
+
+      <button
+        type="button"
+        (click)="resetForm()"
+        class="add-diet-btn"
+        style="background-color: #ddd; color: black; margin-top: 5px;"
+      >
+        {{ 'EXERCISES.FORM.RESET_BUTTON' | translate }}
       </button>
     </form>
   </div>
@@ -21,8 +39,9 @@
   <!-- Sección derecha: lista de ejercicios -->
   <div class="right-section">
     <div class="community-diets">
-      <h3>Lista de Ejercicios</h3>
-      <p *ngIf="exercises.length === 0">No hay ejercicios para mostrar.</p>
+      <h3>{{ 'EXERCISES.LIST_TITLE' | translate }}</h3>
+      <p *ngIf="exercises.length === 0">{{ 'EXERCISES.NO_EXERCISES' | translate }}</p>
+
       <div *ngFor="let exercise of exercises" class="diet-card" (click)="editExercise(exercise)">
         <strong>{{ exercise.title }}</strong>
         <p>{{ exercise.description }}</p>

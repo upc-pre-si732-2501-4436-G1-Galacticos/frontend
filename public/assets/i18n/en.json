@@ -127,9 +127,23 @@
     },
     "LIST_TITLE": "Meals List",
     "NO_MEALS": "There are no meals to display."
+  },
+  "EXERCISES": {
+    "CREATE_TITLE": "Create Exercise",
+    "UPDATE_TITLE": "Update Exercise",
+    "FORM": {
+      "TITLE_PLACEHOLDER": "Exercise title",
+      "DESCRIPTION_PLACEHOLDER": "Exercise description",
+      "CREATE_BUTTON": "Create",
+      "UPDATE_BUTTON": "Update",
+      "RESET_BUTTON": "Clear"
+    },
+    "LIST_TITLE": "Exercise List",
+    "NO_EXERCISES": "There are no exercises to display."
   }
 
-  
+
+
 
 
 
