@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Workout } from '../../model/workout.model';
-import { RoutineDetailsDialogComponent } from '../../components/routine-details-dialog/routine-details-dialog.component';
 import { WorkoutsService } from '../../services/workouts.service';
 import { RoutineListComponent } from '../../components/routine-list/routine-list.component';
 import { CommonModule } from '@angular/common';
