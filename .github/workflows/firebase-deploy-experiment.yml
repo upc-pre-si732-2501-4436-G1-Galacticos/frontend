@@ -30,6 +30,15 @@ jobs:
             geminiApiKey: '${{ secrets.API_KEY_GEMINI }}'
           };
           EOF
+      - name: Replace geminiApiKey in environment.prod.ts
+        run: |
+          cat <<EOF > src/environments/environment.prod.ts
+          export const environment = {
+            production: true,
+            serverBasePath: 'https://fitwisebackend-gfaehmgxfhhjhff6.canadacentral-01.azurewebsites.net/api/v1',
+            geminiApiKey: '${{ secrets.API_KEY_GEMINI }}'
+          };
+          EOF
 
       - name: Build Angular project (production)
         run: npm run build -- --configuration=production
