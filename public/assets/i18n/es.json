@@ -192,7 +192,16 @@
   "COMMON4": {
     "CANCEL": "Cancelar",
     "CONFIRM": "Aceptar"
+  },
+  "WORKOUT_DETAIL": {
+    "EXERCISES_INCLUDED": "Ejercicios incluidos:",
+    "NO_EXERCISES": "No hay ejercicios registrados en esta rutina.",
+    "ASSIGN_BUTTON": "Asignar a mi FitWise Plan"
+  },
+  "COMMON5": {
+    "CLOSE": "Cerrar"
   }
+
 
 
 

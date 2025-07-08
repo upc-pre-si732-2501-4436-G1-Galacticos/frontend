@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule} from '@angular/material/button';
 import {NgForOf, NgIf} from '@angular/common';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-routine-details-dialog',
@@ -10,7 +11,8 @@ import {NgForOf, NgIf} from '@angular/common';
     MatButtonModule,
     MatCardModule,
     NgForOf,
-    NgIf
+    NgIf,
+    TranslateModule
   ],
   templateUrl: './routine-details-dialog.component.html',
   styleUrl: './routine-details-dialog.component.css'
