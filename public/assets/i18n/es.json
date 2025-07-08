@@ -100,7 +100,23 @@
     "GOAL": "Objetivo",
     "UPDATE": "Actualizar perfil",
     "CREATE": "Crear perfil"
+  },
+  "PLANNER": {
+    "CREATE_TITLE": "Crear nuevo plan",
+    "FORM": {
+      "TITLE_LABEL": "Título",
+      "DESCRIPTION_LABEL": "Descripción",
+      "TAGS_LABEL": "Selecciona tags",
+      "CREATE_BUTTON": "Crear Plan"
+    },
+    "COMMUNITY_TITLE": "Planes de la comunidad",
+    "RECOMMENDED_TITLE": "Planes FitWise Recomendados",
+    "NO_PLANS_FOUND": "No se encontraron planes.",
+    "DETAILS_BUTTON": "Ver detalles",
+    "ASSIGN_BUTTON": "Asignar a mi cuenta"
   }
+
+
 
 
 

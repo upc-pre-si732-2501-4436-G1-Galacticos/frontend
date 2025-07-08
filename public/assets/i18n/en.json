@@ -99,7 +99,22 @@
     "GOAL": "Goal",
     "UPDATE": "Update profile",
     "CREATE": "Create profile"
+  },
+  "PLANNER": {
+    "CREATE_TITLE": "Create New Plan",
+    "FORM": {
+      "TITLE_LABEL": "Title",
+      "DESCRIPTION_LABEL": "Description",
+      "TAGS_LABEL": "Select Tags",
+      "CREATE_BUTTON": "Create Plan"
+    },
+    "COMMUNITY_TITLE": "Community Plans",
+    "RECOMMENDED_TITLE": "FitWise Recommended Plans",
+    "NO_PLANS_FOUND": "No plans found.",
+    "DETAILS_BUTTON": "View Details",
+    "ASSIGN_BUTTON": "Assign to My Account"
   }
+
 
 
 
