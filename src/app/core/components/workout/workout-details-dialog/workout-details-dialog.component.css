@@ -6,11 +6,11 @@
 .dialog {
   max-width: 500px;
   width: 100%;
-  background: #FFFFFF;
+  background: var(--background-color);
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
-  color: #4E5366;
+  color: var(--text-primary-color);
 }
 
 /* Header */
@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: #f7f7f7;
+  background: var(--background-color);
 }
 
 .dialog-title {
@@ -35,7 +35,7 @@
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
-  color: #4E5366;
+  color: var(--primary-color);
 }
 
 /* Body */
@@ -80,7 +80,7 @@
   justify-content: flex-end;
   gap: 8px;
   padding: 12px 24px;
-  background: #f7f7f7;
+  background: var(--background-color);
 }
 
 /* Botones */
@@ -97,12 +97,12 @@
 /* Secundario (outline) */
 .btn-secondary {
   background: transparent;
-  color: #4E5366;
-  border: 1px solid #4E5366;
+  color: var(--text-secondary-color);
+  border: 1px solid var(--divider-color);
 }
 
 /* Primario (accent) */
 .btn-primary {
-  background: #BEED00;
-  color: #ffffff;
+  background: var(--accent-color);
+  color: var(--text-primary-color);
 }
