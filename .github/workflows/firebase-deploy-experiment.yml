@@ -20,6 +20,13 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+      - name: Replace geminiApiKey in environment.ts
+        run: |
+          echo "const environment = require('./src/environments/environment');" > temp.js
+          echo "environment.geminiApiKey = process.env.API_KEY_GEMINI;" >> temp.js
+          node temp.js
+        env:
+          API_KEY_GEMINI: ${{ secrets.API_KEY_GEMINI }}
 
       - name: Build Angular project (production)
         run: npm run build -- --configuration=production
