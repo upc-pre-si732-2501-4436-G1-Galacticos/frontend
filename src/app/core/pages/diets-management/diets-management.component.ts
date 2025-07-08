@@ -14,6 +14,7 @@ import { DietListComponent }             from '../../components/diet/diet-list/d
 
 import { tap, switchMap }       from 'rxjs/operators';
 import { of }                   from 'rxjs';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-diets-management',
@@ -25,6 +26,7 @@ import { of }                   from 'rxjs';
     MatButtonModule,
     MatDialogModule,
     DietListComponent,
+    TranslateModule
   ],
   templateUrl: './diets-management.component.html',
   styleUrls: ['./diets-management.component.css']

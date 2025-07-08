@@ -140,7 +140,14 @@
     },
     "LIST_TITLE": "Exercise List",
     "NO_EXERCISES": "There are no exercises to display."
+  },
+  "DIETS": {
+    "NEW_DIET": "New Diet",
+    "VIEW_COMMUNITY": "View Community",
+    "MY_DIETS": "My Diets",
+    "LAST_SAVED": "Last Saved Diet"
   }
+
 
 
 

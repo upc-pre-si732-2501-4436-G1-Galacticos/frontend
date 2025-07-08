@@ -1,13 +1,17 @@
 <div class="diets-management">
   <header class="dm-header">
-    <button class="btn-primary" (click)="openCreateDialog()">Nueva Dieta</button>
-    <button class="btn-secondary" (click)="openCommunityDialog()">Ver Comunidad</button>
+    <button class="btn-primary" (click)="openCreateDialog()">
+      {{ 'DIETS.NEW_DIET' | translate }}
+    </button>
+    <button class="btn-secondary" (click)="openCommunityDialog()">
+      {{ 'DIETS.VIEW_COMMUNITY' | translate }}
+    </button>
   </header>
 
   <div class="dm-body">
     <!-- Lista de mis dietas -->
     <section class="dm-list">
-      <h2 class="dm-title">Mis dietas</h2>
+      <h2 class="dm-title">{{ 'DIETS.MY_DIETS' | translate }}</h2>
       <app-diet-list
         [diets]="myDiets"
         (selectDiet)="openDetails($event, false)">
@@ -16,7 +20,7 @@
 
     <!-- Sidebar: última dieta guardada -->
     <aside *ngIf="currentDiet" class="dm-sidebar">
-      <h3 class="sidebar-title">Última dieta guardada</h3>
+      <h3 class="sidebar-title">{{ 'DIETS.LAST_SAVED' | translate }}</h3>
       <h4 class="sidebar-title">{{ currentDiet.title }}</h4>
       <p class="sidebar-note">{{ currentDiet.description }}</p>
       <ul class="sidebar-meals">
